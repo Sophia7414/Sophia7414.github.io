@@ -145,6 +145,69 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/23/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABRobots%E5%8D%8F%E8%AE%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/23/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABRobots%E5%8D%8F%E8%AE%AE/" class="post-title-link" itemprop="url">python网络爬虫Robots协议</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-07-23 15:48:46 / Modified: 16:17:13" itemprop="dateCreated datePublished" datetime="2023-07-23T15:48:46+08:00">2023-07-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="网络爬虫的限制"><a href="#网络爬虫的限制" class="headerlink" title="网络爬虫的限制"></a>网络爬虫的限制</h1><p>来源审查：检查来访HTTP协议头的User-Agent，只响应浏览器或友好爬虫的访问<br>发布公告：通过Robots协议告知所有爬虫网站的爬取策略，要求爬虫遵守</p>
+<h1 id="Robots协议"><a href="#Robots协议" class="headerlink" title="Robots协议"></a>Robots协议</h1><p>全名Robots Exclusion Standard（网络爬虫排除标准），用来告知网络爬虫吧哪些页面可以爬取，哪些不行，形式为网站根目录下的robots.txt文件，以携程为例，打开<a target="_blank" rel="noopener" href="https://www.ctrip.com/robots.txt%EF%BC%8C%E5%BE%97%E5%88%B0%E7%BB%93%E6%9E%9C%EF%BC%9A">https://www.ctrip.com/robots.txt，得到结果：</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line"></span><br><span class="line">Disallow: /bin/</span><br><span class="line"></span><br><span class="line">Disallow: /Member/</span><br><span class="line"></span><br><span class="line">Disallow: /member/</span><br><span class="line">Disallow: /Service/</span><br><span class="line"></span><br><span class="line">Disallow: /service/</span><br><span class="line"></span><br><span class="line">Disallow: /Email/</span><br><span class="line"></span><br><span class="line">Disallow: /email/</span><br><span class="line"></span><br><span class="line">Disallow: /Pda/</span><br><span class="line">Disallow: /pda/</span><br><span class="line"></span><br><span class="line">Disallow: /ShareScript/</span><br><span class="line"></span><br><span class="line">Disallow: /sharescript/</span><br><span class="line"></span><br><span class="line">Disallow: /Public/AllianceCardIndex.asp</span><br><span class="line"></span><br><span class="line">Disallow: /public/alliancecardindex.asp</span><br><span class="line"></span><br><span class="line">Disallow: /supermarket/</span><br><span class="line"></span><br><span class="line">Disallow: /*Alliance*</span><br><span class="line"></span><br><span class="line">Disallow: /*alliance*</span><br><span class="line"></span><br><span class="line">Disallow: /*Ouid*</span><br><span class="line"></span><br><span class="line">Disallow: /*ouid*</span><br><span class="line"></span><br><span class="line">Allow: /</span><br></pre></td></tr></table></figure>
+<p>其中：<br>User-agent: ——任何被提到的user agent都应该遵守以下协议<br>Disallow:——所有在User-agent中的爬虫都不允许访问符合以下格式的网站</p>
+<h1 id="Robots协议遵守方式"><a href="#Robots协议遵守方式" class="headerlink" title="Robots协议遵守方式"></a>Robots协议遵守方式</h1><h2 id="robots协议的使用"><a href="#robots协议的使用" class="headerlink" title="robots协议的使用"></a>robots协议的使用</h2><p>网络爬虫：自动或人工的识别robots.txt,再进行内容爬取<br>约束性：Robots协议是建议但非约束性，爬虫可以不遵守但可能产生法律风险</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/21/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABRequests%E5%BA%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -283,7 +346,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-07-22 23:16:21" itemprop="dateModified" datetime="2023-07-22T23:16:21+08:00">2023-07-22</time>
+                <time title="Modified: 2023-07-23 15:45:54" itemprop="dateModified" datetime="2023-07-23T15:45:54+08:00">2023-07-23</time>
               </span>
 
           
@@ -324,7 +387,11 @@
 <h2 id="二、函数概念"><a href="#二、函数概念" class="headerlink" title="二、函数概念"></a>二、函数概念</h2><h3 id="1、函数的定义"><a href="#1、函数的定义" class="headerlink" title="1、函数的定义"></a>1、函数的定义</h3><p>设有X、Y两个数集以及一个确定的对应法则（规律）f，∀x∈X，通过f都已唯一的y∈Y与x对应，则称f是定义在X上的函数，记为f(x)&#x3D;y或<img src="/2023/07/20/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%87%BD%E6%95%B0/sign_of_function.jpg" alt="linyu"><br>其中，X成为f的定义域，常记为Df，x是自变量，y是因变量。当x遍取X中的一切数时，和他对应的y值构成数集Vf&#x3D;{y|y&#x3D;f(x),x∈X}。Vf称为f的值域。<br><em><strong>注意：</strong></em>  </p>
 <ul>
 <li><em><strong>一个函数是由x,y的对应法则与x的取值范围X确定的，把”对应法则”和”函数的定义域”称为函数定义的两个要素(可通过这两个要素判断函数是否成立&#x2F;函数是否相同)</strong></em></li>
+<li><em><strong>函数的值域是由函数的定义域和对应法则确定的</strong></em></li>
+<li><em><strong>确定函数定义域的时候，注意函数如有实际意义，应依据实际问题是否有意义来确定（必须使实际问题成立）；如函数不表示某实际问题，自变量所能取得的是使函数y&#x3D;f(x)成立的一切实数所组成的数集</strong></em></li>
 </ul>
+<h3 id="2、函数的几何意义"><a href="#2、函数的几何意义" class="headerlink" title="2、函数的几何意义"></a>2、函数的几何意义</h3><p>设函数y&#x3D;f(x)定义域为Df。∀x∈Df与对应的函数值y&#x3D;f(x)，在xoy面上得点(x,y)。当x遍取Df中所有实数时，就得到点集P，P&#x3D;{(x,y)|y&#x3D;f(x),x∈Df}。称点集P为函数y&#x3D;f(x)的图形。</p>
+<h3 id="3、函数的几个简单性质"><a href="#3、函数的几个简单性质" class="headerlink" title="3、函数的几个简单性质"></a>3、函数的几个简单性质</h3><h4 id="函数的有界性"><a href="#函数的有界性" class="headerlink" title="函数的有界性"></a>函数的有界性</h4><p>若∃M&gt;0，s.t.(使得)|f(x)|≤M且x∈I，则称f(x)在I上有界；否则则称f(x)在I上无界，即对任何一个正数M&gt;0总∃x1∈I，s.t.|f(x)|&gt;M,则称f(x)在I上无界</p>
 <h2 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h2><ul>
 <li>正内接n边形周长Sn&#x3D;n*2r *sin(π&#x2F;n)</li>
 </ul>
@@ -539,7 +606,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
