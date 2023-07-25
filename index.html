@@ -145,6 +145,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/25/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABbeautifulsoup%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/25/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABbeautifulsoup%E5%BA%93/" class="post-title-link" itemprop="url">python网络爬虫Beautiful Soup库</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-07-25 15:37:35 / Modified: 17:05:31" itemprop="dateCreated datePublished" datetime="2023-07-25T15:37:35+08:00">2023-07-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Beautiful-Soup库的理解"><a href="#Beautiful-Soup库的理解" class="headerlink" title="Beautiful Soup库的理解"></a>Beautiful Soup库的理解</h1><p>Beautiful Soup库是解析、遍历、维护“标签树”的功能库。<br>标签包含看宇哥成对出现的名称和0个或多个属性，每个属性都有它的个性和它的值，是键值对构成<br>Beautiful Soup对应一个HTML/XML文档的全部内容  </p>
+<h1 id="Beautiful-Soup库可以用的解析器"><a href="#Beautiful-Soup库可以用的解析器" class="headerlink" title="Beautiful Soup库可以用的解析器"></a>Beautiful Soup库可以用的解析器</h1><ul>
+<li>bs4的HTML解析器:</li>
+</ul>
+<p>对应代码<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BeautifulSoup(mk,&#x27;html.parser&#x27;)</span><br><span class="line">```  </span><br><span class="line">条件：安装bs4库  </span><br><span class="line"></span><br><span class="line">* lxml的HTML解析器:</span><br><span class="line"></span><br><span class="line">对应代码</span><br></pre></td></tr></table></figure><br>BeautifulSoup(mk,’lxml’)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">条件：安装lxml库  </span><br><span class="line"></span><br><span class="line">* lxml的XML解析器</span><br><span class="line">对应代码</span><br></pre></td></tr></table></figure><br>BeautifulSoup(mk,’xml’)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">条件：安装lxml库  </span><br><span class="line"></span><br><span class="line">* html5lib的解析器</span><br><span class="line">对应代码</span><br></pre></td></tr></table></figure><br>BeautifulSoup(mk,’html5lib’)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">条件：安装html5lib库  </span><br><span class="line"># Beautiful Soup库的基本元素</span><br><span class="line">* Tag——标签，最基本的信息组织单元，以&lt;&gt;和&lt;/&gt;标明开头和结尾</span><br><span class="line">* Name——标签的名字，&lt; p&gt; …&lt; p/&gt;的名字是p，格式：&lt; tag&gt;.name</span><br><span class="line">* Attributes——标签的属性，字典形式，格式：&lt; tag&gt;.attrs</span><br><span class="line">* NavigableString——标签内非属性字符串，&lt;&gt; …&lt;/&gt;中字符串，格式：&lt; tag&gt;.string</span><br><span class="line">* Comment——标签内字符串的注释部分，一种特殊的Comment类型</span><br><span class="line"># 获得Tag的方法</span><br><span class="line">以本博客的主页为例：</span><br></pre></td></tr></table></figure><br>import requests<br>from bs4 import BeautifulSoup</p>
+<p>url=”<a target="_blank" rel="noopener" href="https://sophia7414.github.io/">https://sophia7414.github.io/</a>“<br>r=requests.get(url)<br>soup=BeautifulSoup(r.text,’html.parser’)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出某个标签内容（以title为例）：</span><br></pre></td></tr></table></figure><br>print(soup.title)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出（只会输出第一个标签）：</span><br></pre></td></tr></table></figure></p>
+<p><title>Hexo</title><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出某个标签的名字（以a为例）：</span><br></pre></td></tr></table></figure><br>print(soup.a.name)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br></pre></td></tr></table></figure><br>a<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出某个标签的上一级标签的名字（以a为例）：</span><br></pre></td></tr></table></figure><br>print(soup.a.parent.name)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br></pre></td></tr></table></figure><br>div<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出某个标签的属性（以a为例）：</span><br></pre></td></tr></table></figure><br>tag=soup.a<br>print(tag.attrs)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br></pre></td></tr></table></figure><br>{‘href’: ‘/‘, ‘class’: [‘brand’], ‘rel’: [‘start’]}<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出某个标签的某一特定属性属性（以a的class为例）：</span><br></pre></td></tr></table></figure><br>tag=soup.a<br>print(tag.attrs[‘class’])<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br></pre></td></tr></table></figure><br>[‘brand’]<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查看标签的类型（以a为例）：</span><br></pre></td></tr></table></figure><br>tag=soup.a<br>print(type(tag))<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br></pre></td></tr></table></figure></p>
+<p><class 'bs4.element.tag'><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出某个标签内非属性字符串（以title为例）：</span><br></pre></td></tr></table></figure><br>print(soup.title.string)<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br></pre></td></tr></table></figure><br>Hexo<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查看其类型：</span><br></pre></td></tr></table></figure><br>print(type(soup.title.string))<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br></pre></td></tr></table></figure></class></p>
+<p><class 'bs4.element.navigablestring'><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">最后，我们通过一个新的例子来查看comment类型：</span><br></pre></td></tr></table></figure><br>from bs4 import BeautifulSoup</class></p>
+<p>soup=BeautifulSoup(“<b><!--This is a comment--></b></p><p>This is not a comment</p>“,’html.parser’)<br>print(soup.p.string)<br>print(type(soup.p.string))<br>print(soup.b.string)<br>print(type(soup.b.string))<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br></pre></td></tr></table></figure><br>This is not a comment<p></p>
+<p><class 'bs4.element.navigablestring'><br>This is a comment</class></p>
+<p><class 'bs4.element.comment'><br>```</class></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/24/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests%E5%BA%93%E5%AE%9E%E6%88%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -689,7 +759,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
