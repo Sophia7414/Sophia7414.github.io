@@ -145,6 +145,79 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/31/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AF%B9%E8%B1%A1%E5%AF%BC%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/31/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AF%B9%E8%B1%A1%E5%AF%BC%E8%AE%BA/" class="post-title-link" itemprop="url">第一章 对象导论</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-07-31 19:38:20 / Modified: 20:21:56" itemprop="dateCreated datePublished" datetime="2023-07-31T19:38:20+08:00">2023-07-31</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h1><ul>
+<li>万物皆为对象</li>
+<li>程序是对象的集合，它们通过发送消息来告知彼此所要做的。</li>
+<li>每个对象都有自己的由其他对象所构成的存储。</li>
+<li>每个对象都拥有其类型。按照通用的说法，“每个对象都是某个类(class)的一个实例(instance)”</li>
+<li>某一特定类型的所有对象都可以接收同样的消息。<h1 id="如何在JAVA内部设定边界"><a href="#如何在JAVA内部设定边界" class="headerlink" title="如何在JAVA内部设定边界"></a>如何在JAVA内部设定边界</h1>JAVA用public、private、protected在类的内部设定边界。这些访问指定词决定了紧跟其后的东西可以被谁使用。</li>
+<li>public——紧随其后的元素对任何人都是可用的</li>
+<li>private——除类型创建者和类型的内部方法之外的任何人都不能访问的元素。</li>
+<li>protected——与private作用相当，但继承的类可以访问protected成员</li>
+</ul>
+<p>当没有使用前面提到的任何访问指定词时，JAVA将使用默认的访问权限：包访问权限——类可以访问在同一个包(库构件)中的其他类的成员，但是在包之外，这些成员如同指定了private一样。</p>
+<h1 id="“是一个”关系和“像一个”关系"><a href="#“是一个”关系和“像一个”关系" class="headerlink" title="“是一个”关系和“像一个”关系"></a>“是一个”关系和“像一个”关系</h1><ul>
+<li>is-a(是一个)关系——用一个导出类对象来完全替代一个基类对象。这是一种处理继承的理想方式</li>
+<li>is-like-a(像是一个)关系——在导出类型中添加新的接口元素后，这个新的类型仍然可以替代基类，但是这种替代并不完</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/31/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -241,10 +314,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-07-31 13:44:50 / Modified: 14:26:09" itemprop="dateCreated datePublished" datetime="2023-07-31T13:44:50+08:00">2023-07-31</time>
+              <time title="Created: 2023-07-31 13:44:50" itemprop="dateCreated datePublished" datetime="2023-07-31T13:44:50+08:00">2023-07-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-02 13:52:36" itemprop="dateModified" datetime="2023-08-02T13:52:36+08:00">2023-08-02</time>
+              </span>
 
           
 
@@ -270,8 +349,137 @@
 <li>3、处于不同地位和掌握情报多少不同的人，对某事件可能性大小要参照这些情况及可能的后果去作衡量<h2 id="1-1-2-试验与事件"><a href="#1-1-2-试验与事件" class="headerlink" title="1.1.2 试验与事件"></a>1.1.2 试验与事件</h2><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3>在通常的意义下，指一种已发生的情况；在概率论中，“事件”一词的一般含义如下：</li>
 <li>1.有一个明确界定的试验。试验一词，有人为主动的意思，而人只处在被动地位，只是记录而并不干预的情况一般称为“观察”。目前可以把试验一词理解为包含了观察</li>
 <li>2.这个试验的全部可能结果，是在试验前就明确的。在不少情况下，我们不能确切知道一试验的全部可能结果，但可以知道它不超出某个范围，这时，也可以用这个范围来作为该试验的全部可能结果</li>
-<li>3.我们有一个明确的陈述，这个陈述界定了试验的全部可能结果中一确定的部分，这个陈述就叫做一个事件。以掷骰子为例，我们可以定义许多事件，例如：<br>E₁={掷出偶数点}<br>E₂={掷出素数点}<br>E₃={掷出3的倍数点b}</li>
+<li>3.我们有一个明确的陈述，这个陈述界定了试验的全部可能结果中一确定的部分，这个陈述就叫做一个事件。以掷骰子为例，我们可以定义许多事件，例如：<br>E₁={掷出偶数点}<br>E₂={掷出素数点}<br>E₃={掷出3的倍数点}</li>
 </ul>
+<p>由此，我们可以说事件是与试验结果有关的一个命题，其正确与否取决于试验结果如何。<br>在概率论上，有时把单一的试验结果称为一个“基本事件”，一个或一些基本事件并在一起，就构成一个事件，而基本事件本身也是事件。我们常称事件为“随机事件”或“偶然事件”也就是说，事件是否在某次试验中发生，取决于机遇。其极端情况，是“必然事件”和“不可能事件”，可以他们分别等同于概率为1和概率为0的事件</p>
+<h2 id="1-1-3古典概率"><a href="#1-1-3古典概率" class="headerlink" title="1.1.3古典概率"></a>1.1.3古典概率</h2><h3 id="等可能性"><a href="#等可能性" class="headerlink" title="等可能性"></a>等可能性</h3><p>假定某个试验有有限个可能的结果e₁,e₂,…,$e_n$.所有结果在试验中有同等可能,即1/N的出现机会.常常把这样的试验结果称为”等可能的”。<br><strong><em>在”等可能性”概念的基础上，我们引进古典概率的定义</em></strong></p>
+<h3 id="古典概率"><a href="#古典概率" class="headerlink" title="古典概率"></a>古典概率</h3><p>设一个试验有N个等可能的结果，而事件E恰包含其中的M个结果，则事件E的概率，记为P(E),定义为</p>
+<script type="math/tex; mode=display">
+P(E)= \frac{M}{N}</script><p>古典概率的计算主要基于排列组合</p>
+<h3 id="分赌本问题（已简化）"><a href="#分赌本问题（已简化）" class="headerlink" title="分赌本问题（已简化）"></a>分赌本问题（已简化）</h3><ul>
+<li>题目：甲、乙两人赌技相同，各出赌注500元.约定：谁先胜三局，则谁拿走全部1000元.现已赌了三局，甲二胜一负而因故要中止赌博，问这1000元要如何分，才算公平?</li>
+<li>解：设继续赌两局，则可能结果如下：<br>甲甲，甲乙，乙甲，乙乙<br>∵这四个结果是等可能的<br>∴甲赢的可能性为0.75，乙的为0.25<br>∴甲分750元，乙分250元  </li>
+</ul>
+<hr>
+<h3 id="古典概率的局限性"><a href="#古典概率的局限性" class="headerlink" title="古典概率的局限性"></a>古典概率的局限性</h3><p>只能用于全部试验结果为有限个，且等可能性成立的情况，但在几何概率下，这概念可稍稍引申到试验结果有无限多的情况，举一个例子：<br>问题：甲、乙二人约定1点到2点之间在某处碰头，约定先到者等候10分钟即离去.设想甲、乙二人各自随意地在1—2点之间选一个时刻到达该处，问“甲乙二人能碰上”这事件E的概率是多少？<br>解：设甲到时间为x，乙到时间为y，以1点钟作原点，一分为单位，则得到坐标系：<br><img src="/2023/07/31/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87/zuobiaoxi.png" alt="坐标系"><br>正方形OABC内每个点都是一个等可能的试验结果，而这个正方形就是全部可能的结果之集。<br>按约定，只有当|x-y|≤10即点(x,y)落在OFGBHI内时，E才发生。<br>全正方形的面积为60²=3600<br>上述多边形的面积为1100<br>∴事件E的概率为</p>
+<script type="math/tex; mode=display">
+P(E)=\frac{1100}{3600}=\frac{11}{36}</script><hr>
+<p>这样算出的概率称为“几何概率”,因它是基于几何图形的长度、面积、体积等而算出的。</p>
+<h2 id="1-1-4-概率的统计定义"><a href="#1-1-4-概率的统计定义" class="headerlink" title="1.1.4  概率的统计定义"></a>1.1.4  概率的统计定义</h2><h3 id="概率的统计定义"><a href="#概率的统计定义" class="headerlink" title="概率的统计定义"></a>概率的统计定义</h3><p>概率的统计定义是一种通过实验去估计事件概率的方法。通过反复的进行大量的实验（假设为n次），若在这n次实验中事件E共出现m₁次，则称$\frac{m₁}{n}$是E在这n次试验中的“频率”。概率的统计定义的要旨是说，就拿这个频率$\frac{m₁}{n}$作为事件E的概率P(E)的估计。我们也可以说把事件E的概率定义为具有如下性质的一个数p:当把实验重复时，E的频率在p的附近摆动，且当重复次数增大时，这摆动愈来愈小；或者说：概率就是当试验次数无限增大时频率的极限</p>
+<h3 id="概率的统计定义的重要性"><a href="#概率的统计定义的重要性" class="headerlink" title="概率的统计定义的重要性"></a>概率的统计定义的重要性</h3><p>1、概率的统计定义提供了一种估计概率的方法<br>2、概率的统计定义提供了一种检验理论正确与否的准则</p>
+<h2 id="1-1-5-概率的公理化定义"><a href="#1-1-5-概率的公理化定义" class="headerlink" title="1.1.5  概率的公理化定义"></a>1.1.5  概率的公理化定义</h2><h2 id="柯氏的公理体系"><a href="#柯氏的公理体系" class="headerlink" title="柯氏的公理体系"></a>柯氏的公理体系</h2><p>在1933年，现代前苏联大数学家柯尔莫哥洛夫成功地将概率论实现公理化。在柯氏的公理体系中引进一个抽象的集合$\Omega$,其元素$\omega$由于一个事件是由若干基本事件构成，在柯氏公理体系中考虑由$\Omega$的子集(包括$\Omega$本身及∅)构成的一个集类F，F不必包括$\Omega$的一切可能的子集，且必须满足某种我们在此不必仔细说明的条件F中的每个成员就称为“事件”。引进一个定义在F上的函数P，对F中任一成员A,P(A)之值理解为事件A的概率。柯氏公理体系对这个函数P加上了几条要求(公理):  </p>
+<ul>
+<li>1、0≤P(A)≤1</li>
+<li>2、P($\Omega$)=1,P(∅)=0</li>
+</ul>
+<hr>
+<p>柯氏公理只是介定了概率这个概念所必须满足的一些一般性质，它没有也不可能解决在特定场合下如何定出概率的问题</p>
+<h1 id="1-2古典概率计算"><a href="#1-2古典概率计算" class="headerlink" title="1.2古典概率计算"></a>1.2古典概率计算</h1><h2 id="1-2-1-排列组合的几个简单公式"><a href="#1-2-1-排列组合的几个简单公式" class="headerlink" title="1.2.1  排列组合的几个简单公式"></a>1.2.1  排列组合的几个简单公式</h2><h3 id="排列和组合"><a href="#排列和组合" class="headerlink" title="排列和组合"></a>排列和组合</h3><ul>
+<li>ab和ba是不同的排列，但是是相同的组合<h4 id="排列"><a href="#排列" class="headerlink" title="排列"></a>排列</h4>n个相异物件取r个(1≤r≤n)的不同排列总数，为<script type="math/tex; mode=display">
+P_r^n=n(n-1)(n-2)…(n-r+1)</script>**若n=r,则<script type="math/tex; mode=display">
+P_r^r =r(r-1)…1=r!</script></li>
+<li><em>0!=1;当r不是非负整数时，记号r!没有意义</em><h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4>n个相异物件取r个(1≤r≤n)的不同组合总数，为<script type="math/tex; mode=display">
+C_r^n= \frac{P_r^n}{r!}=\frac{n!}{r!(n-r)!}</script>今后我们将用<script type="math/tex; mode=display">
+\begin{pmatrix}
+n\\
+r
+\end{pmatrix}</script>取代$C_r^n$<h4 id="与二项式展开的关系"><a href="#与二项式展开的关系" class="headerlink" title="与二项式展开的关系"></a>与二项式展开的关系</h4>组合系数<script type="math/tex; mode=display">
+\begin{pmatrix}
+n\\
+r
+\end{pmatrix}</script>又常称为二项式系数，因为它出现在下面熟知的二项式展开的公式中：<script type="math/tex; mode=display">
+(a+b)^n=\sum_{i=0}^n\begin{pmatrix}
+n\\
+r
+\end{pmatrix}a^ib^{n-i}</script></li>
+<li>令a=b=1，得<script type="math/tex; mode=display">
+\begin{pmatrix}
+n\\
+0
+\end{pmatrix}+\begin{pmatrix}
+n\\
+1
+\end{pmatrix}+…+\begin{pmatrix}
+n\\
+n
+\end{pmatrix}=2^n</script></li>
+<li>令a=-1,b=1，得<script type="math/tex; mode=display">
+\begin{pmatrix}
+n\\
+0
+\end{pmatrix}-\begin{pmatrix}
+n\\
+1
+\end{pmatrix}+\begin{pmatrix}
+n\\
+2
+\end{pmatrix}-…+(-1)^n\begin{pmatrix}
+n\\
+n
+\end{pmatrix}=0</script><h4 id="分堆问题"><a href="#分堆问题" class="headerlink" title="分堆问题"></a>分堆问题</h4>n个相异物件分成k堆，各堆物件数分别为r₁,…,$r_k$的分法是<script type="math/tex; mode=display">
+n!/(r_1!…r_k!)</script><h1 id="1-3-事件的运算、条件概率与独立性"><a href="#1-3-事件的运算、条件概率与独立性" class="headerlink" title="1.3  事件的运算、条件概率与独立性"></a>1.3  事件的运算、条件概率与独立性</h1>对数字进行运算得出新的数，而对事件作运算则得出新的事件<h2 id="1-3-1-事件的蕴含、包含及相等"><a href="#1-3-1-事件的蕴含、包含及相等" class="headerlink" title="1.3.1  事件的蕴含、包含及相等"></a>1.3.1  事件的蕴含、包含及相等</h2>在同一试验下的两事件A和B,如果当A发生时B必发生，则称A蕴含B,或者说B包含A,记为$A\subset{B}$。若A,B互相蕴含，即$A\subset{B}$且$B\subset{A}$,则称A,B两事件相等，记为A=B。如果A蕴含B,那A中的试验结果必在B中；“两事件A,B相等”的意思是A,B由完全同一的一些试验结果构成。<h2 id="1-3-2-事件的互斥和对立"><a href="#1-3-2-事件的互斥和对立" class="headerlink" title="1.3.2  事件的互斥和对立"></a>1.3.2  事件的互斥和对立</h2><h3 id="互斥事件"><a href="#互斥事件" class="headerlink" title="互斥事件"></a>互斥事件</h3>若两事件A,B不能在同一次试验中都发生,则称它们是互斥的；如果一些事件中任意两个都互斥，则称这些事件是两两互斥的，或简称互斥的。由此可以看出，互斥事件的意思是构成这两个事件各自的试验结果中不能有公共的<br>互斥事件的一个重要情况是“对立事件”<h3 id="对立事件"><a href="#对立事件" class="headerlink" title="对立事件"></a>对立事件</h3>若A为一事件，则事件B={A不发生}称为A的对立事件，多记为$\overline{A}$<h2 id="1-3-3-事件的和-或称并"><a href="#1-3-3-事件的和-或称并" class="headerlink" title="1.3.3  事件的和(或称并)"></a>1.3.3  事件的和(或称并)</h2>设有两事件A,B,定义一个新事件C：C={A发生，或B发生}={A,B至少发生一个}。这样定义的事件C称为事件A与事件B的和，记为C=A+B<br>**推广：设有若干个事件A₁,A₂,…,$A_n$.它们的和A,定义为事件A ={A₁发生，或A₂发生，…,或$A_n$发生}={A₁,A₂,…,$A_n$至少发生一个}，记为A+A₂+…+$A_n$,或<script type="math/tex; mode=display">
+\sum_{i=1}^nA_i</script><h2 id="1-3-4-概率的加法定理"><a href="#1-3-4-概率的加法定理" class="headerlink" title="1.3.4  概率的加法定理"></a>1.3.4  概率的加法定理</h2><h3 id="加法定理"><a href="#加法定理" class="headerlink" title="加法定理"></a>加法定理</h3>若干个互斥事件之和的概率，等于各事件的概率之和：<br>P(A₁+A₂+…)=P(A₁)+P(A₂)+…<br><em>加法定理的一个重要推论如下：</em><br>以$\overline{A}$表A的对立事件，则<script type="math/tex; mode=display">
+P(\overline{A})=1-P(A)</script><h2 id="1-3-5-事件的积-或称交-、事件的差"><a href="#1-3-5-事件的积-或称交-、事件的差" class="headerlink" title="1.3.5  事件的积(或称交)、事件的差"></a>1.3.5  事件的积(或称交)、事件的差</h2><h3 id="事件的积"><a href="#事件的积" class="headerlink" title="事件的积"></a>事件的积</h3>设有两事件A,B,则定义事件C为C={A,B都发生}，此时C称为两事件A,B之积或乘积，并记为AB。<br><em>两个事件A,B互斥，等于说AB是不可能事件</em></li>
+<li>推论：<br>多个事件A₁,A₂,…的积的定义：A={A₁,A₂,…都发生},记为A=A₁A₂…,或(事件有限)<script type="math/tex; mode=display">
+\prod_{i=1}^nA_i</script>或(事件个数无限)<script type="math/tex; mode=display">
+\prod_{i=1}^∞A_i</script><h3 id="事件的差"><a href="#事件的差" class="headerlink" title="事件的差"></a>事件的差</h3>两个事件A,B之差，记为A-B,定义为A-B={A发生，B不发生}。  </li>
+<li>推论：<script type="math/tex; mode=display">
+A-B=\overline{A}B</script><h3 id="事件运算法则"><a href="#事件运算法则" class="headerlink" title="事件运算法则"></a>事件运算法则</h3><em>算术的法则不一定能用于事件运算</em><br>1、A+B及AB与次序无关<br>A+B=B+A,AB=BA<br>2、乘法结合律<br>(AB)C=A(BC) (=ABC)<br>3、分配律<br>A(B-C)= AB-AC</li>
+<li>证：左：事件A和B-C都发生；B发生，C不发生<br>∴A,B同时发生而A,C不同时发生<br>∴左=AB-AC<br>右：AB发生而AC不发生<br>∴A,B都发生<br>∵AC不发生<br>∴C不发生<br>∴B-C发生<br>∴右=A(B-C)<br>得证</li>
+</ul>
+<hr>
+<h2 id="1-3-6条件概率"><a href="#1-3-6条件概率" class="headerlink" title="1.3.6条件概率"></a>1.3.6条件概率</h2><h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><p>在附加一定的条件之下所计算的概率。从广义的意义上说，任何概率都是条件概率。在概率论中，规定试验的那些基础条件被看作是已定不变的，如果不再加入其他条件或假定，则算出的概率就叫做”无条件概率”（通常所说的概率），“条件概率”则是指另外附加的条件，其形式为”已知某事件发生了”  </p>
+<hr>
+<p>设一试验有N个等可能结果，事件A,B分别包含其M₁和M₂个结果，它们有M₁₂个是公共的（AB所包含的试验结果数），若已给B发生，则我们的考虑由起先的N个可能结果局限到现在的M₂个，其中只有M₁₂个试验结果使事件A发生，故一个合理的条件概率定义，应把P(A|B)（已知B发生的条件下A的概率）取为M₁₂/M₂。由于M₁₂/M₂=(M₁₂/N)/(M₂/N)=P(AB)/P(B)，得出条件概率的定义：</p>
+<h4 id="条件概率的定义"><a href="#条件概率的定义" class="headerlink" title="条件概率的定义"></a>条件概率的定义</h4><p>设有两事件A,B而P(B)≠0.则“在给定B发生的条件下A的条件概率”,记为P(A|B),定义为</p>
+<script type="math/tex; mode=display">
+P(A|B)= P(AB)/P(B)</script><h2 id="1-3-7事件的独立性，概率乘法定理"><a href="#1-3-7事件的独立性，概率乘法定理" class="headerlink" title="1.3.7事件的独立性，概率乘法定理"></a>1.3.7事件的独立性，概率乘法定理</h2><p>设有两事件A、B，若P(A|B)&gt;P(A),则B的发生使A发生的可能性增大了；B促进了A的发生。<br>若P(A)=P(A|B),则B的发生与否对A发生的可能性毫无影响，这时在概率论上就称A,B两事件独立。由上述式子可以推出P(AB)= P(A)P(B)，由此可得：</p>
+<h3 id="事件独立的定义"><a href="#事件独立的定义" class="headerlink" title="事件独立的定义"></a>事件独立的定义</h3><p>两事件A,B若满足P(AB)= P(A)P(B),则称A,B独立.</p>
+<h3 id="概率的乘法定理"><a href="#概率的乘法定理" class="headerlink" title="概率的乘法定理"></a>概率的乘法定理</h3><h4 id="定理一"><a href="#定理一" class="headerlink" title="定理一"></a>定理一</h4><ul>
+<li>两独立事件A,B的积AB之概率P(AB)等于其各自概率之积P(A)P(B)，即<script type="math/tex; mode=display">
+P(AB)= P(A)P(B)</script></li>
+</ul>
+<hr>
+<p>在实际问题中，我们并不常用概率的乘法定理去判断两事件A,B是否独立，而是相反：从事件的实际角度去分析判断其不应有关联因而是独立的，然后就可以用概率的乘法定理。<br><em>两个事件如果都依赖同一批结果，彼此之间必会有影响</em></p>
+<ul>
+<li>推广：  <h5 id="多个事件独立性的定义："><a href="#多个事件独立性的定义：" class="headerlink" title="多个事件独立性的定义："></a>多个事件独立性的定义：</h5>设A₁,A₂,…为有限或无限个事件，如果从其中任意取出有限个$A<em>{i_1},A</em>{i<em>2},…,A</em>{i_m}$,都成立:<script type="math/tex; mode=display">
+P(A_{i_1},A_{i_2},…,A_{i_m})=P(A_{i_1})P(A_{i_2})…P(A_{i_m})</script>则称事件A1,A₂,…相互独立，简称独立。与之等价的，有：<br>对任何互不相同的i₁,i₂,…,$i_n$,有:<script type="math/tex; mode=display">
+P(A_{i_1}|A_{i_2},…,A_{i_m} )= P(A_{i_1})</script>即任意事件$A<em>{i_1}$;发生的可能性大小，不受其他事件发生的影响($A</em>{i_1}$独立)</li>
+<li><em>多个事件的独立性往往产生于由多个试验构成的复合试验中，每个事件只与其中一个试验有关。</em>  </li>
+</ul>
+<hr>
+<p>由独立性定义立即得出下面的概率乘法定理和它的两条重要推论：</p>
+<h4 id="定理二"><a href="#定理二" class="headerlink" title="定理二"></a>定理二</h4><p>若干个独立事件A₁,…,$A_n$,之积的概率，等于各事件概率的乘积：</p>
+<script type="math/tex; mode=display">
+P(A_1…A_n)=P(A_1)…P(A_n)</script><p><em>推论：</em>  </p>
+<ul>
+<li>独立事件的任一部分也独立<br>例如，A,B,C,D四事件相互独立，则A,C,或A,B,D等，都是独立的。<br><em>可以更进一步可推广为：由独立事件决定的事件也独立。</em><br>举例来说，若事件A₁,…,A₆相互独立，则B₁=A₁+A₂,B₂=A₃-A₄,B₃=A₅A₆也独立。如果把B₃改为A₄A₅A₆,则B₂,B₃都与A₄有关,就不一定独立了<ul>
+<li>若一列事件A₁,A₂,…相互独立，则将其中任一部分改为对立事件时，所得事件列仍为相互独立。<br>例如，若A₁,A₂,A₃相互独立，则$\overline{A₁}$,A₂,A₃,或$\overline{A₁}$,A₂,$\overline{A₃}$,或$\overline{A_1}$,$\overline{A_2}$,$\overline{A₃}$等，都是互相独立的。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>问题：$A_1,A_2,A_3$相互独立，要证$\overline{A_1}$,A₂,$\overline{A_3}$独立。</p>
+<ul>
+<li>证：P($\overline{A_1}A_2\overline{A_3}$)=P($\overline{A_1}$)P(A₂)P($\overline{A_3}$)<script type="math/tex; mode=display">
+∵A_i=1-\overline{A_i}</script><script type="math/tex; mode=display">
+∴P(\overline{A_1}A_2\overline{A_3})=P(A_2\overline{A_3})-P(A_1A_2\overline{A_3})=P(A_2)-P(A_2)P(A_3)-(P(A_1A_2)-P(A_1A_2A_3))</script><script type="math/tex; mode=display">
+=P(A_2)-P(A_2)P(A_3)-(P(A_1)P(A_2)-P(A_1)P(A_2)P(A_3))</script><script type="math/tex; mode=display">
+=P(A_2)P(\overline{A_3})-P(A_1)P(A_2)P(\overline{A_3})=P(\overline{A_1})P(A_2)P(\overline{A_3})</script>得证</li>
+</ul>
+<hr>
+<p>可以看出：当涉及众多的事件时，这么处理会很冗长，但并无任何实质困难  </p>
+<h3 id="两两独立"><a href="#两两独立" class="headerlink" title="两两独立"></a>两两独立</h3><p>一些事件A₁,A₂,…,如果其中任意两个都独立，则称它们两两独立。由相互独立必推出两两独立，反过来不一定对。<br><strong><em>在实用上，确有许多事件其相依性很小，在误差容许的范围内，它们可视为独立的</em></strong></p>
+<h2 id="1-3-8-全概率公式与贝叶斯公式"><a href="#1-3-8-全概率公式与贝叶斯公式" class="headerlink" title="1.3.8  全概率公式与贝叶斯公式"></a>1.3.8  全概率公式与贝叶斯公式</h2><h3 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h3><p>设B₁,B₂,…为有限或无限个事件，它们两两互斥且在每次试验中至少发生一个，即</p>
+<script type="math/tex; mode=display">
+B_iB_j=∅(i≠j)</script><script type="math/tex; mode=display">
+B_1+B_2+…=\Omega(必然事件)</script><p>把具有这些性质的一组事件称为一个“完备事件群”<br><em>任一事件及其对立事件组成一个完备事件群</em><br>任一事件A.因Ω为必然事件，有A=AΩ=AB₁+AB₂+…(因B₁,B₂,…两两互斥，AB₁,AB₂,…也两两互斥)有:</p>
+<script type="math/tex; mode=display">
+P(A)= P(AB_1)+P(AB_2)+…</script><p>从而推出全概率公式：</p>
+<script type="math/tex; mode=display">
+P(A)= P(B₁)P(A|B₁)+P(B₂)P(A|B₂)+…</script><h3 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h3><p>在全概率公式的假定之下，有</p>
+<script type="math/tex; mode=display">
+P(B_i|A)=P(AB_i)/P(A)=P(B_i)P(A|B_i)/\sum_{j}P(B_j)P(A|B_j)</script><p>这个公式就叫做贝叶斯公式<br>如果我们把事件A看成“结果”,把诸事件B₁,B₂,…看成导致这结果的可能的“原因”,则可以把全概率公式看作“由原因推结果”;而把贝叶斯公式看做“由结果推原因”</p>
 
       
     </div>
@@ -314,10 +522,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-07-29 12:31:07 / Modified: 14:00:50" itemprop="dateCreated datePublished" datetime="2023-07-29T12:31:07+08:00">2023-07-29</time>
+              <time title="Created: 2023-07-29 12:31:07" itemprop="dateCreated datePublished" datetime="2023-07-29T12:31:07+08:00">2023-07-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-01 16:28:35" itemprop="dateModified" datetime="2023-08-01T16:28:35+08:00">2023-08-01</time>
+              </span>
 
           
 
@@ -332,7 +546,7 @@
       
           <ul>
 <li>linux在<strong>服务器领域</strong>的应用是最强的  </li>
-<li>linux的特点有：免费、稳定、高效</li>
+<li>linux的特点有：免费、稳定、高效<h1 id="网络连接的三种方式"><a href="#网络连接的三种方式" class="headerlink" title="网络连接的三种方式"></a>网络连接的三种方式</h1><h2 id="1、桥接模式"><a href="#1、桥接模式" class="headerlink" title="1、桥接模式"></a>1、桥接模式</h2>虚拟系统可以和外部系统通信，但是容易造成IP冲突<h2 id="2、NAT模式（网络地址转换模式）"><a href="#2、NAT模式（网络地址转换模式）" class="headerlink" title="2、NAT模式（网络地址转换模式）"></a>2、NAT模式（网络地址转换模式）</h2>虚拟系统可以和外部系统通信，而且不会造成IP冲突<h2 id="3、主机模式"><a href="#3、主机模式" class="headerlink" title="3、主机模式"></a>3、主机模式</h2>独立的系统（不与外界通信）</li>
 </ul>
 
       
@@ -890,68 +1104,11 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/19/first-try/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/19/first-try/" class="post-title-link" itemprop="url">first try</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-07-19 15:37:20 / Modified: 15:44:21" itemprop="dateCreated datePublished" datetime="2023-07-19T15:37:20+08:00">2023-07-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>eeeeeeeeeeeeeee</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -1016,12 +1173,12 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
