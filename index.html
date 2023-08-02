@@ -145,79 +145,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/31/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AF%B9%E8%B1%A1%E5%AF%BC%E8%AE%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/31/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AF%B9%E8%B1%A1%E5%AF%BC%E8%AE%BA/" class="post-title-link" itemprop="url">第一章 对象导论</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-07-31 19:38:20 / Modified: 20:21:56" itemprop="dateCreated datePublished" datetime="2023-07-31T19:38:20+08:00">2023-07-31</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h1><ul>
-<li>万物皆为对象</li>
-<li>程序是对象的集合，它们通过发送消息来告知彼此所要做的。</li>
-<li>每个对象都有自己的由其他对象所构成的存储。</li>
-<li>每个对象都拥有其类型。按照通用的说法，“每个对象都是某个类(class)的一个实例(instance)”</li>
-<li>某一特定类型的所有对象都可以接收同样的消息。<h1 id="如何在JAVA内部设定边界"><a href="#如何在JAVA内部设定边界" class="headerlink" title="如何在JAVA内部设定边界"></a>如何在JAVA内部设定边界</h1>JAVA用public、private、protected在类的内部设定边界。这些访问指定词决定了紧跟其后的东西可以被谁使用。</li>
-<li>public——紧随其后的元素对任何人都是可用的</li>
-<li>private——除类型创建者和类型的内部方法之外的任何人都不能访问的元素。</li>
-<li>protected——与private作用相当，但继承的类可以访问protected成员</li>
-</ul>
-<p>当没有使用前面提到的任何访问指定词时，JAVA将使用默认的访问权限：包访问权限——类可以访问在同一个包(库构件)中的其他类的成员，但是在包之外，这些成员如同指定了private一样。</p>
-<h1 id="“是一个”关系和“像一个”关系"><a href="#“是一个”关系和“像一个”关系" class="headerlink" title="“是一个”关系和“像一个”关系"></a>“是一个”关系和“像一个”关系</h1><ul>
-<li>is-a(是一个)关系——用一个导出类对象来完全替代一个基类对象。这是一种处理继承的理想方式</li>
-<li>is-like-a(像是一个)关系——在导出类型中添加新的接口元素后，这个新的类型仍然可以替代基类，但是这种替代并不完</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/31/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -681,10 +608,16 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-07-25 15:37:35 / Modified: 17:12:27" itemprop="dateCreated datePublished" datetime="2023-07-25T15:37:35+08:00">2023-07-25</time>
+              <time title="Created: 2023-07-25 15:37:35" itemprop="dateCreated datePublished" datetime="2023-07-25T15:37:35+08:00">2023-07-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-02 16:43:47" itemprop="dateModified" datetime="2023-08-02T16:43:47+08:00">2023-08-02</time>
+              </span>
 
           
 
@@ -731,7 +664,22 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
 查看其类型：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(type(soup.title.string))</span><br></pre></td></tr></table></figure>
 输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#x27;bs4.element.NavigableString&#x27;&gt;</span><br></pre></td></tr></table></figure>
 最后，我们通过一个新的例子来查看comment类型：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">soup=BeautifulSoup(&quot;&lt;b&gt;&lt;!--This is a comment--&gt;&lt;/b&gt;&lt;p&gt;This is not a comment&lt;/p&gt;&quot;,&#x27;html.parser&#x27;)</span><br><span class="line">print(soup.p.string)</span><br><span class="line">print(type(soup.p.string))</span><br><span class="line">print(soup.b.string)</span><br><span class="line">print(type(soup.b.string))</span><br></pre></td></tr></table></figure>
-输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">This is not a comment</span><br><span class="line">&lt;class &#x27;bs4.element.NavigableString&#x27;&gt;</span><br><span class="line">This is a comment</span><br><span class="line">&lt;class &#x27;bs4.element.Comment&#x27;&gt;</span><br></pre></td></tr></table></figure></li>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">This is not a comment</span><br><span class="line">&lt;class &#x27;bs4.element.NavigableString&#x27;&gt;</span><br><span class="line">This is a comment</span><br><span class="line">&lt;class &#x27;bs4.element.Comment&#x27;&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="基于Beautiful-Soup库的HTML遍历方法"><a href="#基于Beautiful-Soup库的HTML遍历方法" class="headerlink" title="基于Beautiful Soup库的HTML遍历方法"></a>基于Beautiful Soup库的HTML遍历方法</h1><h2 id="HTML的基本格式"><a href="#HTML的基本格式" class="headerlink" title="HTML的基本格式"></a>HTML的基本格式</h2><img src="/2023/07/25/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABbeautifulsoup%E5%BA%93/html格式.png" alt="基本格式"><h2 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h2></li>
+<li><p>下行遍历：<br>方法1：.contents，将所有tag的子节点存入列表<br>方法2：.children，与.contents类似，用于循环遍历子节点<br>方法3：.descendants，子孙节点的迭代类型，包含所有子孙节点，用于循环遍历<br>依然以上次的网站为例，代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=&quot;https://sophia7414.github.io/&quot;</span><br><span class="line">r=requests.get(url)</span><br><span class="line">soup=BeautifulSoup(r.text,&#x27;html.parser&#x27;)</span><br><span class="line">tag=soup.a</span><br><span class="line">print(tag)</span><br><span class="line">print(&#x27;contents:&#x27;)</span><br><span class="line">print(tag.contents)</span><br><span class="line">print(&#x27;children:&#x27;)</span><br><span class="line">print(list(tag.children))   # 这里返回的是一个迭代器对象</span><br><span class="line">print(&#x27;descendants&#x27;)</span><br><span class="line">print(list(tag.descendants))    # 这里返回一个生成器对象</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;a class=&quot;brand&quot; href=&quot;/&quot; rel=&quot;start&quot;&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">contents:</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &#x27;\n&#x27;, &lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;, &#x27;\n&#x27;, &lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &#x27;\n&#x27;]</span><br><span class="line">children:</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &#x27;\n&#x27;, &lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;, &#x27;\n&#x27;, &lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &#x27;\n&#x27;]</span><br><span class="line">descendants</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &lt;i&gt;&lt;/i&gt;, &#x27;\n&#x27;, &lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;, &#x27;Hexo&#x27;, &#x27;\n&#x27;, &lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &lt;i&gt;&lt;/i&gt;, &#x27;\n&#x27;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上行遍历<br>方法1：.parent，返回节点的父标签<br>方法2：.parents，返回节点的先辈标签的迭代类型，用于循环遍历先辈节点<br>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&#x27;parent&#x27;)</span><br><span class="line">print(tag.parent)</span><br><span class="line">print(&#x27;parents:&#x27;)</span><br><span class="line">lis=list(tag.parents)   # 这里返回的是一个生成器对象</span><br><span class="line">print(lis[0],lis[1])</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">parent</span><br><span class="line">&lt;div class=&quot;site-meta&quot;&gt;</span><br><span class="line">&lt;a class=&quot;brand&quot; href=&quot;/&quot; rel=&quot;start&quot;&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">parents:</span><br><span class="line">&lt;div class=&quot;site-meta&quot;&gt;</span><br><span class="line">&lt;a class=&quot;brand&quot; href=&quot;/&quot; rel=&quot;start&quot;&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;/div&gt; &lt;div class=&quot;site-brand-container&quot;&gt;</span><br><span class="line">&lt;div class=&quot;site-nav-toggle&quot;&gt;</span><br><span class="line">&lt;div aria-label=&quot;Toggle navigation bar&quot; class=&quot;toggle&quot;&gt;</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-first&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-middle&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-last&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;site-meta&quot;&gt;</span><br><span class="line">&lt;a class=&quot;brand&quot; href=&quot;/&quot; rel=&quot;start&quot;&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;site-nav-right&quot;&gt;</span><br><span class="line">&lt;div class=&quot;toggle popup-trigger&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>平行遍历(只在同一个父节点下)<br>方法1：.next_sibling，返回按照HTML文本顺序的下一个平行节点标签<br>方法2：.previous_sibling，返回按照HTML文本顺序的下一个平行节点标签<br>方法3：.next_siblings，迭代类型，返回按照HTML文本顺序的后续所有平行节点标签<br>方法4：.previous_siblings，迭代类型，返回按照HTML文本顺序的前续所有平行节点标签<br>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tag=soup.span</span><br><span class="line">print(&#x27;next_sibling&#x27;)</span><br><span class="line">print(tag.next_sibling.next_sibling)</span><br><span class="line">print(&#x27;next_siblings&#x27;)</span><br><span class="line">print(list(tag.next_siblings))    # 这里返回的是一个生成器对象</span><br><span class="line">print(&#x27;previous_sibling&#x27;)</span><br><span class="line">print(tag.previous_sibling.previous_sibling)</span><br><span class="line">print(&#x27;previous_siblings&#x27;)</span><br><span class="line">print(list(tag.previous_siblings))</span><br></pre></td></tr></table></figure>
+<p>返回：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">next_sibling</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-middle&quot;&gt;&lt;/span&gt;</span><br><span class="line">next_siblings</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;toggle-line toggle-line-middle&quot;&gt;&lt;/span&gt;, &#x27;\n&#x27;, &lt;span class=&quot;toggle-line toggle-line-last&quot;&gt;&lt;/span&gt;, &#x27;\n&#x27;]</span><br><span class="line">previous_sibling</span><br><span class="line">None</span><br><span class="line">previous_siblings</span><br><span class="line">[&#x27;\n&#x27;]</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -1104,11 +1052,68 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/19/first-try/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/19/first-try/" class="post-title-link" itemprop="url">first try</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-07-19 15:37:20 / Modified: 15:44:21" itemprop="dateCreated datePublished" datetime="2023-07-19T15:37:20+08:00">2023-07-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p>eeeeeeeeeeeeeee</p>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
 
 
@@ -1173,12 +1178,12 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
