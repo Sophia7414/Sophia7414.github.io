@@ -22,7 +22,7 @@
 
   <meta name="description" content="01 WebWeb（World Wide Web）全球广域网，也称为万维网,web端就是指网页端 网页构成网站的基本元素 浏览器网页运行的平台 Web标准制作网页要遵循的规范。Web标准包括三个方面：1、结构标准（HTML）：用于对网页元素进行整理和分类2、表现标准（CSS）：用于设置网页元素的版式、颜色、大小等外观样式3、行为标准（JS）：用于定义网页的交互和行为可以根据web标准将web前端分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML">
+<meta property="og:title" content="HTML 笔记">
 <meta property="og:url" content="http://example.com/2023/08/02/HTML/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="01 WebWeb（World Wide Web）全球广域网，也称为万维网,web端就是指网页端 网页构成网站的基本元素 浏览器网页运行的平台 Web标准制作网页要遵循的规范。Web标准包括三个方面：1、结构标准（HTML）：用于对网页元素进行整理和分类2、表现标准（CSS）：用于设置网页元素的版式、颜色、大小等外观样式3、行为标准（JS）：用于定义网页的交互和行为可以根据web标准将web前端分">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://example.com/2023/08/02/HTML/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BB%93%E6%9E%84.png">
 <meta property="og:image" content="http://example.com/2023/08/02/HTML/first%20html.png">
 <meta property="article:published_time" content="2023-08-02T09:10:10.000Z">
-<meta property="article:modified_time" content="2023-08-02T12:30:11.763Z">
+<meta property="article:modified_time" content="2023-08-03T13:12:41.253Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="web前端">
 <meta property="article:tag" content="HTML">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>HTML | Hexo</title>
+  <title>HTML 笔记 | Hexo</title>
   
 
 
@@ -168,7 +168,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          HTML
+          HTML 笔记
         </h1>
 
         <div class="post-meta">
@@ -177,10 +177,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-08-02 17:10:10 / Modified: 20:30:11" itemprop="dateCreated datePublished" datetime="2023-08-02T17:10:10+08:00">2023-08-02</time>
+              <time title="Created: 2023-08-02 17:10:10" itemprop="dateCreated datePublished" datetime="2023-08-02T17:10:10+08:00">2023-08-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-03 21:12:41" itemprop="dateModified" datetime="2023-08-03T21:12:41+08:00">2023-08-03</time>
+              </span>
 
           
 
@@ -221,7 +227,56 @@
 <li><body></body>——文档的主体，页面内容基本都是放到body里面的<h3 id="文档声明头"><a href="#文档声明头" class="headerlink" title="文档声明头"></a>文档声明头</h3>以<code>&lt;!DOCTYPE ……&gt;</code>开头的语句，是任何一个标准的HTML页面的第一行，简称DTD，用来告知浏览器文档使用哪种HTML或XHTML规范。在HTML4.01中共有两种大规范（普通和XHTML）以及3种小规范，一共6种DTD。其中的3种小规范为：</li>
 <li>strict：表示“严格的”，这种模式里面的要求更为严格</li>
 <li>Transitional：表示“普通的”，这种模式没有别的规范。</li>
-<li>Frameset：表示“框架”，在框架的页面使用<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2></li>
+<li>Frameset：表示“框架”，在框架的页面使用</li>
+</ul>
+<p>在HTML5中，没有XHTML了，文档申明头为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="页面语言-lang"><a href="#页面语言-lang" class="headerlink" title="页面语言(lang)"></a>页面语言(lang)</h3><p><code>&lt;html lang=&quot;en&quot;&gt;</code>标签用于指定页面的语言类型，最常见的有两种：</p>
+<ul>
+<li>en：页面语言为英语。</li>
+<li>zh-CN：页面语言为中文。</li>
+</ul>
+<h3 id="头标签-head"><a href="#头标签-head" class="headerlink" title="头标签(head)"></a>头标签(head)</h3><p>html5骨架（由程序生成）：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot;</span><br><span class="line">          content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>头标签内部的常见标签有：</p>
+<h4 id="lt-title-gt"><a href="#lt-title-gt" class="headerlink" title="&lt;title&gt;"></a><code>&lt;title&gt;</code></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;title&gt;Document&lt;/title&gt;</span><br></pre></td></tr></table></figure>
+<p>指定整个网页的标题，在浏览器最上方显示，有助于SEO搜索引擎优化。</p>
+<h4 id="lt-base-gt"><a href="#lt-base-gt" class="headerlink" title="&lt;base&gt;"></a><code>&lt;base&gt;</code></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;base href=&quot;/&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>为页面上的所有链接规定默认地址或默认目标。</p>
+<h4 id="lt-meta-gt"><a href="#lt-meta-gt" class="headerlink" title="&lt;meta&gt;"></a><code>&lt;meta&gt;</code></h4><p>提供有关页面的基本信息,常见的几种meta标签如下:</p>
+<ul>
+<li>charset(字符集)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br></pre></td></tr></table></figure>
+表示即网页的编码方式。计算机要准确的处理各种字符集文字，需要进行字符编码，以便计算机能够识别和存储各种文字。如果meta写的和声明的不匹配，那么浏览器就是乱码。</li>
+<li>viewport(视口)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot;</span><br><span class="line">          content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</span><br></pre></td></tr></table></figure>
+<code>width=device-width</code>:口宽度等于屏幕宽度</li>
+<li>关键字<br>例：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;Keywords&quot; content=&quot;try,first&quot;&gt;</span><br></pre></td></tr></table></figure>
+用于提高搜索命中率，让别人能够找到你。</li>
+<li>页面描述<br>例：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;Description&quot; content=&quot;This is my first try&quot;&gt;</span><br></pre></td></tr></table></figure>
+百度搜索结果能够显示页面描述中的语句</li>
+<li>refresh(刷新)<br>例：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;refresh&quot; content=&quot;3;http://www.baidu.com&quot;&gt;</span><br></pre></td></tr></table></figure>
+上述标签表示3秒之后，自动跳转到百度页面。</li>
+</ul>
+<h4 id="lt-body-gt"><a href="#lt-body-gt" class="headerlink" title="&lt;body&gt;"></a><code>&lt;body&gt;</code></h4><p>用于定义HTML文档所要显示的内容，也称为主体标签。</p>
+<h4 id="lt-link-gt"><a href="#lt-link-gt" class="headerlink" title="&lt;link&gt;"></a><code>&lt;link&gt;</code></h4><p>定义文档与外部资源的关系。</p>
+<h3 id="lt-body-gt-标签"><a href="#lt-body-gt-标签" class="headerlink" title="&lt;body&gt;标签"></a><code>&lt;body&gt;</code>标签</h3><p>属性：</p>
+<ul>
+<li>bgcolor——设置整个网页的背景颜色。</li>
+<li>background——设置整个网页的背景图片。</li>
+<li>text——设置网页中的文本颜色。</li>
+<li>leftmargin——网页的左边距。</li>
+<li>topmargin——网页的上边距。</li>
+<li>rightmargin——网页的右边距。</li>
+<li>bottommargin——网页的下边距。</li>
+</ul>
+<p>该标签还有一些其他的属性，例如：link属性表示超链接的默认颜色；alink属性表示鼠标点击但是还没有松开时的颜色；vlink属性表示点击完成后的颜色。</p>
+<h2 id="计算机编码"><a href="#计算机编码" class="headerlink" title="计算机编码"></a>计算机编码</h2><p>中文能够使用的字符集有UTF-8和GBK</p>
+<ul>
+<li>用meta标签声明的当前这个html文档的字库，一定要和保存的文件编码类型一样，否则乱码</li>
+<li>保存大小：UTF-8(字多，有各种国家的语言)&gt;gb2312(字少，只用中文和少数外语和符号) <h2 id="HTML的规范"><a href="#HTML的规范" class="headerlink" title="HTML的规范"></a>HTML的规范</h2></li>
+<li>标签不能交叉嵌套</li>
+<li>标记都必须小写</li>
+<li>标签都必须闭合</li>
+<li>属性值必须加引号</li>
+<li>属性必须有值</li>
+<li>XHTML文档开头必须要有DTD文档类型定义</li>
+<li>HTML的文字之间如果有空格、换行、tab，都将被折叠为一个空格显示<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2></li>
 <li>在VSCode中，可以通过!或html:5+tab的方式自动生成html骨架</li>
 </ul>
 
@@ -247,8 +302,8 @@
       <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
       <div class="post-nav-item">
-    <a href="/2023/08/02/JAVA%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" rel="next" title="第一章 JAVA语言入门">
-      第一章 JAVA语言入门 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/08/02/JAVA%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" rel="next" title="JAVA 第一章 JAVA语言入门 笔记">
+      JAVA 第一章 JAVA语言入门 笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -308,7 +363,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01-Web"><span class="nav-number">1.</span> <span class="nav-text">01 Web</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web%EF%BC%88World-Wide-Web%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">Web（World Wide Web）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5"><span class="nav-number">1.2.</span> <span class="nav-text">网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web%E6%A0%87%E5%87%86"><span class="nav-number">1.4.</span> <span class="nav-text">Web标准</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">02 浏览器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E6%B8%B2%E6%9F%93%E5%BC%95%E6%93%8E%EF%BC%88%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%EF%BC%89"><span class="nav-number">2.1.1.</span> <span class="nav-text">1、渲染引擎（浏览器内核）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81JS%E5%BC%95%E6%93%8E-JS%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="nav-number">2.1.2.</span> <span class="nav-text">2、JS引擎(JS解释器)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">浏览器工作原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-%E5%88%9D%E8%AF%86HTML"><span class="nav-number">3.</span> <span class="nav-text">03 初识HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XHTML"><span class="nav-number">3.2.</span> <span class="nav-text">XHTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAHTML%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">第一个HTML文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E7%BB%93%E6%9E%84"><span class="nav-number">3.4.</span> <span class="nav-text">HTML结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%A8%E6%9E%B6%E6%A0%87%E7%AD%BE"><span class="nav-number">3.4.1.</span> <span class="nav-text">骨架标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%A3%B0%E6%98%8E%E5%A4%B4"><span class="nav-number">3.4.2.</span> <span class="nav-text">文档声明头</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E5%B1%95"><span class="nav-number">3.5.</span> <span class="nav-text">拓展</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01-Web"><span class="nav-number">1.</span> <span class="nav-text">01 Web</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web%EF%BC%88World-Wide-Web%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">Web（World Wide Web）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5"><span class="nav-number">1.2.</span> <span class="nav-text">网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">1.3.</span> <span class="nav-text">浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web%E6%A0%87%E5%87%86"><span class="nav-number">1.4.</span> <span class="nav-text">Web标准</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">02 浏览器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">2.1.</span> <span class="nav-text">浏览器的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E6%B8%B2%E6%9F%93%E5%BC%95%E6%93%8E%EF%BC%88%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%EF%BC%89"><span class="nav-number">2.1.1.</span> <span class="nav-text">1、渲染引擎（浏览器内核）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81JS%E5%BC%95%E6%93%8E-JS%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="nav-number">2.1.2.</span> <span class="nav-text">2、JS引擎(JS解释器)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">浏览器工作原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-%E5%88%9D%E8%AF%86HTML"><span class="nav-number">3.</span> <span class="nav-text">03 初识HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XHTML"><span class="nav-number">3.2.</span> <span class="nav-text">XHTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAHTML%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">第一个HTML文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E7%BB%93%E6%9E%84"><span class="nav-number">3.4.</span> <span class="nav-text">HTML结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%A8%E6%9E%B6%E6%A0%87%E7%AD%BE"><span class="nav-number">3.4.1.</span> <span class="nav-text">骨架标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E5%A3%B0%E6%98%8E%E5%A4%B4"><span class="nav-number">3.4.2.</span> <span class="nav-text">文档声明头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E8%AF%AD%E8%A8%80-lang"><span class="nav-number">3.4.3.</span> <span class="nav-text">页面语言(lang)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E6%A0%87%E7%AD%BE-head"><span class="nav-number">3.4.4.</span> <span class="nav-text">头标签(head)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-title-gt"><span class="nav-number">3.4.4.1.</span> <span class="nav-text">&lt;title&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-base-gt"><span class="nav-number">3.4.4.2.</span> <span class="nav-text">&lt;base&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-meta-gt"><span class="nav-number">3.4.4.3.</span> <span class="nav-text">&lt;meta&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-body-gt"><span class="nav-number">3.4.4.4.</span> <span class="nav-text">&lt;body&gt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-link-gt"><span class="nav-number">3.4.4.5.</span> <span class="nav-text">&lt;link&gt;</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-body-gt-%E6%A0%87%E7%AD%BE"><span class="nav-number">3.4.5.</span> <span class="nav-text">&lt;body&gt;标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A0%81"><span class="nav-number">3.5.</span> <span class="nav-text">计算机编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E7%9A%84%E8%A7%84%E8%8C%83"><span class="nav-number">3.6.</span> <span class="nav-text">HTML的规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E5%B1%95"><span class="nav-number">3.7.</span> <span class="nav-text">拓展</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
