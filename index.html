@@ -145,6 +145,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/04/JAVA-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E8%AF%AD%E5%8F%A5-%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/04/JAVA-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E8%AF%AD%E5%8F%A5-%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">JAVA 第三章 运算符、表达式和语句 笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-08-04 20:02:16 / Modified: 21:43:03" itemprop="dateCreated datePublished" datetime="2023-08-04T20:02:16+08:00">2023-08-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="3-1-运算符与表达式"><a href="#3-1-运算符与表达式" class="headerlink" title="3.1  运算符与表达式"></a>3.1  运算符与表达式</h1><h2 id="算术运算符与算术表达式"><a href="#算术运算符与算术表达式" class="headerlink" title="算术运算符与算术表达式"></a>算术运算符与算术表达式</h2><h3 id="加减运算符"><a href="#加减运算符" class="headerlink" title="加减运算符(+,-)"></a>加减运算符(+,-)</h3><p>双目运算符(连接两个操作元的运算符)，结合方向从左到右，操作元是整型或浮点型数据，优先级是4级。</p>
+<h3 id="乘，除和求余运算符"><a href="#乘，除和求余运算符" class="headerlink" title="乘，除和求余运算符(*,/,%)"></a>乘，除和求余运算符(*,/,%)</h3><p>双目运算符,结合方向是从左到右，操作元是整型或浮点型数据，优先级是3级。</p>
+<h2 id="自增，自减运算符-—"><a href="#自增，自减运算符-—" class="headerlink" title="自增，自减运算符(++,—)"></a>自增，自减运算符(++,—)</h2><p>单目运算符，无相对操作元的固定位置，操作元必须是一个整型或浮点型变量，作用是使变量的值增1或减1。<br><em>位置的区别：以++为例，++x是先执行x=x+1再使用x的值，而x++是先使用x的值再执行x=x+1</em></p>
+<h2 id="算术混合运算的精度"><a href="#算术混合运算的精度" class="headerlink" title="算术混合运算的精度"></a>算术混合运算的精度</h2><h2 id="关系运算符与关系表达式"><a href="#关系运算符与关系表达式" class="headerlink" title="关系运算符与关系表达式"></a>关系运算符与关系表达式</h2><p>用来比较两个值的关系，运算结果是boolean型，当对应的关系成立时结果是true,否则是false</p>
+<h2 id="逻辑运算符与逻辑表达式"><a href="#逻辑运算符与逻辑表达式" class="headerlink" title="逻辑运算符与逻辑表达式"></a>逻辑运算符与逻辑表达式</h2><p>包括&amp;&amp;,||,!。其中&amp;&amp;,||为二目运算符，实现逻辑与，逻辑或 ；!为单目运算符，实现逻辑非。逻辑运算符操作元必须是boolean型数据,可以用来连接关系表达式。逻辑运算符”&amp;&amp;”和”||”也称做短路逻辑运算符(前者有一个false就直接得出结果为false；后者有一个true就直接得出结果为true)</p>
+<h2 id="赋值运算符与赋值表达式"><a href="#赋值运算符与赋值表达式" class="headerlink" title="赋值运算符与赋值表达式"></a>赋值运算符与赋值表达式</h2><p>赋值运算符=是双目运算符，左面的操作元必须是变量。</p>
+<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>我们知道整型数据在内存中以2进制的形式表示，这样我们就可以对整型数据进行按位的运算。</p>
+<h3 id="“按位与”运算符"><a href="#“按位与”运算符" class="headerlink" title="“按位与”运算符"></a>“按位与”运算符</h3><p>“&amp;”是双目运算符，对两个整型数据a,b按位进行运算。如果a,b两个数据对应位都是1,则结果的该位是1,否则是0.如果b的精度高于a,那么结果的精度和b相同。</p>
+<h3 id="“按位或”运算符"><a href="#“按位或”运算符" class="headerlink" title="“按位或”运算符"></a>“按位或”运算符</h3><p>“|”是双目运算符，对两个整型数据a,b按位进行运算，运算法则是如果a,b两个数据对应位都是0,则结果的该位是0,否则是1。如果b的精度高于与a,那么结果结果的精度和b相同。</p>
+<h3 id="“按位非”运算符"><a href="#“按位非”运算符" class="headerlink" title="“按位非”运算符"></a>“按位非”运算符</h3><p>“~”是单目运算符，对一个整型数据a按位进行运算，运算法则是如果a对应位都是0,则结果的该位是1,否则是0。</p>
+<h3 id="“按位异或”运算符"><a href="#“按位异或”运算符" class="headerlink" title="“按位异或”运算符"></a>“按位异或”运算符</h3><p>“^”是双目运算符，对两个整型数据a,b按位进行运算，运算法则是如果a,b两个数据对应位相同，则结果的该位是0,否则是1.如果b的精度高于与a,那么结果的精度和b相同。<br><em>位运算符和逻辑运算符：设x=1，经过((y=1)=0))&amp;&amp;((x=6)=6))后x=1，而经过((y=1)=0))&amp;((x=6)=6))后x=6</em></p>
+<h2 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h2><p>双目运算符，左面的操作元是一个对象 右面是一个类.当左面的对象是右面的类创建的对象时，该运算符运算的结果是true,否则是false。</p>
+<h2 id="运算符综述"><a href="#运算符综述" class="headerlink" title="运算符综述"></a>运算符综述</h2><p>Java的表达式就是用运算符连接起来的，符合Java规则的式子。运算符的优先级决定了表达式中运算执行的先后顺序。</p>
+<h1 id="3-2-语句"><a href="#3-2-语句" class="headerlink" title="3.2  语句"></a>3.2  语句</h1><h2 id="语句概述"><a href="#语句概述" class="headerlink" title="语句概述"></a>语句概述</h2><p>Java里的语句可分为以下五类</p>
+<h3 id="方法调用语句"><a href="#方法调用语句" class="headerlink" title="方法调用语句"></a>方法调用语句</h3><p>如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(&quot;你好，很高兴学习java&quot;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="表达式语句"><a href="#表达式语句" class="headerlink" title="表达式语句"></a>表达式语句</h3><p>由一个表达式构成一个语句，最典型的是赋值语句.<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x=23;</span><br></pre></td></tr></table></figure><br><em>分号是语句不可缺少的部分</em></p>
+<h3 id="复合语句"><a href="#复合语句" class="headerlink" title="复合语句"></a>复合语句</h3><p>可以用{}把一些语句括起来构成复合语句:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    z=23+x;</span><br><span class="line">    System out.println(&quot;hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="package语句和import语句"><a href="#package语句和import语句" class="headerlink" title="package语句和import语句"></a>package语句和import语句</h3><p>package语句和import语句和类，对象有关。</p>
+<h2 id="Java语言的控制语句"><a href="#Java语言的控制语句" class="headerlink" title="Java语言的控制语句"></a>Java语言的控制语句</h2><p>Java语言的控制语句有条件语句和switch开关语句两类。</p>
+<h3 id="条件控制语句"><a href="#条件控制语句" class="headerlink" title="条件控制语句"></a>条件控制语句</h3><p>条件语句可分为3种：</p>
+<ul>
+<li>if语句：<br>if语句的一般形式为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+括号内的表达式的值必须是boolean类型，当值为true时，则执行紧跟着的复合语句；如果表达式的值为false,则执行程序中if语句后面的其他语句。复合语句如果只有一个语句时{}可以省略不写</li>
+<li>if-else语句<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+括号内的表达式的值必须是boolean类型，当值为true时，则执行紧跟着的复合语句；如果表达式的值为false,则执行else后面的复合语句</li>
+<li>if语句的扩充形式<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br><span class="line">else if(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br><span class="line">else if(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br><span class="line">…</span><br><span class="line">else if(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="switch开关语句"><a href="#switch开关语句" class="headerlink" title="switch开关语句"></a>switch开关语句</h3><p>switch语句是多分支的开关语句，它的一般格式如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">switch(表达式)</span><br><span class="line">&#123;case 常量值1</span><br><span class="line">    语句;</span><br><span class="line">    break;</span><br><span class="line">case 常量值2</span><br><span class="line">    语句;</span><br><span class="line">    break;</span><br><span class="line">    …</span><br><span class="line">case 常量值n</span><br><span class="line">    语句;</span><br><span class="line">    break;</span><br><span class="line">default</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>switch语句中表达式的值以及常量值1到常量值n必须是整型或字符型。switch语句首先计算表达式的值，如果表达式的值和某个case后面的常量值相同，就执行该case里的若干个语句直到碰到break语句为止.若没有一个常量与表达式的值相同，则执行default后面的若干个语句。其中default是可有可无的。<br><em>在同一个switch语句中，case后的常量值必须互不相同</em></p>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><h3 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h3><p>for语句是java程序设计中最有用的循环语句，for语句的格式如下<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(表达式1 表达式2 表达式3)</span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>for语句中的语句称为循环体；表达式1负责完成变量的初始化；表达式式2是值为boolean型的表达式，称为循环条件；表达式3用来修整变量，改变循环条件。<br>for语句的执行过程是这样的:首先计算表达式1,完成必要的初始化工作;再判断表达式2的值，若表达式2的值为true,则执行循环体;执行完循环体之后紧接着计算表达式3,以便改变循环条件，这样一轮循环就结束了。第二轮循环从计算表达式2开始</p>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>一般格式：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">while(表达式)</span><br><span class="line">    &#123;</span><br><span class="line">        语句</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h3><p>一般格式：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">do</span><br><span class="line">    &#123;</span><br><span class="line">        语句</span><br><span class="line">    &#125;</span><br><span class="line">while(表达式)</span><br></pre></td></tr></table></figure><br><em>do-while循环和while循环的区别是do-while的循环体至少被执行一次</em></p>
+<h3 id="在循环体中使用语句break和语句continue"><a href="#在循环体中使用语句break和语句continue" class="headerlink" title="在循环体中使用语句break和语句continue"></a>在循环体中使用语句break和语句continue</h3><p>在一个循环中，如果在某次循环体的执行中执行了break语句，那么整个循环语句就结束；如果在某次循环体的执行中执行了continue语句，那么本次循环就结束，而转入进行下一次循环。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/02/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%8C%E5%85%B3%E9%94%AE%E5%AD%97%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1125,73 +1218,6 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/23/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABRobots%E5%8D%8F%E8%AE%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/23/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABRobots%E5%8D%8F%E8%AE%AE/" class="post-title-link" itemprop="url">python网络爬虫Robots协议 笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-07-23 15:48:46" itemprop="dateCreated datePublished" datetime="2023-07-23T15:48:46+08:00">2023-07-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-03 21:11:48" itemprop="dateModified" datetime="2023-08-03T21:11:48+08:00">2023-08-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="网络爬虫的限制"><a href="#网络爬虫的限制" class="headerlink" title="网络爬虫的限制"></a>网络爬虫的限制</h1><p>来源审查：检查来访HTTP协议头的User-Agent，只响应浏览器或友好爬虫的访问<br>发布公告：通过Robots协议告知所有爬虫网站的爬取策略，要求爬虫遵守</p>
-<h1 id="Robots协议"><a href="#Robots协议" class="headerlink" title="Robots协议"></a>Robots协议</h1><p>全名Robots Exclusion Standard（网络爬虫排除标准），用来告知网络爬虫吧哪些页面可以爬取，哪些不行，形式为网站根目录下的robots.txt文件，以携程为例，打开<a target="_blank" rel="noopener" href="https://www.ctrip.com/robots.txt，得到结果：">https://www.ctrip.com/robots.txt，得到结果：</a><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line"></span><br><span class="line">Disallow: /bin/</span><br><span class="line"></span><br><span class="line">Disallow: /Member/</span><br><span class="line"></span><br><span class="line">Disallow: /member/</span><br><span class="line">Disallow: /Service/</span><br><span class="line"></span><br><span class="line">Disallow: /service/</span><br><span class="line"></span><br><span class="line">Disallow: /Email/</span><br><span class="line"></span><br><span class="line">Disallow: /email/</span><br><span class="line"></span><br><span class="line">Disallow: /Pda/</span><br><span class="line">Disallow: /pda/</span><br><span class="line"></span><br><span class="line">Disallow: /ShareScript/</span><br><span class="line"></span><br><span class="line">Disallow: /sharescript/</span><br><span class="line"></span><br><span class="line">Disallow: /Public/AllianceCardIndex.asp</span><br><span class="line"></span><br><span class="line">Disallow: /public/alliancecardindex.asp</span><br><span class="line"></span><br><span class="line">Disallow: /supermarket/</span><br><span class="line"></span><br><span class="line">Disallow: /*Alliance*</span><br><span class="line"></span><br><span class="line">Disallow: /*alliance*</span><br><span class="line"></span><br><span class="line">Disallow: /*Ouid*</span><br><span class="line"></span><br><span class="line">Disallow: /*ouid*</span><br><span class="line"></span><br><span class="line">Allow: /</span><br></pre></td></tr></table></figure><br>其中：<br>User-agent: ——任何被提到的user agent都应该遵守以下协议<br>Disallow:——所有在User-agent中的爬虫都不允许访问符合以下格式的网站</p>
-<h1 id="Robots协议遵守方式"><a href="#Robots协议遵守方式" class="headerlink" title="Robots协议遵守方式"></a>Robots协议遵守方式</h1><h2 id="robots协议的使用"><a href="#robots协议的使用" class="headerlink" title="robots协议的使用"></a>robots协议的使用</h2><p>网络爬虫：自动或人工的识别robots.txt,再进行内容爬取<br>约束性：Robots协议是建议但非约束性，爬虫可以不遵守但可能产生法律风险</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1261,7 +1287,7 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
