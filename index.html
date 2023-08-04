@@ -319,7 +319,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-04 08:22:29" itemprop="dateModified" datetime="2023-08-04T08:22:29+08:00">2023-08-04</time>
+                <time title="Modified: 2023-08-04 18:58:44" itemprop="dateModified" datetime="2023-08-04T18:58:44+08:00">2023-08-04</time>
               </span>
 
           
@@ -441,6 +441,51 @@
 <li>文本级标签（标签里只能放文字、图片、表单元素）：p、span、a、b、i、u、em。</li>
 <li>容器级标签（标签里可以放置任何东西）：div、h系列、li、dt、dd</li>
 </ul>
+<h1 id="05-字体标签和超链接"><a href="#05-字体标签和超链接" class="headerlink" title="05 字体标签和超链接"></a>05 字体标签和超链接</h1><h2 id="字体标签"><a href="#字体标签" class="headerlink" title="字体标签"></a>字体标签</h2><h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><ul>
+<li>空格——<code>&amp;nbsp;</code>(non-breaking spacing)</li>
+<li>小于号——<code>&amp;lt;</code>（less than）</li>
+<li>大于号——<code>&amp;gt;</code>（greater than）</li>
+<li>&amp; ——<code>&amp;amp;</code></li>
+<li>双引号——<code>&amp;quot;</code></li>
+<li>单引号——<code>&amp;apos;</code></li>
+<li>©——<code>&amp;copy;</code></li>
+<li>™——<code>&amp;trade;</code></li>
+<li>文字（以unicode32464的绐为例）——<code>&amp;#32464;</code></li>
+<li>￥——<code>&amp;yen;</code></li>
+<li>®——<code>&amp;reg;</code></li>
+<li>°——<code>&amp;deg;</code></li>
+<li>±——<code>&amp;plusmn;</code></li>
+<li>乘号——<code>&amp;times;</code></li>
+<li>÷——<code>&amp;divide;</code></li>
+<li>上标2——<code>&amp;sup2;</code></li>
+<li>上标3——<code>&amp;sup3;</code></li>
+</ul>
+<p>举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;1&amp;nbsp;2&amp;lt;3&amp;gt;4&amp;amp;5&amp;quot;6&amp;apos;7&amp;copy;8&amp;trade;9&amp;#32464;10&amp;yen;</span><br><span class="line">        11&amp;reg;12&amp;deg;13&amp;plusmn;14&amp;times;15&amp;divide;16&amp;sup2;17&amp;sup3;&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>结果如图：<br><img src="/2023/08/02/HTML/特殊字符.png" alt="特殊字符"></p>
+<h3 id="下划线、中划线、斜体"><a href="#下划线、中划线、斜体" class="headerlink" title="下划线、中划线、斜体"></a>下划线、中划线、斜体</h3><ul>
+<li>下划线——<code>&lt;u&gt;</code></li>
+<li>中划线——<code>&lt;s&gt;</code>或<code>&lt;del&gt;</code></li>
+<li>斜体——<code>&lt;i&gt;</code>或<code>&lt;em&gt;</code></li>
+</ul>
+<p>举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;u&gt;u&lt;/u&gt;</span><br><span class="line">    &lt;s&gt;s&lt;/s&gt;</span><br><span class="line">    &lt;del&gt;del&lt;/del&gt;</span><br><span class="line">    &lt;i&gt;i&lt;/i&gt;</span><br><span class="line">    &lt;em&gt;em&lt;/em&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>结果如图：<br><img src="/2023/08/02/HTML/下划线、中划线、斜体.png" alt="下划线、中划线、斜体"></p>
+<h3 id="上标下标"><a href="#上标下标" class="headerlink" title="上标下标"></a>上标下标</h3><ul>
+<li>上标——<code>&lt;sup&gt;</code></li>
+<li>下标——<code>&lt;sub&gt;</code></li>
+</ul>
+<p>举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    sup&lt;sup&gt;sup&lt;/sup&gt;</span><br><span class="line">    sub&lt;sub&gt;sub&lt;/sub&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>结果如图：<br><img src="/2023/08/02/HTML/上标下标.png" alt="上标下标"></p>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><ul>
+<li>外部链接(链接到外部文件)——点击后访问herf中的地址（本地或网络都可）</li>
+<li>锚链接——给超链接起一个名字，作用是在本页面或者其他页面的的不同位置进行跳转。步骤是首先创建一个锚点(用name和id属性给那个位置起名)，然后在另外的位置设置超链接(href的内容设为(如果存在的页面名称+)#+之前取的名字)，点击时将回到锚点位置。</li>
+<li>邮件链接——点击之后会弹出outlook</li>
+</ul>
+<p>举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;a href=&quot;http://www.baidu.com&quot;&gt;外部链接&lt;/a&gt;</span><br><span class="line">    &lt;a name=&quot;mao&quot; id=&quot;mao&quot;&gt;锚链接&lt;/a&gt;</span><br><span class="line">    &lt;pre&gt;</span><br></pre></td></tr></table></figure><br>结果如图：<br><img src="/2023/08/02/HTML/3种超链接.png" alt="3中超链接"></p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li>href——目标URL</li>
+<li>title——悬停文本。</li>
+<li>name——主要用于设置锚点的名称。</li>
+<li>target——告诉浏览器用什么方式来打开目标页面，有以下几个值：_self(在同一个网页中显示（默认值）)，_blank(在新的窗口中打开)，_parent(在父窗口中显示)，_top(在顶级窗口中显示)<br>举例如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;a href=&quot;http://www.baidu.com&quot; title=&quot;baiduyixia&quot; target=&quot;_blank&quot;&gt;外部链接&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+由于无法给悬浮标签截图，所以这里不放结果。</li>
+</ul>
+<p><em>a的语义要小于p</em></p>
 
       
     </div>
