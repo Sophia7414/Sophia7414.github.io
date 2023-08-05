@@ -145,6 +145,178 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/05/JAVA-%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%B1%BB%EF%BC%8C%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%8E%A5%E5%8F%A3-%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/05/JAVA-%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%B1%BB%EF%BC%8C%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%8E%A5%E5%8F%A3-%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">JAVA 第四章 类，对象和接口 笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-08-05 00:01:36" itemprop="dateCreated datePublished" datetime="2023-08-05T00:01:36+08:00">2023-08-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-06 00:35:09" itemprop="dateModified" datetime="2023-08-06T00:35:09+08:00">2023-08-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="4-1-编程语言的几个发展阶段"><a href="#4-1-编程语言的几个发展阶段" class="headerlink" title="4.1 编程语言的几个发展阶段"></a>4.1 编程语言的几个发展阶段</h1><ul>
+<li><p>机器语言(如汇编语言):计算机处理信息的早期语言是所谓的机器语言,使用机器语言编程也称做面向机器编程。20世纪50年代出现了汇编语言，在编写指令时，它用一些简单的容易记忆的符号来代替二进制指令，但汇编语言仍是面向机器语言，需针对不同的机器来编写不同的代码，习惯上称机器语言，汇编语言是低级语言。</p>
+</li>
+<li><p>过程语言(如c语言，Fortrans语言):用这些语言编程也称做面向过程编程，语言把代码组成叫做过程或函数的块,每个块的目标是完成某个任务。使用这些语言编写代码指令时，不必再去考虑机器指令的细节，只要按着具体语言的语法要求去编写“源文件”(根据这门语言的语法编写具有一定扩展名的文本文件)。过程语言的源文件的一个特点是更接近人的“自然语言”，习惯上也称过程语言是高级语言。<br><em>无论那种高级语言编写的源文件，计算机都不能直接执行，必须把源文件通过某种方式转换成机器指令，然后计算机去执行相应的机器指令。现在最常用的方式是编译方式和解释方式</em></p>
+</li>
+<li><p>面向对象编程：基于对象的编程更加符合人的思维模式，编写的程序更加健壮和强大。面向对象编程鼓励创造性的程序设计。</p>
+</li>
+<li><p>Java语言：JAVA不针对特定的CPU芯片进行编译，它提供的编译器把源程序编译成称做字节码（很接近机器码的文件，可以在提供了Java虚拟机JVM的任何系统上被解释执行）的一个中间代码，当字节码加载到内存之后，再由Java的解释器对字节码翻译一句，执行一句，不产生整个的机器代码程序，翻译过程如果不出现错误，就一直进行到全部执行完毕，否则将在错误处停止执行。Java语言引入了类（用来创建对象的模板，包含被创建的对象的状态描述和方法的定义）的概念，它的源程序（扩展名为.java的文本文件）是由若干个类组成</p>
+</li>
+</ul>
+<h1 id="4-2-类"><a href="#4-2-类" class="headerlink" title="4.2 类"></a>4.2 类</h1><p>类是组成Java程序的基本要素，封装了一类对象的状态和方法，是用来定义对象的模板。类的实现包括两部分：类声明和类体，基本格式为<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class 类名</span><br><span class="line">&#123;</span><br><span class="line">    类体的内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>class是用来定义类的关键字，“class类名”是类的声明部分，类名必须是合法的。两个大括号以及之间的内容是类体。</p>
+<h2 id="类声明"><a href="#类声明" class="headerlink" title="类声明"></a>类声明</h2><p>以下是两个类声明的例子.<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class People</span><br><span class="line">&#123;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br><span class="line">class 植物</span><br><span class="line">&#123;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>“class People”和“class 植物”叫做类声明，”People”和”植物”分别是类名。习惯上类名的第一个字母大写，但这不是必须的。类的名字不能是Java中的关键字，要符合标识符规定<br>。给类名名时，最好符合以下规定：如果类名使用字母，那么名字的首写字母使用大写字母；类名最好见名得意，当类名由几个”单词”复合而成时，每个单词的首写字母使用大写。</p>
+<h2 id="类体"><a href="#类体" class="headerlink" title="类体"></a>类体</h2><p>写类的目的是为了描述一类事物共有的属性和功能，描述过程由类体来实现。类声明之后的一对大括号以及它们之间的内容称做类体，大括号之间的内容称做类体的内容。类体的内容由两部分构成：一部分是变量的定义，用来刻画属性；另一部分是方法的定义，用来刻画功能。举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class test &#123;</span><br><span class="line">    int x=1;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        int a=10, b=3 ;</span><br><span class="line">        if (a&gt;6)&#123;</span><br><span class="line">            System.out.println(&quot;a大&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            System.out.println(&quot;a小&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (b&gt;6)&#123;</span><br><span class="line">            System.out.println(&quot;b大&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            System.out.println(&quot;b小&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="成员变量和局部变量"><a href="#成员变量和局部变量" class="headerlink" title="成员变量和局部变量"></a>成员变量和局部变量</h2><p>变量定义部分所定义的变量被称为类的成员变量;在方法体中定义的变量和方法的参数被称为局部变量。</p>
+<ul>
+<li>成员变量和局部变量的类型可以是Java中的任何一种数据类型。</li>
+<li>成员变量在整个类内都有效，局部变量只在定义它的方法内有效。成员变量与它在类体中书写的先后位置无关，但不提倡把成员变量的定义分散地写在方法之间或类体的最后。</li>
+<li>成员变量又分为实例成员变量(简称实例变量)和类成员变量(简称类变量)例如:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class dog&#123;</span><br><span class="line">    float x;</span><br><span class="line">    static int y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+其中x是实例变量，而y是类变量。如果成员变量的类型前面加上关键字static,这样的成员变量称做是类变量或静态成员变量。</li>
+<li><p>如果局部变量的名字与成员变量的名字相同，则成员变量被隐藏(这个成员变量在这个方法内暂时失效)</p>
+</li>
+<li><p>局部变量的名字与成员变量的名字相同时，如果想在该方法内使用成员变量，必须使用关键字this。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class try</span><br><span class="line">&#123;</span><br><span class="line">    float A;</span><br><span class="line">    void try_2(float A)</span><br><span class="line">    &#123;</span><br><span class="line">        this.A=A;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，this.A就表示成员变量A</p>
+</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>方法的定义包括两部分:方法声明和方法体.一般格式为:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">方法声明部分&#123;</span><br><span class="line">    方法体的内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="方法声明"><a href="#方法声明" class="headerlink" title="方法声明"></a>方法声明</h3><p>最基本的方法声明包括方法名和方法的返回类型，如<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">float a()&#123;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>方法返回的数据的类型可以是任意的Java数据类型。当一个方法不需要返回数据时，返回类型必须是void。方法的参数可以是任意的Java数据类型。方法的名字必须符合标识符规定，名字如果使用字母，首写字母应该使用小写；如果由多个单词组成，从第2个单词开始的其它单词的首写字母使用大写。</p>
+<h3 id="方法体"><a href="#方法体" class="headerlink" title="方法体"></a>方法体</h3><p>方法声明之后的一对大括号”{“,”}”以及之间的内容称做方法的方法体。方法体的内容包括局部变量的定义和合法的Java语句。方法参数在整个方法内有效，方法内定义的局部变量从它定义的位置之后开始有效，局部变量的名字必须符合标识符规定。遵守习惯，名字如果使用字母，首写字母使用小写；如果由多个单词组成，从第2个单词开始的其它单词的首写字母使用大写。</p>
+<h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><p>方法重载的意思是一个类中可以有多个方法具有相同的名字，但这些方法的参数必须不同，即或者是参数的个数不同，或者是参数的类型不同。<br><em>方法的返回类型和参数的名字不参与比较，也就是说如果两个方法的名字相同，即使类型不同，也必须保证参数不同</em></p>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>构造方法是一种特殊方法，它的名字必须与它所在的类的名字完全相同，并且不返回任何数据类型。</p>
+<h2 id="类方法和实例方法"><a href="#类方法和实例方法" class="headerlink" title="类方法和实例方法"></a>类方法和实例方法</h2><p>我们已经知道，成员变量可分为实例变量和类变量，同样，类中的方法也可分为实例方法和类方法。方法声明时，方法类型前面不加关键字static的是实例方法，加static的是类方法。</p>
+<h2 id="两个值得注意的问题"><a href="#两个值得注意的问题" class="headerlink" title="两个值得注意的问题"></a>两个值得注意的问题</h2><ul>
+<li>对成员变量的操作只能放在方法（方法申明 方法名{}）中，方法可以对成员变量和方法体中自己定义的局部变量进行操作。</li>
+<li>实例方法既能对类变量操作也能对实例变量操作，而类方法只能对类变量进行操作。</li>
+<li>一个类中的方法可以互相调用，实例方法可以调用该类中的其它方法；类中的类方法只能调用该类的类方法，不能调用实例方法。</li>
+</ul>
+<h1 id="4-3对象"><a href="#4-3对象" class="headerlink" title="4.3对象"></a>4.3对象</h1><p>我们已经说过类是创建对象的模板。当使用一个类创建了一个对象时，我们也说我们给出了这个类的一个实例。</p>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>创建一个对象包括对象的声明和为对象分配内存两个步骤</p>
+<h3 id="对象的声明"><a href="#对象的声明" class="headerlink" title="对象的声明"></a>对象的声明</h3><p>一般格式为：类的名字 对象名字，如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">People zhangPing</span><br></pre></td></tr></table></figure><br>这里People是一个类的名字，zhangPing是我们声明的对象的名字。</p>
+<h3 id="为对象分配内存"><a href="#为对象分配内存" class="headerlink" title="为对象分配内存"></a>为对象分配内存</h3><p>使用new运算符和类的构造方法为声明的对象分配内存，如果类中没有构造方法，系统会调用默认的构造方法（无参数）。举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zhangPing=new People();</span><br></pre></td></tr></table></figure><br>以下是两个实例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Man</span><br><span class="line">&#123;</span><br><span class="line">    float height,weight;</span><br><span class="line">    String head,ear,foot,mouth;</span><br><span class="line">    void speak(String s)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        Man xiaoming;</span><br><span class="line">        xiaoming=new Man();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Num&#123;</span><br><span class="line">    int x,y;</span><br><span class="line">    Num(int a, int b)&#123;</span><br><span class="line">        x=a;</span><br><span class="line">        y=b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class test&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        Num text;</span><br><span class="line">        text=new Num(100,1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><em>如果你的类里定义了一个或多个构造方法,那么 Java 不提供默认的构造方法</em></p>
+<h3 id="对象的内存模型"><a href="#对象的内存模型" class="headerlink" title="对象的内存模型"></a>对象的内存模型</h3><h4 id="声明对象时的内存模型"><a href="#声明对象时的内存模型" class="headerlink" title="声明对象时的内存模型."></a>声明对象时的内存模型.</h4><p>当用一个类声明一个变量即对象时，得到一个内存中还没有任何数据变量，我们称之为空对象，空对象不能使用,因为它还没有得到任何“实体”，必须再进行为对象分配内存(对象分配实体)的步骤</p>
+<h4 id="对象分配内存后的内存模型"><a href="#对象分配内存后的内存模型" class="headerlink" title="对象分配内存后的内存模型"></a>对象分配内存后的内存模型</h4><p>当系统见到new运算符时，就会做两件事：<br>一、为类中的各个变量分配内存，如果成员变量在声明时没有指定初值,那么整型变量默认初值是0；浮点型默认初值是0.0；boolean型默认初值是false；引用型默认初值是null。<br>二、为了确保内存单元将由被声明的对象操作管理,new运算符在为类中的各个实例变量分配内存后,将返回一个引用给对象变量，也就是返回一个“号码”——地址号(代表这些成员变量内存位置的首地址号码)，你可以认为这个引用就是对象变量在内存里的名字,而且这个名字是Java 系统为了确保内存单元将由被声明的对象操作管理，称类中的各个实例变量分配的内存单元是属于声明的对象的实体(这些变量是属于声明的对象的)。<br><em>对象的声明和分配内存两个步骤可以用一个等价的步骤完成,以上面的第一个例子来说，为：<code>Man xiaoming=new Man();</code></em></p>
+<h4 id="创建多个不同的对象"><a href="#创建多个不同的对象" class="headerlink" title="创建多个不同的对象"></a>创建多个不同的对象</h4><p>一个类通过使用new运算符可以创建多个不同的对象,这些对象将被分配不同的内存空间,改变其中一个对象的状态不会影响其它对象的状态。</p>
+<h2 id="使用对象"><a href="#使用对象" class="headerlink" title="使用对象"></a>使用对象</h2><p>对象不仅可以操作自己的变量改变状态,而且还拥有了使用创建它的那个类中的方法的能力,通过使用运算符“.”，对象可以实现对自己的变量访问和方法的调用。</p>
+<h3 id="对象操作自己的变量、对象的属性"><a href="#对象操作自己的变量、对象的属性" class="headerlink" title="对象操作自己的变量、对象的属性(.)"></a>对象操作自己的变量、对象的属性(.)</h3><p>通过使用运算符”.”,对象可以实现对自己的变量的访问。</p>
+<h3 id="对象调用类中的方法-对象的功能"><a href="#对象调用类中的方法-对象的功能" class="headerlink" title="对象调用类中的方法 对象的功能(.)"></a>对象调用类中的方法 对象的功能(.)</h3><p>对象创建之后,可以使用运算符“.”调用创建它的类中的方法。当对象调用类中的一个方法时,方法中的局部变量被分配内存空间；方法执行完毕,局部变量即刻释放内存。<br><em>当对象调用方法时,方法中出现的成员变量就是指该对象的成员变量</em></p>
+<h2 id="对象的引用和实体"><a href="#对象的引用和实体" class="headerlink" title="对象的引用和实体"></a>对象的引用和实体</h2><p>设你用同一个类创建了两个对象p1、p2，如果你使用了赋值语句p1=p2;那么p1和p2本质上是一样的了，系统将取消原来分配给p1的内存。因此,一个类创建的两个对象,如果具有相同的引用,那么就具有完全相同的实体。</p>
+<h1 id="static-关键字"><a href="#static-关键字" class="headerlink" title="static 关键字"></a>static 关键字</h1><h2 id="实例变量和类变量的区别"><a href="#实例变量和类变量的区别" class="headerlink" title="实例变量和类变量的区别"></a>实例变量和类变量的区别</h2><p>类中的类变量在没有创建对象之前，该类被加载到内存时,就分配了相应的内存空间。如果该类创建对象,那么不同对象的实例变量分配不同的内存空间,而类变量不再重新分配内存,所有的对象共享类变量(所有的对象的类变量是相同的)。类变量的内存空间直到程序退出运行,才释放所占有的内存。</p>
+<h2 id="通过类名直接访问类变量"><a href="#通过类名直接访问类变量" class="headerlink" title="通过类名直接访问类变量"></a>通过类名直接访问类变量</h2><p>类变量在类的字节码加载到内存时就分配了内存空间,并且被所有的对象共享,因此,Java允许通过类名直接访问类变量。</p>
+<h2 id="实例方法和类方法的区别"><a href="#实例方法和类方法的区别" class="headerlink" title="实例方法和类方法的区别"></a>实例方法和类方法的区别</h2><ul>
+<li>当类的字节码文件被加载到内存时，类的实例方法不会被分配入口地址，当该类创建对象后,类中的实例方法才分配入口地址。  </li>
+<li>当我们创建第一个对象时，类中的实例方法就分配了入口地址，当再创建对象时, 不再分配入口地址。也就是说，方法的入口地址被所有的对象共享，当所有的对象都不存在时, 方法的入口地址才被取消；对于类中的类方法,在该类被加载到内存时,就分配了相应的入口地址，从而类方法不仅可以被类创建的任何对象调用执行,也可以直接通过类名调用，类方法的入口地址直到程序退出才被取消。</li>
+<li>无论是类方法或实例方法,当被调用执行时,方法中的局部变量才被分配内存空间,方法调用完毕,局部变量即刻释放所占的内存.在一个方法被调用执行完毕之前,如果该方法又被调用,那么,方法的局部变量会再次被分配新的内存空间。</li>
+</ul>
+<h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><p>this关键字可以出现在类的实例方法中,代表使用该方法的当前对象。当成员变量在实例方法中出现 时,默认的格式是：<code>this.成员变量</code>。当成员变量的名字和局部变量的名字相同时.成员变量前面的”this.”不可以省略。<br>类的实例方法可以调用类的其它方法的默认格式是：<code>this.方法</code>。this代表使用所在的方法的当前对象，让其调用this后的方法。一个方法调用另一个方法时可以省略方法名字前面的”this.”</p>
+<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><p>包是Java语言中有效地管理类的一个机制。</p>
+<h2 id="包语句"><a href="#包语句" class="headerlink" title="包语句"></a>包语句</h2><p>通过关键字package声明。package语句作为Java源文件的第一条语句,指明该源文件定义的类所在的包。语句的一般格式为：<code>package 包名</code>。如果源程序中省略了package语句,源文件中你定义命名的类被认为在同一个包中，但该包没有名字。包名可以是一个合法的标识符,也可以是若干个标识符加“.”分割而成。程序如果使用了包语句,如<code>package a.b</code>，那么你的目录结构必须包含有如下的结构：\a\b,并且要将源文件保存在b中，然后编译源文件，运行时则必须到啊的上一层目录运行，命令为：<code>java a.b.文件名</code></p>
+<h2 id="import-语句"><a href="#import-语句" class="headerlink" title="import 语句"></a>import 语句</h2><p>使用import语句可以引入包中的类。在一个Java源程序中可以有多个import语句,它们必须写在package语句(假如有package语句的话)和源文件中类的定义之间。如果要引入一个包中的全部类,则可以用星号来代替，而只引入一个类的时候，则在包名后面加<code>.需要的类名</code>。在引用自己的包时，可以通过在classpath中间添加自己的包的位置的方式来使用自己的包。我们可以通过将类存放在当前程序所在的目录中，来使用无名包中的类。<br><em>如果使用 import 语句引入了整个包中的类,那么可能会增加编译时间.但绝对不会影响程序运行的性能</em></p>
+<h2 id="将类打包"><a href="#将类打包" class="headerlink" title="将类打包"></a>将类打包</h2><p>我们也可以对单独的一个类进行编译,生成字节码文件,然后供其它类使用。</p>
+<h1 id="访问权限"><a href="#访问权限" class="headerlink" title="访问权限"></a>访问权限</h1><p>我们可以通过修饰符private,protected和public来说明使用权限。</p>
+<h2 id="私有变量和私有方法"><a href="#私有变量和私有方法" class="headerlink" title="私有变量和私有方法"></a>私有变量和私有方法</h2><p>用关键字private修饰的成员变量和方法。格式为：<code>private 变量名</code>/<code>private 方法名</code>。当用一个类创建了一个对象后,该对象不能访问自己的私有变量和私有方法。如果 类中的某个成员是私有类变量(静态成员变量)或私有的类方法,那么在另外一个类中,也不能通过类名来调用他们。只有在本类中创建该类的对象时,这个对象才能访问自己的私有成员变量和类中的私有方法。</p>
+<h2 id="共有变量和共有方法"><a href="#共有变量和共有方法" class="headerlink" title="共有变量和共有方法"></a>共有变量和共有方法</h2><p>public修饰的成员变量和方法，格式为：<code>public 变量名</code>/<code>public 方法名</code>。在任何一个其他类中用类创建了一个对象后,该对象能访问自己的public变量和public方法。如果一个类中的某个成员或某个方法是public类变量或方法,那么在任何一个类中,也可以通过类名来操作这个成员变量或方法。</p>
+<h2 id="友好变量和友好方法"><a href="#友好变量和友好方法" class="headerlink" title="友好变量和友好方法"></a>友好变量和友好方法</h2><p>不用private,public,protected修饰符的成员变量和方法被称为友好变量和友好方法。设A类含友好变量和友好方法。当在另外一个类中用A创建了一个对象且两个类在同一个包时，那么该对象以及任何一个和A在同一包中的类以通过类名的方式都能访问那些友好变量和友好方法。</p>
+<h2 id="受保护的成员变量和方法"><a href="#受保护的成员变量和方法" class="headerlink" title="受保护的成员变量和方法"></a>受保护的成员变量和方法</h2><p>用protected修饰的成员变量和方法，格式为：<code>protected 变量名</code>/<code>protected 方法名</code>。设A类含受保护的成员变量和方法。当在另外一个类中用类 A创建了一个对象且两个类在同一个包时，那么该对象以及任何一个和A在同一包中的类以通过类名的方式都能访问那些受保护的成员变量和方法。<br>当在另外一个类中用类 Tom 创建了一个对象后,如果这个类与类 Tom 在同一个包中,那 么该对象能访问自己的 protected 变量和 protected 方法.在任何一个与 Tom 同一包中的 类中,也可以通过 Tom 类的类名访问Tom 类的 protected 类变量和 protected 类方法.</p>
+<h2 id="public类与友好类"><a href="#public类与友好类" class="headerlink" title="public类与友好类"></a>public类与友好类</h2><p>类声明时,如果class前面加上public就是public类，可以在任何另外一个类中该类创建对象；如果一个类不加public修饰就被称做友好类,另外一个类中使用友好类创建对象时,要保证它们是在同一包中。<br><em>不能用 protected 和 private 修饰类</em>  </p>
+<p>按访问权限从高到低的排列顺序是：public,protected,友好的,private.</p>
+<h1 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h1><p>继承是一种由已有的类创建新类的机制。先创建一个共有属性的一般类(父类(超类)),根据该一般类再创建具有特殊属性的新类(子类),新类继承一般类的状态和行为,并根据需要增加它自己的新的状态和行为。Java中子类只能有一个父类。</p>
+<h2 id="创建子类"><a href="#创建子类" class="headerlink" title="创建子类"></a>创建子类</h2><p>在类的声明中,通过使用关键字extends来创建一个类的子类,格式如下:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class 子类名 extends 父类名&#123;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="子类的继承性"><a href="#子类的继承性" class="headerlink" title="子类的继承性"></a>子类的继承性</h2><h3 id="子类和父类在同一包中的继承性"><a href="#子类和父类在同一包中的继承性" class="headerlink" title="子类和父类在同一包中的继承性"></a>子类和父类在同一包中的继承性</h3><p>如果子类和父类在同一个包中,那么子类继承了其父类中不是private的成员变量作为自己的成员变量以及不是private的方法作为自己的方法。</p>
+<h3 id="子类和父类不在同一包中的继承性"><a href="#子类和父类不在同一包中的继承性" class="headerlink" title="子类和父类不在同一包中的继承性"></a>子类和父类不在同一包中的继承性</h3><p>如果子类和父类不在同一个包中,那么子类继承了父类的protected,public 成员变量做为子类的成员变量以及protected,public 法为子类的方法。此时，子类不能继承父类的友好变量和友好方法.</p>
+<h2 id="成员变量的隐藏和方法的重写"><a href="#成员变量的隐藏和方法的重写" class="headerlink" title="成员变量的隐藏和方法的重写"></a>成员变量的隐藏和方法的重写</h2><p>当我们在子类中定义的成员变量和父类中的成员变量同名时,则父类中的成员变量不能被继承,称子类的成员变量隐藏了父类的成员变量；当子类中定义了一个方法,并且这个方法的名字,返回类型,及参数个数和类型和父类的某个方法完全相同时,父类的这个方法将被隐藏，称我们重写了父类的方法或置换了父类的方法。子类通过成员变量的隐藏和方法的重写可以把父类的状态和行为改变为自身的状态和行为。如果子类重写了父类的方法,则运行时系统调用子类重写的方法,如未重写,那么子类创建的对象也可以调用这个方法,只不过方法产生的行为和父类的相同。</p>
+<h2 id="final类，final方法"><a href="#final类，final方法" class="headerlink" title="final类，final方法"></a>final类，final方法</h2><p>final类格式如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">final class A</span><br><span class="line">&#123;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>final类不能被继承。如果一个方法被修饰为final方法,则这个方法不能被重写；如果一个成员变量被修饰为final的,就是常量。</p>
+<h1 id="对象的上转型对象"><a href="#对象的上转型对象" class="headerlink" title="对象的上转型对象"></a>对象的上转型对象</h1><p>当我们用子类创建一个对象,并把这个对象的引用放到父类的对象中时, 比如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A a;</span><br><span class="line">B b=new B();</span><br><span class="line">a=b;</span><br></pre></td></tr></table></figure><br>称这个父类对象是子类对象的上转型对象。<br>对象的上转型对象的实体是子类负责创建的,但上转型对象会失去原对象的一些属性和功能。上转型对象具有如下特点：</p>
+<ul>
+<li>上转对象不能操作子类新增的成员变量(失掉了这部分属性)不能使用子类新增的方法(失掉了一些功能)</li>
+<li>上转型对象可以操作子类继承或重写的成员变量,也可以使用子类继承的或重写的方法.</li>
+<li>如果子类重写了父类的某个方法后,对象的上转对象调用这个方法时一定是调用了这个重写的方法,因为这个上转对象的实体是子类创建的。</li>
+</ul>
+<h1 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a>多态性</h1><p>当一个类有很多子类时,并且这些子类都重写了父类中的某个方法，那么我们把子类创建的对象的上转型对象在调用这个方法时就可能具有多种形态。</p>
+<h1 id="abstract类和abstract方法"><a href="#abstract类和abstract方法" class="headerlink" title="abstract类和abstract方法"></a>abstract类和abstract方法</h1><p>用关键字abstract修饰类称为abstract类(抽象类),例如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">abstract class A</span><br><span class="line">&#123; </span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>abstract 类不能用 new 运算创建对象，必须产生其子类, 由子类创建对象。对于abstract方法,只允许声明,而不允许实现，如：<code>abstract void draw()</code>。如果一个类是一个abstract类的子类,它必须具体实现父类的abstract方法；如果一个类中含有abstract方法,那么这个类必须用abstract来修饰(abstract类也可以没有abstract方法)；一个 abstract 类只关心它的子类是否具有某种功能,并不关心功能的具体行为,功能的具体行为由子类负责实现。</p>
+<h1 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h1><p>如果我们在子类中想使用被子类隐藏的父类的成员变量或方法就可以使用关键字super</p>
+<h2 id="使用-super-调用父类的构造方法"><a href="#使用-super-调用父类的构造方法" class="headerlink" title="使用 super 调用父类的构造方法"></a>使用 super 调用父类的构造方法</h2><p>子类不继承父类的构造方法,因此,子类如果想使用父类的构造方法,必须在子类的构造方法中使用,并且必须使用关键字super来表示,而且super必须是子类构造方法中的头一条语句.例如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class A&#123;</span><br><span class="line">    …</span><br><span class="line">    A(int b, int c)&#123;</span><br><span class="line">        …</span><br><span class="line">    &#125;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br><span class="line">class A extends D&#123;</span><br><span class="line">    …</span><br><span class="line">    E(int b, int c, int f)&#123;</span><br><span class="line">        super(b,c)</span><br><span class="line">        …</span><br><span class="line">    &#125;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>需要注意的是如果在子类的构造方法中,没有显示使用super关键字调用父类的某个构造方法,那么默认地有super();语句,即调用父类的不带参数的构造方法。如果父类没有提供不带参数的构造方法,就会出现错误。</p>
+<h2 id="使用super操作被隐藏的成员变量和方法"><a href="#使用super操作被隐藏的成员变量和方法" class="headerlink" title="使用super操作被隐藏的成员变量和方法"></a>使用super操作被隐藏的成员变量和方法</h2><p>如果我们在子类中想使用被子类隐藏了的父类的成员变量或方法就可以使用关键字super，比如：<code>super.x</code>,<code>super.play()</code>,就是被子类隐藏的父类的成员变量x和方法play()。</p>
+<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><p>一个类可以实现多个接口,使用关键字interface来定义一个接口。接口的定义分为接口的声明和接口体。</p>
+<h2 id="接口的声明与使用"><a href="#接口的声明与使用" class="headerlink" title="接口的声明与使用"></a>接口的声明与使用</h2><h3 id="接口声明"><a href="#接口声明" class="headerlink" title="接口声明"></a>接口声明</h3><p>接口通过使用关键自interface来声明.格式：<code>interface 接口的名字</code></p>
+<h3 id="接口体"><a href="#接口体" class="headerlink" title="接口体"></a>接口体</h3><p>接口体中包含常量定义和方法定义两部分。接口体中只进行方法的声明,不许提供方法的实现,所以,方法的定义没有方法体,且用分号结尾。如<br><figure class="highlight plaintext"><figcaption><span>A</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    final int MAX=100;</span><br><span class="line">    void add();</span><br><span class="line">    float sum(float x ,float y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="接口的使用"><a href="#接口的使用" class="headerlink" title="接口的使用"></a>接口的使用</h3><p>一个类通过使用关键字implements声明自己使用一个或多个接口。如果使用多个接口, 用逗号隔开接口名。如：<code>class Dog extends Animal implements Eatable,Sleepable</code>。如果一个类使用了某个接口,那么这个类必须实现该接口的所有方法,即为这些方法提供方法体。在类中实现接口的方法时,方法的名字,返回类型,参数个数及类型必须与接口中的完全一致。接口中的方法被默认是public的,所以类在实现接口方法时,一定要用public来修饰。如果接口的方法的返回类型如果不是void的,那么在类中实现该接口方法时,方法体至少要有一个return语句。通过引入包可以使用Java提供的接口，也可以自己定义接口。</p>
+<h3 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a>接口回调</h3><p>接口回调是指可以把实现某一接口的类创建的对象的引用赋给该接口声明的接口变量中。那么该接口变量就可以调用被类实现的接口中的方法。当接口变量调用被类实现的接口中的方法时,就是通知相应的对象调用接口的方法.</p>
+<h1 id="jar文件"><a href="#jar文件" class="headerlink" title="jar文件"></a>jar文件</h1><h2 id="将应用程序压缩为jar文件"><a href="#将应用程序压缩为jar文件" class="headerlink" title="将应用程序压缩为jar文件"></a>将应用程序压缩为jar文件</h2><p>我们可以把java应用程序中涉及到的类压缩成一个JAR文件,然后使用java解释器使用参数-jar或用鼠标双击该文件执行这个压缩文件，命令如下：<code>java -jar XXX.jar</code>生成一个Jar文件的步骤如下:</p>
+<ul>
+<li>首先用文本编辑器编写一个清单文件(.mf)内容如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Manifest-Version: 1.0</span><br><span class="line">Main-Class: A(主类名称)</span><br></pre></td></tr></table></figure>
+随后保存该文件到目标文件夹（类所在的文件夹）。<br><em>“Manifest- Version”和 “1.0”之间,”Main-Class”和主类”A”之间必须有且只有一个空格。</em></li>
+<li>生成 JAR 文件，命令为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jar cfm XXX.jar(要生成的jar文件名) XXX.mf(对应清单名) XXX.class XXXX.class(所用类名)</span><br></pre></td></tr></table></figure>
+其中参数c表示要生成一个新的JAR文件;f表示要生成的JAR文件的名字;m表示文件清单文件的名字。</li>
+</ul>
+<h2 id="将类压缩成-jar-文件"><a href="#将类压缩成-jar-文件" class="headerlink" title="将类压缩成 jar 文件"></a>将类压缩成 jar 文件</h2><p>我们以Test1.class 和 Test2.class为例压缩成B.jar。</p>
+<ul>
+<li>首先编写一个清单文件second.mf并保存目标文件夹:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Manifest-Version: 1.0</span><br><span class="line">Class: Test1 Test2</span><br></pre></td></tr></table></figure></li>
+<li>生成JAR文件:<code>cfm B.jar second.mf  Test1.class Test2.class</code></li>
+</ul>
+<h2 id="更新-查看-jar-文件"><a href="#更新-查看-jar-文件" class="headerlink" title="更新,查看 jar 文件"></a>更新,查看 jar 文件</h2><ul>
+<li><code>jar tf 文件名.jar</code>——查看一个 JAR 文件中的内容</li>
+<li><code>jar xf 文件名.jar</code>解压 JAR 文件</li>
+<li><code>jar uf JAR文件名.jar 需更新的文件名</code>更新一个 JAR 文件,将一个新的文件增加到XXX.jar中 </li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/04/JAVA-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E8%AF%AD%E5%8F%A5-%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -168,10 +340,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-08-04 20:02:16 / Modified: 21:43:03" itemprop="dateCreated datePublished" datetime="2023-08-04T20:02:16+08:00">2023-08-04</time>
+              <time title="Created: 2023-08-04 20:02:16" itemprop="dateCreated datePublished" datetime="2023-08-04T20:02:16+08:00">2023-08-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-06 00:37:29" itemprop="dateModified" datetime="2023-08-06T00:37:29+08:00">2023-08-06</time>
+              </span>
 
           
 
@@ -269,7 +447,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-03 21:11:39" itemprop="dateModified" datetime="2023-08-03T21:11:39+08:00">2023-08-03</time>
+                <time title="Modified: 2023-08-06 00:36:03" itemprop="dateModified" datetime="2023-08-06T00:36:03+08:00">2023-08-06</time>
               </span>
 
           
@@ -346,7 +524,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-03 21:12:29" itemprop="dateModified" datetime="2023-08-03T21:12:29+08:00">2023-08-03</time>
+                <time title="Modified: 2023-08-06 00:37:15" itemprop="dateModified" datetime="2023-08-06T00:37:15+08:00">2023-08-06</time>
               </span>
 
           
@@ -412,7 +590,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-04 18:58:44" itemprop="dateModified" datetime="2023-08-04T18:58:44+08:00">2023-08-04</time>
+                <time title="Modified: 2023-08-06 00:37:36" itemprop="dateModified" datetime="2023-08-06T00:37:36+08:00">2023-08-06</time>
               </span>
 
           
@@ -702,7 +880,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-03 21:11:11" itemprop="dateModified" datetime="2023-08-03T21:11:11+08:00">2023-08-03</time>
+                <time title="Modified: 2023-08-06 00:35:37" itemprop="dateModified" datetime="2023-08-06T00:35:37+08:00">2023-08-06</time>
               </span>
 
           
@@ -910,7 +1088,7 @@ P(B_i|A)=P(AB_i)/P(A)=P(B_i)P(A|B_i)/\sum_{j}P(B_j)P(A|B_j)</script><p>这个公
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-03 21:12:20" itemprop="dateModified" datetime="2023-08-03T21:12:20+08:00">2023-08-03</time>
+                <time title="Modified: 2023-08-06 00:37:07" itemprop="dateModified" datetime="2023-08-06T00:37:07+08:00">2023-08-06</time>
               </span>
 
           
@@ -978,7 +1156,7 @@ P(B_i|A)=P(AB_i)/P(A)=P(B_i)P(A|B_i)/\sum_{j}P(B_j)P(A|B_j)</script><p>这个公
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-03 21:11:31" itemprop="dateModified" datetime="2023-08-03T21:11:31+08:00">2023-08-03</time>
+                <time title="Modified: 2023-08-06 00:35:56" itemprop="dateModified" datetime="2023-08-06T00:35:56+08:00">2023-08-06</time>
               </span>
 
           
@@ -1069,7 +1247,7 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-03 21:12:10" itemprop="dateModified" datetime="2023-08-03T21:12:10+08:00">2023-08-03</time>
+                <time title="Modified: 2023-08-06 00:36:38" itemprop="dateModified" datetime="2023-08-06T00:36:38+08:00">2023-08-06</time>
               </span>
 
           
@@ -1134,75 +1312,6 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
 <p>返回：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">next_sibling</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-middle&quot;&gt;&lt;/span&gt;</span><br><span class="line">next_siblings</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;toggle-line toggle-line-middle&quot;&gt;&lt;/span&gt;, &#x27;\n&#x27;, &lt;span class=&quot;toggle-line toggle-line-last&quot;&gt;&lt;/span&gt;, &#x27;\n&#x27;]</span><br><span class="line">previous_sibling</span><br><span class="line">None</span><br><span class="line">previous_siblings</span><br><span class="line">[&#x27;\n&#x27;]</span><br></pre></td></tr></table></figure></li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/24/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests%E5%BA%93%E5%AE%9E%E6%88%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/24/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests%E5%BA%93%E5%AE%9E%E6%88%98/" class="post-title-link" itemprop="url">python网络爬虫requests库实战 笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-07-24 14:31:27" itemprop="dateCreated datePublished" datetime="2023-07-24T14:31:27+08:00">2023-07-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-03 21:11:55" itemprop="dateModified" datetime="2023-08-03T21:11:55+08:00">2023-08-03</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="爬取京东商品页面"><a href="#爬取京东商品页面" class="headerlink" title="爬取京东商品页面"></a>爬取京东商品页面</h1><p>首先我们选择任意一个商品链接进行爬取，查看状态码：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url=&quot;https://item.jd.com/10025299008302.html&quot;</span><br><span class="line">r=requests.get(url)</span><br><span class="line">print(r.status_code)</span><br></pre></td></tr></table></figure><br>得到结果：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">200</span><br></pre></td></tr></table></figure><br>由此可见爬取成功。随后我们查看编码：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(r.encoding)</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">utf-8</span><br></pre></td></tr></table></figure><br>非默认编码，说明网站提供了编码格式。随后输出爬取内容（前1000位）：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(r.text[:1000])</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf8&quot; version=&#x27;1&#x27;/&gt;</span><br><span class="line">    &lt;title&gt;京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！&lt;/title&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes&quot;/&gt;</span><br><span class="line">    &lt;meta name=&quot;description&quot;</span><br><span class="line">          content=&quot;京东JD.COM-专业的综合网上购物商城，为您提供正品低价的购物选择、优质便捷的服务体验。商品来自全球数十万品牌商家，囊括家电、手机、电脑、服装、居家、母婴、美妆、个护、食品、生鲜等丰富品类，满足各种购物需求。&quot;/&gt;</span><br><span class="line">    &lt;meta name=&quot;Keywords&quot; content=&quot;网上购物,网上商城,家电,手机,电脑,服装,居家,母婴,美妆,个护,食品,生鲜,京东&quot;/&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        window.point = &#123;&#125;</span><br><span class="line">        window.point.start = new Date().getTime()</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;//static.360buyimg.com&quot;/&gt;</span><br><span class="line">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;//misc.360buyimg.com&quot;/&gt;</span><br><span class="line">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;//img10.360buyimg.com&quot;/&gt;</span><br><span class="line">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;//img11.360buyimg.com&quot;/&gt;</span><br><span class="line">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;//img12.360buyimg.com&quot;/&gt;</span><br><span class="line">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;//img13.360buyimg.com&quot;/&gt;</span><br><span class="line">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;//img1</span><br></pre></td></tr></table></figure><br>由此可得爬取的全代码前1000位）为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url=&quot;https://item.jd.com/10025299008302.html&quot;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    r.raise_for_status()</span><br><span class="line">    r.encoding = r.apparent_encoding</span><br><span class="line">    print(r.text[:1000])</span><br><span class="line">except:</span><br><span class="line">    print(&#x27;ERROR!!!&#x27;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="亚马逊商品页面的爬取"><a href="#亚马逊商品页面的爬取" class="headerlink" title="亚马逊商品页面的爬取"></a>亚马逊商品页面的爬取</h1><p>首先我们选择任意一个商品链接进行爬取，查看状态码和编码信息：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url=&quot;https://www.amazon.cn/dp/B09PR8KNJK?ref_=Oct_DLandingS_D_d79c7de5_5&quot;</span><br><span class="line">r=requests.get(url)</span><br><span class="line">print(r.status_code)</span><br><span class="line">print(r.encoding)</span><br></pre></td></tr></table></figure><br>得到结果：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">503</span><br><span class="line">ISO-8859-1</span><br></pre></td></tr></table></figure><br>发现爬取出现错误，编码为默认状态，无法阅读爬到的结果，所以修改编码格式后查看爬取的结果：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r.encoding=r.apparent_encoding</span><br><span class="line">print(r.text)</span><br></pre></td></tr></table></figure><br>得到结果：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">        To discuss automated access to Amazon data please contact api-services-support@amazon.com.</span><br><span class="line">        For information about migrating to our APIs refer to our Marketplace APIs at https://developer.amazonservices.com.cn/index.html/ref=rm_5_sv, or our Product Advertising API at https://associates.amazon.cn/gp/advertising/api/detail/main.html/ref=rm_5_ac for advertising use cases.</span><br><span class="line">--&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">      &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;</span><br><span class="line">      &lt;title&gt;亚马逊&lt;/title&gt;</span><br><span class="line">   &lt;body style=&quot;text-align:center;&quot;&gt;</span><br><span class="line">      &lt;br&gt;</span><br><span class="line">      &lt;div style=&quot;width:600px;margin:0 auto;text-align:left;&quot;&gt;</span><br><span class="line">         &lt;h2&gt;意外错误&lt;/h2&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;br&gt;</span><br><span class="line">      &lt;div style=&quot;width:500px;margin:0 auto;text-align:left;&quot;&gt;&lt;font color=&quot;red&quot;&gt;抱歉，由于程序执行时，遇到意外错误，您刚刚操作没有执行成功，请稍后重试。或将此错误报告给我们的客服中心：&lt;a href=&quot;mailto:service_bj@cs.amazon.cn&quot;&gt;service_bj@cs.amazon.cn&lt;/a&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;推荐您&lt;a href=&quot;javascript:history.back(1)&quot;&gt;返回上一页&lt;/a&gt;，确认您的操作无误后，再继续其他操作。&lt;br&gt;您可以通过亚马逊&lt;a href=&quot;https://www.amazon.cn/help/ref=cs_503_link/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;帮助中心&lt;/a&gt;，获得更多的帮助。&lt;br&gt;&lt;/div&gt;</span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>由此可见错误出现在API上，可能是由于网站认出了正在爬取网站信息的是一个爬虫。我们通过查看request中的headers来检查我们发给亚马逊的头部信息：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(r.request.headers)</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;User-Agent&#x27;: &#x27;python-requests/2.30.0&#x27;, &#x27;Accept-Encoding&#x27;: &#x27;gzip, deflate&#x27;, &#x27;Accept&#x27;: &#x27;*/*&#x27;, &#x27;Connection&#x27;: &#x27;keep-alive&#x27;&#125;</span><br></pre></td></tr></table></figure><br>由此User-Agent条可见，我们告诉网站这次访问是由一个requests库引起的，因此修改头部文件，将爬取的信息改为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kv=&#123;&#x27;user-agent&#x27;:&#x27;Mozillla/5.0&#x27;&#125;</span><br><span class="line">r=requests.get(url,headers=kv)</span><br></pre></td></tr></table></figure><br>再次查看状态码和头部信息：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(r.status_code)</span><br><span class="line">print(r.request.headers)</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">200</span><br><span class="line">&#123;&#x27;user-agent&#x27;: &#x27;Mozillla/5.0&#x27;, &#x27;Accept-Encoding&#x27;: &#x27;gzip, deflate&#x27;, &#x27;Accept&#x27;: &#x27;*/*&#x27;, &#x27;Connection&#x27;: &#x27;keep-alive&#x27;&#125;</span><br></pre></td></tr></table></figure><br>可以得出在更换浏览器头后可以正常爬取，输出爬取的全代码（前1000位）：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(r.text[:1000])</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;&lt;html lang=&quot;zh-cn&quot; class=&quot;a-no-js&quot; data-19ax5a9jf=&quot;dingo&quot;&gt;&lt;!-- sp:feature:head-start --&gt;</span><br><span class="line">&lt;head&gt;&lt;script&gt;var aPageStart = (new Date()).getTime();&lt;/script&gt;&lt;meta charset=&quot;utf-8&quot;/&gt;</span><br><span class="line">&lt;!-- sp:end-feature:head-start --&gt;</span><br><span class="line">&lt;!-- sp:feature:csm:head-open-part1 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&#x27;text/javascript&#x27;&gt;var ue_t0=ue_t0||+new Date();&lt;/script&gt;</span><br><span class="line">&lt;!-- sp:end-feature:csm:head-open-part1 --&gt;</span><br><span class="line">&lt;!-- sp:feature:cs-optimization --&gt;</span><br><span class="line">&lt;meta http-equiv=&#x27;x-dns-prefetch-control&#x27; content=&#x27;on&#x27;&gt;</span><br><span class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;https://images-cn.ssl-images-amazon.com&quot;&gt;</span><br><span class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;https://m.media-amazon.com&quot;&gt;</span><br><span class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;https://completion.amazon.com&quot;&gt;</span><br><span class="line">&lt;!-- sp:end-feature:cs-optimization --&gt;</span><br><span class="line">&lt;!-- sp:feature:csm:head-open-part2 --&gt;</span><br><span class="line">&lt;script type=&#x27;text/javascript&#x27;&gt;</span><br><span class="line">window.ue_ihb = (window.ue_ihb || window.ueinit || 0) + 1;</span><br><span class="line">if (window.ue_ihb === 1) &#123;</span><br><span class="line"></span><br><span class="line">var ue_csm = window,</span><br><span class="line">    ue_hob = +new Date();</span><br><span class="line">(function(d)&#123;var e=d.ue=d.ue||&#123;&#125;,f=Date.now||function()&#123;return+new Date&#125;;e.d=function</span><br></pre></td></tr></table></figure><br>由此可得爬取的全代码（前1000位）为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url=&quot;https://www.amazon.cn/dp/B09PR8KNJK?ref_=Oct_DLandingS_D_d79c7de5_5&quot;</span><br><span class="line">kv=&#123;&#x27;user-agent&#x27;:&#x27;Mozillla/5.0&#x27;&#125;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    r=requests.get(url,headers=kv)</span><br><span class="line">    r.raise_for_status()</span><br><span class="line">    r.encoding=r.apparent_encoding</span><br><span class="line">    print(r.text[:1000])</span><br><span class="line">except:</span><br><span class="line">    print(&#x27;ERROR!!!&#x27;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="360搜索关键词"><a href="#360搜索关键词" class="headerlink" title="360搜索关键词"></a>360搜索关键词</h1><p>首先，我们知道360的搜索接口是：  <a target="_blank" rel="noopener" href="https://www.so.com/s?q=keyword">https://www.so.com/s?q=keyword</a><br>只要替换掉keyword就可以向搜索引擎提交关键词了，因此我们要用requests库构建这样的URL：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">kv=&#123;&#x27;q&#x27;:&#x27;first&#x27;&#125;    # 关键词对应键值对</span><br><span class="line">url=&quot;https://www.so.com/s&quot;</span><br><span class="line">r=requests.get(url,params=kv)</span><br></pre></td></tr></table></figure><br>查看状态码和编码格式：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(r.status_code)</span><br><span class="line">print(r.encoding)</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">200</span><br><span class="line">UTF-8</span><br></pre></td></tr></table></figure><br>查看给360的URL:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(r.request.url)</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.so.com/s?q=first</span><br></pre></td></tr></table></figure><br>由此可见，kv中的键是接口前标识，值是接口后内容。输出获取代码的长度：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(len(r.text))</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">433821</span><br></pre></td></tr></table></figure><br>由此可得爬取的全代码（总长度）为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">kv=&#123;&#x27;q&#x27;:&#x27;first&#x27;&#125;</span><br><span class="line">url=&quot;https://www.so.com/s&quot;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    r=requests.get(url,params=kv)</span><br><span class="line">    r.raise_for_status()</span><br><span class="line">    print(len(r.text))</span><br><span class="line">except:</span><br><span class="line">    print(&#x27;ERROR!!!&#x27;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="图片的爬取与储存"><a href="#图片的爬取与储存" class="headerlink" title="图片的爬取与储存"></a>图片的爬取与储存</h1><p>现在我要爬取这样一张图片 <img src="/2023/07/24/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests%E5%BA%93%E5%AE%9E%E6%88%98/yuantu.png" alt="yuantu"><br>这张图片的地址是：<a target="_blank" rel="noopener" href="https://t7.baidu.com/it/u=1595072465,3644073269&amp;fm=193&amp;f=GIF">https://t7.baidu.com/it/u=1595072465,3644073269&amp;fm=193&amp;f=GIF</a><br>首先，我们来确定保存的路径，并对图片进行爬取，查看它的状态码：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">path=&#x27;Z:/blog/source/_posts/python网络爬虫requests库实战/test.jpg&#x27;</span><br><span class="line">url=&quot;https://t7.baidu.com/it/u=1595072465,3644073269&amp;fm=193&amp;f=GIF&quot;</span><br><span class="line">r=requests.get(url)</span><br><span class="line">print(r.status_code)</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">200</span><br></pre></td></tr></table></figure><br>随后我们来保存这个图片文件（二进制文件）：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with open(path, &#x27;wb&#x27;) as f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure><br>可以看到结果：<img src="/2023/07/24/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests%E5%BA%93%E5%AE%9E%E6%88%98/result.png" alt="result"><img src="/2023/07/24/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests%E5%BA%93%E5%AE%9E%E6%88%98/test.jpg" alt="test"><br>可以得到爬取的全代码为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import os.path</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line">root=&#x27;Z:/blog/source/_posts/python网络爬虫requests库实战/&#x27;</span><br><span class="line">url=&quot;https://t7.baidu.com/it/u=1595072465,3644073269&amp;fm=193&amp;f=GIF&quot;</span><br><span class="line">name=&#x27;test.jpg&#x27;</span><br><span class="line">path=root+name</span><br><span class="line">try:</span><br><span class="line">    if not os.path.exists(root):</span><br><span class="line">        os.mkdir(root)</span><br><span class="line">    if not os.path.exists(path):</span><br><span class="line">        r=requests.get(url)</span><br><span class="line">        r.raise_for_status()</span><br><span class="line">        with open(path, &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(r.content)</span><br><span class="line">            f.close()</span><br><span class="line">            print(&#x27;FINISH&#x27;)</span><br><span class="line">    else:</span><br><span class="line">        print(&#x27;存在&#x27;)</span><br><span class="line">except:</span><br><span class="line">    print(&#x27;ERROR!!!&#x27;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="IP地址归属地的自动查询"><a href="#IP地址归属地的自动查询" class="headerlink" title="IP地址归属地的自动查询"></a>IP地址归属地的自动查询</h1><p>可以查询ip地址的网址为：<a target="_blank" rel="noopener" href="https://ip138.com/">https://ip138.com/</a> ，通过查询一个随机ip的方式，我们得到了其搜索接口为：<a target="_blank" rel="noopener" href="https://ip138.com/iplookup.php?ip=">https://ip138.com/iplookup.php?ip=</a> <strong>ipaddress</strong> ，替换掉ipaddress就可以进行查询了，这里我们拿一个随机生成的ip 124.253.96.108 举例，由此我们可以编写代码：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url=&quot;https://ip138.com/iplookup.php?&quot;</span><br><span class="line">kv=&#123;&#x27;ip&#x27;:&#x27;124.253.96.108&#x27;&#125;</span><br><span class="line">header=&#123;&#x27;user-agent&#x27;:&#x27;PostmanRuntime/7.32.3&#x27;,&#x27;Connection&#x27;:&#x27;keep-alive&#x27;&#125;</span><br><span class="line"></span><br><span class="line">r=requests.get(url,headers=header,params=kv,timeout=1000)</span><br></pre></td></tr></table></figure><br>查看状态码和文字编码：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(r.status_code)</span><br><span class="line">print(r.encoding)</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">200</span><br><span class="line">UTF-8</span><br></pre></td></tr></table></figure><br>查看5000到5500个字节：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">pan&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</span><br><span class="line">&lt;/tfoot&gt;</span><br><span class="line">&lt;tbody&gt;</span><br><span class="line">&lt;tr class=&quot;active&quot;&gt;</span><br><span class="line">&lt;td class=&quot;th&quot;&gt;ASN归属地&lt;/td&gt;</span><br><span class="line">&lt;td&gt;&lt;span&gt;印度旁遮普&lt;/span&gt;&lt;/td&gt;</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;/tbody&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">document.getElementById(&#x27;getmore&#x27;).addEventListener(&#x27;click&#x27;,function()&#123;</span><br><span class="line">var $parent = this.parentNode;</span><br><span class="line">$parent.innerHTML = &#x27;&lt;div class=&quot;link&quot;&gt;\</span><br><span class="line">&lt;a href=&quot;https://www.cnnic.net.cn/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;CNNIC&lt;/a&gt;\</span><br><span class="line">&lt;a href=&quot;https://www.apnic.net/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;APNIC&lt;/a&gt;\</span><br><span class="line">&lt;a href=&quot;https:</span><br></pre></td></tr></table></figure><br>由此可得查询ip地址的全代码：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url=&quot;https://ip138.com/iplookup.php?&quot;</span><br><span class="line">kv=&#123;&#x27;ip&#x27;:&#x27;124.253.96.108&#x27;&#125;</span><br><span class="line">header=&#123;&#x27;user-agent&#x27;:&#x27;PostmanRuntime/7.32.3&#x27;,&#x27;Connection&#x27;:&#x27;keep-alive&#x27;&#125;</span><br><span class="line">try:</span><br><span class="line">    r=requests.get(url,headers=header,params=kv,timeout=1000)</span><br><span class="line">    r.raise_for_status()</span><br><span class="line">    print(r.text[5000:5500])</span><br><span class="line">except:</span><br><span class="line">    print(&#x27;ERROR!!!&#x27;)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -1287,12 +1396,12 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
