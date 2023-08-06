@@ -145,6 +145,121 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/25/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABbeautifulsoup%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/25/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABbeautifulsoup%E5%BA%93/" class="post-title-link" itemprop="url">python网络爬虫Beautiful Soup库 笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-25 15:37:35" itemprop="dateCreated datePublished" datetime="2023-07-25T15:37:35+08:00">2023-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-06 00:36:38" itemprop="dateModified" datetime="2023-08-06T00:36:38+08:00">2023-08-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Beautiful-Soup库的理解"><a href="#Beautiful-Soup库的理解" class="headerlink" title="Beautiful Soup库的理解"></a>Beautiful Soup库的理解</h1><p>Beautiful Soup库是解析、遍历、维护“标签树”的功能库。<br>标签包含看宇哥成对出现的名称和0个或多个属性，每个属性都有它的个性和它的值，是键值对构成<br>Beautiful Soup对应一个HTML/XML文档的全部内容  </p>
+<h1 id="Beautiful-Soup库可以用的解析器"><a href="#Beautiful-Soup库可以用的解析器" class="headerlink" title="Beautiful Soup库可以用的解析器"></a>Beautiful Soup库可以用的解析器</h1><ul>
+<li><p>bs4的HTML解析器:<br>对应代码<br><code>BeautifulSoup(mk,&#39;html.parser&#39;)</code><br>条件：安装bs4库  </p>
+</li>
+<li><p>lxml的HTML解析器:<br>对应代码<br><code>BeautifulSoup(mk,&#39;lxml&#39;)</code><br>条件：安装lxml库  </p>
+</li>
+<li><p>lxml的XML解析器<br>对应代码<br><code>BeautifulSoup(mk,&#39;xml&#39;)</code><br>条件：安装lxml库  </p>
+</li>
+<li><p>html5lib的解析器<br>对应代码<br><code>BeautifulSoup(mk,&#39;html5lib&#39;)</code><br>条件：安装html5lib库  </p>
+</li>
+</ul>
+<h1 id="Beautiful-Soup库的基本元素"><a href="#Beautiful-Soup库的基本元素" class="headerlink" title="Beautiful Soup库的基本元素"></a>Beautiful Soup库的基本元素</h1><ul>
+<li>Tag——标签，最基本的信息组织单元，以<>和</>标明开头和结尾</li>
+<li>Name——标签的名字，&lt; p&gt; …&lt; p/&gt;的名字是p，格式：&lt; tag&gt;.name</li>
+<li>Attributes——标签的属性，字典形式，格式：&lt; tag&gt;.attrs</li>
+<li>NavigableString——标签内非属性字符串，<> …</>中字符串，格式：&lt; tag&gt;.string</li>
+<li>Comment——标签内字符串的注释部分，一种特殊的Comment类型<h1 id="获得Tag的方法"><a href="#获得Tag的方法" class="headerlink" title="获得Tag的方法"></a>获得Tag的方法</h1>以本博客的主页为例：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=&quot;https://sophia7414.github.io/&quot;</span><br><span class="line">r=requests.get(url)</span><br><span class="line">soup=BeautifulSoup(r.text,&#x27;html.parser&#x27;)</span><br></pre></td></tr></table></figure>
+输出某个标签内容（以title为例）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(soup.title)</span><br></pre></td></tr></table></figure>
+输出（只会输出第一个标签）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;title&gt;Hexo&lt;/title&gt;</span><br></pre></td></tr></table></figure>
+输出某个标签的名字（以a为例）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(soup.a.name)</span><br></pre></td></tr></table></figure>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a</span><br></pre></td></tr></table></figure>
+输出某个标签的上一级标签的名字（以a为例）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(soup.a.parent.name)</span><br></pre></td></tr></table></figure>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div</span><br></pre></td></tr></table></figure>
+输出某个标签的属性（以a为例）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag=soup.a</span><br><span class="line">print(tag.attrs)</span><br></pre></td></tr></table></figure>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;href&#x27;: &#x27;/&#x27;, &#x27;class&#x27;: [&#x27;brand&#x27;], &#x27;rel&#x27;: [&#x27;start&#x27;]&#125;</span><br></pre></td></tr></table></figure>
+输出某个标签的某一特定属性属性（以a的class为例）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag=soup.a</span><br><span class="line">print(tag.attrs[&#x27;class&#x27;])</span><br></pre></td></tr></table></figure>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;brand&#x27;]</span><br></pre></td></tr></table></figure>
+查看标签的类型（以a为例）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tag=soup.a</span><br><span class="line">print(type(tag))</span><br></pre></td></tr></table></figure>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#x27;bs4.element.Tag&#x27;&gt;</span><br></pre></td></tr></table></figure>
+输出某个标签内非属性字符串（以title为例）：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(soup.title.string)</span><br></pre></td></tr></table></figure>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hexo</span><br></pre></td></tr></table></figure>
+查看其类型：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(type(soup.title.string))</span><br></pre></td></tr></table></figure>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#x27;bs4.element.NavigableString&#x27;&gt;</span><br></pre></td></tr></table></figure>
+最后，我们通过一个新的例子来查看comment类型：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">soup=BeautifulSoup(&quot;&lt;b&gt;&lt;!--This is a comment--&gt;&lt;/b&gt;&lt;p&gt;This is not a comment&lt;/p&gt;&quot;,&#x27;html.parser&#x27;)</span><br><span class="line">print(soup.p.string)</span><br><span class="line">print(type(soup.p.string))</span><br><span class="line">print(soup.b.string)</span><br><span class="line">print(type(soup.b.string))</span><br></pre></td></tr></table></figure>
+输出：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">This is not a comment</span><br><span class="line">&lt;class &#x27;bs4.element.NavigableString&#x27;&gt;</span><br><span class="line">This is a comment</span><br><span class="line">&lt;class &#x27;bs4.element.Comment&#x27;&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="基于Beautiful-Soup库的HTML遍历方法"><a href="#基于Beautiful-Soup库的HTML遍历方法" class="headerlink" title="基于Beautiful Soup库的HTML遍历方法"></a>基于Beautiful Soup库的HTML遍历方法</h1><h2 id="HTML的基本格式"><a href="#HTML的基本格式" class="headerlink" title="HTML的基本格式"></a>HTML的基本格式</h2><img src="/2023/07/25/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABbeautifulsoup%E5%BA%93/html格式.png" alt="基本格式"><h2 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h2></li>
+<li><p>下行遍历：<br>方法1：.contents，将所有tag的子节点存入列表<br>方法2：.children，与.contents类似，用于循环遍历子节点<br>方法3：.descendants，子孙节点的迭代类型，包含所有子孙节点，用于循环遍历<br>依然以上次的网站为例，代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=&quot;https://sophia7414.github.io/&quot;</span><br><span class="line">r=requests.get(url)</span><br><span class="line">soup=BeautifulSoup(r.text,&#x27;html.parser&#x27;)</span><br><span class="line">tag=soup.a</span><br><span class="line">print(tag)</span><br><span class="line">print(&#x27;contents:&#x27;)</span><br><span class="line">print(tag.contents)</span><br><span class="line">print(&#x27;children:&#x27;)</span><br><span class="line">print(list(tag.children))   # 这里返回的是一个迭代器对象</span><br><span class="line">print(&#x27;descendants&#x27;)</span><br><span class="line">print(list(tag.descendants))    # 这里返回一个生成器对象</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;a class=&quot;brand&quot; href=&quot;/&quot; rel=&quot;start&quot;&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">contents:</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &#x27;\n&#x27;, &lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;, &#x27;\n&#x27;, &lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &#x27;\n&#x27;]</span><br><span class="line">children:</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &#x27;\n&#x27;, &lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;, &#x27;\n&#x27;, &lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &#x27;\n&#x27;]</span><br><span class="line">descendants</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &lt;i&gt;&lt;/i&gt;, &#x27;\n&#x27;, &lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;, &#x27;Hexo&#x27;, &#x27;\n&#x27;, &lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;, &lt;i&gt;&lt;/i&gt;, &#x27;\n&#x27;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上行遍历<br>方法1：.parent，返回节点的父标签<br>方法2：.parents，返回节点的先辈标签的迭代类型，用于循环遍历先辈节点<br>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print(&#x27;parent&#x27;)</span><br><span class="line">print(tag.parent)</span><br><span class="line">print(&#x27;parents:&#x27;)</span><br><span class="line">lis=list(tag.parents)   # 这里返回的是一个生成器对象</span><br><span class="line">print(lis[0],lis[1])</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">parent</span><br><span class="line">&lt;div class=&quot;site-meta&quot;&gt;</span><br><span class="line">&lt;a class=&quot;brand&quot; href=&quot;/&quot; rel=&quot;start&quot;&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">parents:</span><br><span class="line">&lt;div class=&quot;site-meta&quot;&gt;</span><br><span class="line">&lt;a class=&quot;brand&quot; href=&quot;/&quot; rel=&quot;start&quot;&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;/div&gt; &lt;div class=&quot;site-brand-container&quot;&gt;</span><br><span class="line">&lt;div class=&quot;site-nav-toggle&quot;&gt;</span><br><span class="line">&lt;div aria-label=&quot;Toggle navigation bar&quot; class=&quot;toggle&quot;&gt;</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-first&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-middle&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-last&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;site-meta&quot;&gt;</span><br><span class="line">&lt;a class=&quot;brand&quot; href=&quot;/&quot; rel=&quot;start&quot;&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-before&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;h1 class=&quot;site-title&quot;&gt;Hexo&lt;/h1&gt;</span><br><span class="line">&lt;span class=&quot;logo-line-after&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;site-nav-right&quot;&gt;</span><br><span class="line">&lt;div class=&quot;toggle popup-trigger&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>平行遍历(只在同一个父节点下)<br>方法1：.next_sibling，返回按照HTML文本顺序的下一个平行节点标签<br>方法2：.previous_sibling，返回按照HTML文本顺序的下一个平行节点标签<br>方法3：.next_siblings，迭代类型，返回按照HTML文本顺序的后续所有平行节点标签<br>方法4：.previous_siblings，迭代类型，返回按照HTML文本顺序的前续所有平行节点标签<br>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tag=soup.span</span><br><span class="line">print(&#x27;next_sibling&#x27;)</span><br><span class="line">print(tag.next_sibling.next_sibling)</span><br><span class="line">print(&#x27;next_siblings&#x27;)</span><br><span class="line">print(list(tag.next_siblings))    # 这里返回的是一个生成器对象</span><br><span class="line">print(&#x27;previous_sibling&#x27;)</span><br><span class="line">print(tag.previous_sibling.previous_sibling)</span><br><span class="line">print(&#x27;previous_siblings&#x27;)</span><br><span class="line">print(list(tag.previous_siblings))</span><br></pre></td></tr></table></figure>
+<p>返回：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">next_sibling</span><br><span class="line">&lt;span class=&quot;toggle-line toggle-line-middle&quot;&gt;&lt;/span&gt;</span><br><span class="line">next_siblings</span><br><span class="line">[&#x27;\n&#x27;, &lt;span class=&quot;toggle-line toggle-line-middle&quot;&gt;&lt;/span&gt;, &#x27;\n&#x27;, &lt;span class=&quot;toggle-line toggle-line-last&quot;&gt;&lt;/span&gt;, &#x27;\n&#x27;]</span><br><span class="line">previous_sibling</span><br><span class="line">None</span><br><span class="line">previous_siblings</span><br><span class="line">[&#x27;\n&#x27;]</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/24/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests%E5%BA%93%E5%AE%9E%E6%88%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -632,7 +747,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
