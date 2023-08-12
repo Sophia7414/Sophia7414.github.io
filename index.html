@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-12 15:07:16" itemprop="dateModified" datetime="2023-08-12T15:07:16+08:00">2023-08-12</time>
+                <time title="Modified: 2023-08-12 15:09:47" itemprop="dateModified" datetime="2023-08-12T15:09:47+08:00">2023-08-12</time>
               </span>
 
           
@@ -292,7 +292,7 @@ F(x)=
 (x-a)/(b-a),a<x<b\\
 1,x≥b
 \end{cases}</script><p>均匀分布的一个好处是：借助于它容易实现对分布的模拟，比如以某种方法产生“随机数”，如取n足够大，而独立地产生n个随机数字a₁,…,an时，X=0·a₁a₂…an就很接近于[0,1]均匀分布R(0,1)。<br>对一般分布函数F(x),若F(x)处处连续且严格上升，则其反函数G存在，若X～R(0,1),则G(X)～F。用上述模拟方法产生X的模拟值后,代入G中即得分布F的模拟值。</p>
-<h1 id="各公式的推导以及证明"><a href="#各公式的推导以及证明" class="headerlink" title="各公式的推导以及证明"></a>各公式的推导以及证明</h1><h2 id="二项分布-1"><a href="#二项分布-1" class="headerlink" title="二项分布"></a>二项分布</h2><p>设某事件A在一次试验中发生的概率为p，现把这试验独立地重复n次，以X记A在这n次试验中发生的次数.则X可取0,1, … ,n等值。为确定其概率分布，考虑事件{X=i}。要这个事件发生，必须在这n次试验中，有i个A,n-i个$\overline{A}$。每个A有概率p，n次试验独立，每个这样的原始结果序列发生的概率为 $p<em>i(1-p)</em>{n-i}$ 。因为在n个位置中A可以占据任何i个位置，故一共有 $C_n^i$ 种可能。由此得出:</p>
+<h1 id="各公式的推导以及证明"><a href="#各公式的推导以及证明" class="headerlink" title="各公式的推导以及证明"></a>各公式的推导以及证明</h1><h2 id="二项分布-1"><a href="#二项分布-1" class="headerlink" title="二项分布"></a>二项分布</h2><p>设某事件A在一次试验中发生的概率为p，现把这试验独立地重复n次，以X记A在这n次试验中发生的次数.则X可取0,1, … ,n等值。为确定其概率分布，考虑事件{X=i}。要这个事件发生，必须在这n次试验中，有i个A,n-i个$\overline{A}$。每个A有概率p，n次试验独立，每个这样的原始结果序列发生的概率为$p_i$$(1-p)^{n-i}$。因为在n个位置中A可以占据任何i个位置，故一共有$C_n^i$种可能。由此得出:</p>
 <script type="math/tex; mode=display">
 p_i=b(i;n,p)=p^i(1-p)^{n-i}C_n^i(i=0,1, …,n)</script><h2 id="波哇松分布-1"><a href="#波哇松分布-1" class="headerlink" title="波哇松分布"></a>波哇松分布</h2><p>观察得到事件A在一段时间(长度为1)内发生了λ次,设所观察的这段时间为[0,1).取一个很大的自然数n, 把时间段[0,1)分为等长的n段，把在任意长度为1的时段内发生的A数设为X。作几个假定：</p>
 <ul>
