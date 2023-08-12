@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2023/07/31/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87/zuobiaoxi.png">
 <meta property="article:published_time" content="2023-07-31T05:44:50.000Z">
-<meta property="article:modified_time" content="2023-08-06T02:58:30.475Z">
+<meta property="article:modified_time" content="2023-08-06T04:56:58.489Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="概率论与数理统计">
@@ -184,7 +184,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-06 10:58:30" itemprop="dateModified" datetime="2023-08-06T10:58:30+08:00">2023-08-06</time>
+                <time title="Modified: 2023-08-06 12:56:58" itemprop="dateModified" datetime="2023-08-06T12:56:58+08:00">2023-08-06</time>
               </span>
 
           
@@ -238,68 +238,23 @@ P(E)=\frac{1100}{3600}=\frac{11}{36}</script><hr>
 <p>柯氏公理只是介定了概率这个概念所必须满足的一些一般性质，它没有也不可能解决在特定场合下如何定出概率的问题</p>
 <h1 id="1-2古典概率计算"><a href="#1-2古典概率计算" class="headerlink" title="1.2古典概率计算"></a>1.2古典概率计算</h1><h2 id="1-2-1-排列组合的几个简单公式"><a href="#1-2-1-排列组合的几个简单公式" class="headerlink" title="1.2.1  排列组合的几个简单公式"></a>1.2.1  排列组合的几个简单公式</h2><h3 id="排列和组合"><a href="#排列和组合" class="headerlink" title="排列和组合"></a>排列和组合</h3><ul>
 <li>ab和ba是不同的排列，但是是相同的组合<h4 id="排列"><a href="#排列" class="headerlink" title="排列"></a>排列</h4>n个相异物件取r个(1≤r≤n)的不同排列总数，为<script type="math/tex; mode=display">
-P_r^n=n(n-1)(n-2)…(n-r+1)</script>**若n=r,则<script type="math/tex; mode=display">
+P_n^r=n(n-1)(n-2)…(n-r+1)</script>**若n=r,则<script type="math/tex; mode=display">
 P_r^r =r(r-1)…1=r!</script></li>
 <li><em>0!=1;当r不是非负整数时，记号r!没有意义</em><h4 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h4>n个相异物件取r个(1≤r≤n)的不同组合总数，为<script type="math/tex; mode=display">
-C_r^n= \frac{P_r^n}{r!}=\frac{n!}{r!(n-r)!}</script>今后我们将用<script type="math/tex; mode=display">
-\begin{pmatrix}
-n\\
-r
-\end{pmatrix}</script>取代$C_r^n$<h4 id="与二项式展开的关系"><a href="#与二项式展开的关系" class="headerlink" title="与二项式展开的关系"></a>与二项式展开的关系</h4>组合系数<script type="math/tex; mode=display">
-\begin{pmatrix}
-n\\
-r
-\end{pmatrix}</script>又常称为二项式系数，因为它出现在下面熟知的二项式展开的公式中：<script type="math/tex; mode=display">
-(a+b)^n=\sum_{i=0}^n\begin{pmatrix}
-n\\
-r
-\end{pmatrix}a^ib^{n-i}</script></li>
+C_n^r= \frac{P_n^r}{r!}=\frac{n!}{r!(n-r)!}</script></li>
+</ul>
+<h4 id="与二项式展开的关系"><a href="#与二项式展开的关系" class="headerlink" title="与二项式展开的关系"></a>与二项式展开的关系</h4><p>组合系数</p>
+<script type="math/tex; mode=display">
+C_n^r</script><p>又常称为二项式系数，因为它出现在下面熟知的二项式展开的公式中：</p>
+<script type="math/tex; mode=display">
+(a+b)^n=\sum_{i=0}^nC_n^ia^ib^{n-i}</script><ul>
 <li>令a=b=1，得<script type="math/tex; mode=display">
-\begin{pmatrix}
-n\\
-0
-\end{pmatrix}+\begin{pmatrix}
-n\\
-1
-\end{pmatrix}+…+\begin{pmatrix}
-n\\
-n
-\end{pmatrix}=2^n</script></li>
+C_n^0+C_n^1+…+C_n^n=2^n</script></li>
 <li>令a=-1,b=1，得<script type="math/tex; mode=display">
-\begin{pmatrix}
-n\\
-0
-\end{pmatrix}-\begin{pmatrix}
-n\\
-1
-\end{pmatrix}+\begin{pmatrix}
-n\\
-2
-\end{pmatrix}-…+(-1)^n\begin{pmatrix}
-n\\
-n
-\end{pmatrix}=0</script></li>
+C_n^0-C_n^1+C_n^2-…+(-1)^nC_n^n=0</script></li>
 <li>另一个有用公式是<script type="math/tex; mode=display">
-\begin{pmatrix}
-m+n\\
-k
-\end{pmatrix}=\sum_{i=0}^k\begin{pmatrix}
-m\\
-i
-\end{pmatrix}\begin{pmatrix}
-n\\
-k-i
-\end{pmatrix}</script>它是由$(1+x)^{m+n}=(1+x)^m+(1+x)^n$中$x^{k}$的系数得到的，即：<script type="math/tex; mode=display">
-\sum_{k=0}^{m+n}\begin{pmatrix}
-m+n\\
-k
-\end{pmatrix}x^k=\sum_{i=0}^m\begin{pmatrix}
-m\\
-i
-\end{pmatrix}x^i\sum_{j=0}^n\begin{pmatrix}
-n\\
-j
-\end{pmatrix}x^j</script></li>
+C_{m+n}^k=\sum_{i=0}^kC_m^iC_n^{k-i}</script>它是由$(1+x)^{m+n}=(1+x)^m+(1+x)^n$中$x^{k}$的系数得到的，即：<script type="math/tex; mode=display">
+\sum_{k=0}^{m+n}C_{m+n}^kx^k=\sum_{i=0}^mC_m^ix^i\sum_{j=0}^nC_n^jx^j</script></li>
 </ul>
 <h4 id="分堆问题"><a href="#分堆问题" class="headerlink" title="分堆问题"></a>分堆问题</h4><p>n个相异物件分成k堆，各堆物件数分别为r₁,…,$r_k$的分法是</p>
 <script type="math/tex; mode=display">
