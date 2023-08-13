@@ -145,6 +145,170 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/12/JAVA-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/08/12/JAVA-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">JAVA 第五章 数组与字符串 笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-08-12 15:36:08" itemprop="dateCreated datePublished" datetime="2023-08-12T15:36:08+08:00">2023-08-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-08-13 19:51:31" itemprop="dateModified" datetime="2023-08-13T19:51:31+08:00">2023-08-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>数组是相同类型的数据按顺序组成的一种复合数据类型，通过数组名加数组下标,来使用数组中的数据，下标从0开始排序。</p>
+<h1 id="5-1-声明数组"><a href="#5-1-声明数组" class="headerlink" title="5.1 声明数组"></a>5.1 声明数组</h1><p>声名数组包括数组的名字,数组包含的元素的数据类型。<br>声明一维数组有下列两种格式：<code>数组元素类型 数组名字[ ]</code>，<code>数组元素类型[ ] 数组名字</code>;声明二维数组有下列两种格式：<code>数组元素类型 数组名字[ ][ ]</code>，<code>数组元素类型[ ][ ] 数组名字</code>，例如：<code>float boy[ ]</code>,表示将来数 boy的元素可以存放float型数据。数组的元素的类型可以是Java的任何一种类型.假如你已经定义了一个People类,那么你可以声明一个数组：<code>People china[ ]</code>,表示将来数组china元素可以存放People类型数据(People类创建的对象)</p>
+<h1 id="5-2-创建数组"><a href="#5-2-创建数组" class="headerlink" title="5.2 创建数组"></a>5.2 创建数组</h1><p>声明数组仅仅是给出了数组名字和元素的数据类型,要想真正的使用数组必须为它分配内存空间,即创建数组.为数组分配内存空间的格式如下：<code>数组名字 = new 数组元素的类型[数组元素的个数];</code>(在为数组分配内存空间时必须指明数组的长度)，如：<code>boy= new float[7];</code>。声明数组和创建数组可以一起完成,如：<code>float boy[]=new float[7]</code>。二维数组和一维数组一样,在定义之后必须用new运算符分配内存空间,例如：<code>int mytwo[][]=new int[3][4]</code></p>
+<ul>
+<li>和C语言不同的是,Java 允许使用int型变量指定数组的大小,例如:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int size=30;</span><br><span class="line">double number[]=new double[size];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="5-3-数组元素的使用"><a href="#5-3-数组元素的使用" class="headerlink" title="5.3 数组元素的使用"></a>5.3 数组元素的使用</h1><p>一维数组、二维数组都通过下标符访问自己的元素,如<code>boy[0]</code>,<code>a[0][1]</code>,需要注意的是下标从0开始。</p>
+<ul>
+<li>如果创建了<code>float a[]=new float[6]</code>,则 a.length的值为6。</li>
+</ul>
+<h1 id="5-4-数组的初始化"><a href="#5-4-数组的初始化" class="headerlink" title="5.4 数组的初始化"></a>5.4 数组的初始化</h1><p>创建数组后,系统会给每个数组元素一个默认的值,如float型是0.0。我们在声明数组时同时也还可以给数组的元素一个初始值，如<code>float boy[ ]=&#123;12.3f,23.89f,2.0f,23f,578.98f&#125;;</code>,上述语句相当于：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">float boy[]=new float[5];</span><br><span class="line">boy[0]=12.3f;boy[1]=23.89f;boy[2]=2.0f;boy[3]=23f;boy[4]=578.98f;</span><br></pre></td></tr></table></figure></p>
+<h1 id="5-5-字符串"><a href="#5-5-字符串" class="headerlink" title="5.5 字符串"></a>5.5 字符串</h1><p>Java使用java.lang包中的String类来创建一个字符串变量,因此字符串变量是类类型变量,是一个对象。使用步骤如下：1、定下字符串常量；2、声明字符串；3、创建字符串，例如：<code>String s=&quot;a&quot;;</code>或<code>String s=new String(&quot;a&quot;);</code>也可以用一个已创建的字符串创建另一个字符串,如<code>String tom=s;</code>。String 类还有两个较常用构造方法：</p>
+<ul>
+<li><p><code>String(char a [])</code>用一个字符数组a创建一个字符串对象:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char a[]=&#123;&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;&#125;;</span><br><span class="line">String s=new String(a);</span><br></pre></td></tr></table></figure>
+<p>相当于<code>String s=&quot;abc&quot;;</code></p>
+</li>
+<li><p><code>String(char a[],int startIndex,int count)</code>提取字符数组a中的一部分字符创建一个字符串对象,参数startIndex和count分别指定在a中提取字符的起始位置和从该位置开始截取的字符个数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char a[]=&#123;&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;&#125;;</span><br><span class="line">String s=new String(a,1,2);</span><br></pre></td></tr></table></figure>
+<p>相当于<code>String s=&quot;bc&quot;;</code></p>
+<h2 id="5-5-1-怎样获取字符串的长度"><a href="#5-5-1-怎样获取字符串的长度" class="headerlink" title="5.5.1 怎样获取字符串的长度"></a>5.5.1 怎样获取字符串的长度</h2><p>使用 String 类中的 length()方法可以获取一个字符串的长度,如:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int n;</span><br><span class="line">String s=&quot;abc&quot;;</span><br><span class="line">n=s.length();</span><br></pre></td></tr></table></figure>
+<p>n的值为3。</p>
+</li>
+</ul>
+<h2 id="5-5-2-字符串比较"><a href="#5-5-2-字符串比较" class="headerlink" title="5.5.2 字符串比较"></a>5.5.2 字符串比较</h2><h3 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h3><p>字符串对象调用String类中的<code>public boolean equals(String s)</code>方法比较当前字符串对象的实体是否与参数指定的字符串s的实体相同,如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=&quot;abc&quot;;</span><br><span class="line">String s1=&quot;abc&quot;;</span><br><span class="line">String s2=&quot;ac&quot;;</span><br></pre></td></tr></table></figure><br><code>s.equals(s1)</code>为<code>true</code>;<code>s.equals(s2)</code>为<code>false</code></p>
+<h3 id="equalsIgnoreCase方法"><a href="#equalsIgnoreCase方法" class="headerlink" title="equalsIgnoreCase方法"></a>equalsIgnoreCase方法</h3><p>字符串对象调用<code>public boolean equalsIgnoreCase(String s)</code>比较当前字符串对象是否与参数指定的字符串s是否相同, 比较时忽略大小写,如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s=&quot;abc&quot;;</span><br><span class="line">String s1=&quot;ABC&quot;;</span><br></pre></td></tr></table></figure><br><code>s.equalsIgnoreCase(s1)</code>为<code>true</code></p>
+<p><em>如果用new方法定义两个内容相同的字符串s、s1，则s==s1返回为false。例如：</em><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s=new String(&quot;abc&quot;);</span><br><span class="line">String s1=new String(&quot;abc&quot;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="startsWith-endsWith方法"><a href="#startsWith-endsWith方法" class="headerlink" title="startsWith,endsWith方法"></a>startsWith,endsWith方法</h3><p>字符串对象调用<code>public boolean startsWith(String s)</code>方法,判断当前字符串对象的前缀是否是参数指定的字符串s;用<code>public boolean endsWith(String s)</code>方法,判断一个字符串的后缀是否是字符串s,如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s=&quot;abc&quot;</span><br></pre></td></tr></table></figure><br><code>s.startsWith(&quot;a&quot;)</code>以及<code>s.endsWith(&quot;c&quot;)</code>的值是true</p>
+<h3 id="regionMatches方法"><a href="#regionMatches方法" class="headerlink" title="regionMatches方法"></a>regionMatches方法</h3><p>字符串调用<code>public boolean regionMatches(int firstStart,String other,int ortherStart,int length)</code>方法,从当前字符串参数firstStart指定的位置开始处,取长度为length的一个子串,并将这个子串和参数other指定的一个字符串的子串进行比较,其中,other指定的字符串的子串是从参数othertStart指定的位置开始,从other中取长度为length的一个子串。如果两个子串相同该方法就返回true,否则返回false，该方法的重载方法<code>public boolean regionMatches(boolean b,int firstStart,String other,int ortherStart,int length)</code>可以通过参数b决定是否忽略大小写,当b取 true时,忽略大小写,如：对<code>String s=&quot;abcd&quot;;</code>,<code>s.regionMatches(0,&quot;Ab&quot;,0,2)</code>的值为false而<code>s.regionMatches(true,0,&quot;Ab&quot;,0,2)</code>的值为true。</p>
+<h3 id="compareTo-compareToIgnoreCase方法"><a href="#compareTo-compareToIgnoreCase方法" class="headerlink" title="compareTo,compareToIgnoreCase方法"></a>compareTo,compareToIgnoreCase方法</h3><p>字符串对象可以使用String类中的<code>public int compareTo (String s)</code>方法,按辞典序与参数s指定的字符串比较大小,如果当前字符串与s相同,该方法返回值0;如果当前字符串对象大于s,该方法返回正值;如果小于s,该方法返回负值。例如：对<code>String s=&quot;b&quot;</code>，<code>s.compareTo(&quot;a&quot;)</code>的值为1,<code>s.compareTo(&quot;b&quot;)</code>的值为0,<code>s.compareTo(&quot;c&quot;)</code>的值为-1。<br>按辞典序比较两个字符串还可以使用<code>public int compareToIgnoreCase(String s)</code>方法, 该方法忽略大小写,例如：对<code>String s=&quot;b&quot;</code>，<code>s.compareToIgnoreCase(&quot;B&quot;)</code>的值为0</p>
+<h2 id="5-5-3-字符串检索"><a href="#5-5-3-字符串检索" class="headerlink" title="5.5.3 字符串检索"></a>5.5.3 字符串检索</h2><h3 id="搜索指定串出现的位置"><a href="#搜索指定串出现的位置" class="headerlink" title="搜索指定串出现的位置"></a>搜索指定串出现的位置</h3><ul>
+<li><code>public int indexOf(String s)</code>字符串调用该方法从当前字符串的头开始检索字符串s,并返回首次出现s的位置;如果没有检索到字符串s,该方法返回的值是-1</li>
+<li><code>public int indexOf(String s,int startpoint)</code>字符串调用该方法从当前字符串的startpoint位置处开始检索字符串s,并返回首次出现s的位置;如果没有检索到字符串s,该方法返回的值是-1</li>
+<li><code>public int lastIndexOf(String s)</code>字符串调用该方法从当前字符串的头开始检索字符串s,并返回最后出现s的位置;如果没有检索到字符串s,该方法返回的值是-1</li>
+<li><code>public int lastIndexOf(String s,int startpoint)</code>字符串调用该方法从当前字符串的startpoint位置处开始检索字符串s,并返回最后出现s的位置;如果没有检索到字符串s,该方法返回的值是-1</li>
+</ul>
+<p>例如：对<code>String s=&quot;abca&quot;;</code>有：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s.indexOf(&quot;ab&quot;)</span><br><span class="line">s.indexOf(&quot;ab&quot;,1)</span><br><span class="line">s.lastIndexOf(&quot;ab&quot;)</span><br><span class="line">s.lastIndexOf(&quot;ab&quot;,1)</span><br></pre></td></tr></table></figure><br>的值分别为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">3</span><br><span class="line">3</span><br><span class="line">0</span><br></pre></td></tr></table></figure></p>
+<h3 id="搜索指定字符出现的位置"><a href="#搜索指定字符出现的位置" class="headerlink" title="搜索指定字符出现的位置"></a>搜索指定字符出现的位置</h3><ul>
+<li><code>public int indexOf(int char)</code>字符串调用该方法从当前字符串的头开始检索字符char,并返回首次出现char的位置;如果没有检索到字符char,该方法返回的值是-1</li>
+<li><code>public int indexOf(int char,int startpoint)</code>字符串调用该方法从当前字符串的startpoint位置处开始检索字符char,并返回首次出现char的位置;如果没有检索到字符char,该方法返回的值是-1</li>
+<li><code>public int lastIndexOf(int char)</code>字符串调用该方法从当前字符串的头开始检索字符char,并返回最后出现char的位置;如果没有检索到字符char,该方法返回的值是-1</li>
+<li><code>public int lastIndexOf(int char,int startpoint)</code>字符串调用该方法从当前字符串的startpoint位置处开始检索字符char,并返回最后出现char的位置;如果没有检索到字符char,该方法返回的值是-1</li>
+</ul>
+<h2 id="5-5-4-字符串的截取"><a href="#5-5-4-字符串的截取" class="headerlink" title="5.5.4 字符串的截取"></a>5.5.4 字符串的截取</h2><ul>
+<li><code>public String substring(int startpoint)</code>字符串对象调用该方法获得一个当前字符串的子串,该子串是从当前字符串的startpoint处截取到最后所得到的字符串。</li>
+<li><code>public String substring(int start ,int end)</code>字符串对象调用该方法获得一个当前字符串的子串,该子串是从当前字符串的start处截取到end处所得到的字符串,但不包括end处所对应的字符.</li>
+</ul>
+<p>例如：对<code>String s=&quot;abcde&quot;;</code>有：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s.substring(2)</span><br><span class="line">s.substring(2,4)</span><br></pre></td></tr></table></figure><br>的值分别为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cde</span><br><span class="line">cd</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-5-5-替换"><a href="#5-5-5-替换" class="headerlink" title="5.5.5 替换"></a>5.5.5 替换</h2><ul>
+<li><code>public String replace(char oldChar,char newChar)</code>字符串对象s调用该方法可以获得一个串对象,这个串对象是用参数newChar指定的字符替换s中由oldChar指定的所有字符而得到的字符串</li>
+<li><code>public String replaceAll(String old ,String new)</code>字符串对象s调用该方法可以获得一个串对象,这个串对象是通过用参数new指定的字符串替换s中由old指定的所有字符串而得到的字符串</li>
+<li><code>Public String trim()</code>一个字符串s通过调用方法trim()得到一个字符串对象,该字符串对象是s去掉前后空格后的字符串</li>
+</ul>
+<p>例如：对<code>String s=&quot; This is a String. &quot;;</code>有：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s.replace(&#x27;i&#x27;,&#x27;a&#x27;)</span><br><span class="line">s.replaceAll(&quot;is&quot;,&quot;are&quot;)</span><br><span class="line">s.trim()</span><br></pre></td></tr></table></figure><br>的值分别为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> Thas as a Strang. </span><br><span class="line"> Thare are a String. </span><br><span class="line">This is a String.</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-5-6-字符串转化为相应的数值"><a href="#5-5-6-字符串转化为相应的数值" class="headerlink" title="5.5.6 字符串转化为相应的数值"></a>5.5.6 字符串转化为相应的数值</h2><h3 id="转化为整型"><a href="#转化为整型" class="headerlink" title="转化为整型"></a>转化为整型</h3><p>java.lang包中的Integer类调用其类方法<code>public static int parseInt(String s)</code>可以将“数字”格式的字符串,转化为int型数据。类似地,使用java.lang 包中的Byte,Short,Long 类调相应的类方法<code>public static byte parseByte(String s)</code>,<code>public static short parseShort(String s)</code>,<code>public static long parseLong(String s)</code>可以将“数字”格式的字符串,转化为相应的基本数据类型。例如：对于<code>String s=&quot;123.45&quot;;</code>,<code>Byte.parseByte(s)</code>的值为<code>123</code></p>
+<h3 id="转化为float型或double型"><a href="#转化为float型或double型" class="headerlink" title="转化为float型或double型"></a>转化为float型或double型</h3><p>java.lang包中的Float类调用其类方法<code>public static float parseFloat(String s)</code>可以将“数字”格式的字符串转化为float型数据；类似地,使用java.lang包中的Double类调相应的类方法<code>public static double parseDouble(String s)</code>例如：对<code>String s=&quot;123.45&quot;;</code>,<code>Float.parseFloat(s)</code>的值为<code>123.45</code></p>
+<ul>
+<li>另外,还可以使用Float类的类方法<code>public static Float valueOf(String s)</code>或Double类的类方法<code>public static Double valueOf(String s)</code>来转换。例如：对<code>String s=&quot;123.45&quot;;</code>,<code>Float.valueOf(s).floatValue()</code>的值为<code>123.45</code>。（这里的Float.valueOf(s)创建了一个Float类的类对象）（double类调用的方法是.doubleValue()）</li>
+</ul>
+<h2 id="5-5-7-数值转化为字符串"><a href="#5-5-7-数值转化为字符串" class="headerlink" title="5.5.7 数值转化为字符串"></a>5.5.7 数值转化为字符串</h2><p>可以使用 String 类的下列类方法：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public String valueOf(byte n)</span><br><span class="line">public String valueOf(int n)</span><br><span class="line">public String valueOf(long n)</span><br><span class="line">public String valueOf(float n)</span><br><span class="line">public String valueOf(double n)</span><br></pre></td></tr></table></figure><br>例如：对<code>float n=123.456f;</code>，有<code>String.valueOf(n)</code>的值为<code>&quot;123.456&quot;</code></p>
+<h2 id="5-5-8-对象的字符串表示"><a href="#5-5-8-对象的字符串表示" class="headerlink" title="5.5.8 对象的字符串表示"></a>5.5.8 对象的字符串表示</h2><p><em>所有的类都默认地是java.lang包中Object类的子类或间接子类</em><br>Object类有一个public方法toString(),一个对象通过调用该方法可以获得该对象的字符串表示。<br>例如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Date date=new Date();</span><br><span class="line">        System.out.println(date.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出当前时间如：<code>Sun Aug 13 17:45:34 CST 2023</code></p>
+<h2 id="5-5-9-使用StringTokenizer类分析字符串"><a href="#5-5-9-使用StringTokenizer类分析字符串" class="headerlink" title="5.5.9 使用StringTokenizer类分析字符串"></a>5.5.9 使用StringTokenizer类分析字符串</h2><p>当我们分析一个字符串并将字符串分解成可被独立使用的单词时,可以使用java.util包中的StringTokenizer类,该类有两个常用的构造方法:</p>
+<ul>
+<li><code>StringTokenizer(String s)</code>为字符串s构造一个分析器.使用默认的分隔符集合,即空格符。若干个空格,换行符,回车符,Tab 符,进纸符被看做一个空格。</li>
+<li><code>StringTokenizer(String s,String delim)</code>为字符串s构造一个分析器,参数delim中的字符被作为分隔符。</li>
+</ul>
+<p>我们把一个StringTokenizer对象称作一个字符串分析器。一个分析器可以使用nextToken()方法逐个获取字符串中的语言符号、单词,每当调用nextToken()时,都将在字符串中获得下一个语言符号，通常用while循环来逐个获取语言符号,为了控制循环,我们可以使用StringTokenizer类中的hasMoreTokens()方法,只要字符串中还有语言符号,该方法就返回true,否则返回false.另外我们还可以调用countTokens()方法得到字符串一共有多少个。<br>例如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        String s=new String(&quot;This is a, string.&quot;);</span><br><span class="line">        StringTokenizer fenxi1=new StringTokenizer(s);</span><br><span class="line">        StringTokenizer fenxi2=new StringTokenizer(s,&quot;,&quot;);</span><br><span class="line">        while (fenxi1.hasMoreTokens())&#123;</span><br><span class="line">            System.out.println(fenxi1.countTokens());</span><br><span class="line">            System.out.println(fenxi1.nextToken());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        while (fenxi2.hasMoreTokens())&#123;</span><br><span class="line">            System.out.println(fenxi2.countTokens());</span><br><span class="line">            System.out.println(fenxi2.nextToken());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">This</span><br><span class="line">3</span><br><span class="line">is</span><br><span class="line">2</span><br><span class="line">a,</span><br><span class="line">1</span><br><span class="line">string.</span><br><span class="line">2</span><br><span class="line">This is a</span><br><span class="line">1</span><br><span class="line"> string.</span><br></pre></td></tr></table></figure></p>
+<h1 id="5-6-Character类"><a href="#5-6-Character类" class="headerlink" title="5.6 Character类"></a>5.6 Character类</h1><ul>
+<li><code>public static boolean isDigit(char ch)</code>如果ch是数字字符方法返回true,否则返回false</li>
+<li><code>public static boolean isLetter(char ch)</code>如果ch是字母方法返回true,否则返回false</li>
+<li><code>public static boolean isLetterOrDigit(char ch)</code>如果ch是数字字符或字母方法返回true,否则返回 false.</li>
+<li><code>public static boolean isLowerCase(char ch)</code>如果ch是小写字母方法返回true,否则返回false</li>
+<li><code>public static boolean isUpperCase(char ch)</code>如果ch是大写字母方法返回true,否则返回false</li>
+<li><code>public static char toLowerCase(char ch)</code>返回ch的小写形式</li>
+<li><code>public static char toUpperCase(char ch)</code>返回ch的大写形式</li>
+<li><code>public static boolean isSpaceChar(char ch)</code>如果ch是空格返回true</li>
+</ul>
+<p>例如：对<code>char a=&#39;a&#39;</code>,<code>Character.isDigit(a)</code>的值为<code>false</code></p>
+<h1 id="5-7-字符串与字符-字节数组"><a href="#5-7-字符串与字符-字节数组" class="headerlink" title="5.7 字符串与字符,字节数组"></a>5.7 字符串与字符,字节数组</h1><h2 id="5-7-1-字符串与字符数组"><a href="#5-7-1-字符串与字符数组" class="headerlink" title="5.7.1 字符串与字符数组"></a>5.7.1 字符串与字符数组</h2><h3 id="用字符数组创建字符串对象"><a href="#用字符数组创建字符串对象" class="headerlink" title="用字符数组创建字符串对象"></a>用字符数组创建字符串对象</h3><p>String 类中有两个用字符数组创建字符串对象的构造方法</p>
+<ul>
+<li><code>String(char[])</code>该构造方法用指定的字符数组构造一个字符串对象</li>
+<li><code>String(char[],int offset,int length)</code>用指定的字符数组的一部分,即从数组起始位置offset开始取length个字符构造一个字符串对象</li>
+</ul>
+<p>例如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        char a[]=&#123;&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;&#125;;</span><br><span class="line">        String s=new String(a,1,1);</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出：<code>b</code></p>
+<h3 id="将字符串中的字符拷贝到字符数组"><a href="#将字符串中的字符拷贝到字符数组" class="headerlink" title="将字符串中的字符拷贝到字符数组"></a>将字符串中的字符拷贝到字符数组</h3><ul>
+<li><code>public void getChars(int start,int end,char c[],int offset)</code>字符串调用getChars方法将当前字符串中的一部分字符拷贝到参数c指定的数组中,将字符串中从位置start到end-1位置上的字符拷贝到数组c中,并从数组c的offset处开始存放这些字符.需要注意的是,必须保证数组c能容纳下要被拷贝的字符</li>
+<li><code>public char[] toCharArray()</code>字符串对象调用该方法可以初始化一个字符数组,该数组的长度与字符串的长度相等,并将字符串对象的全部字符拷贝到该数组中</li>
+</ul>
+<p>例如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        char a[]=new char[4];</span><br><span class="line">        a[0]=&#x27;a&#x27;;</span><br><span class="line">        a[1]=&#x27;b&#x27;;</span><br><span class="line">        a[2]=&#x27;c&#x27;;</span><br><span class="line">        String s=new String(&quot;defgh&quot;);</span><br><span class="line">        s.getChars(1,3,a,2);</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        char b[]=s.toCharArray();</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">abef</span><br><span class="line">defgh</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-7-2-字符串与字节数组"><a href="#5-7-2-字符串与字节数组" class="headerlink" title="5.7.2 字符串与字节数组"></a>5.7.2 字符串与字节数组</h2><h3 id="用字节数组创建字符串对象"><a href="#用字节数组创建字符串对象" class="headerlink" title="用字节数组创建字符串对象"></a>用字节数组创建字符串对象</h3><ul>
+<li><code>String(byte[])</code>该构造方法使用平台默认的字符编码,用指定的字节数组构造一个字符串对象.</li>
+<li><code>String(byte[],int offset,int length)</code>该构造方法使用平台默认的字符编码,用指定的字节数组的一部分,即从数组起始位置offset开始取length个字节构造一个字符串对象.</li>
+</ul>
+<p>例如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        byte b[]= &quot;你我他&quot;.getBytes();</span><br><span class="line">        String s=new String(b,0,2);</span><br><span class="line">        System.out.println(s);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你</span><br></pre></td></tr></table></figure></p>
+<h3 id="将字符串转化为字节数组"><a href="#将字符串转化为字节数组" class="headerlink" title="将字符串转化为字节数组"></a>将字符串转化为字节数组</h3><ul>
+<li><code>public byte[] getBytes()</code>使用平台默认的字符编码,将当前字符串转化为一个字节数组</li>
+</ul>
+<h1 id="如何运行一个需要输入的JAVA程序"><a href="#如何运行一个需要输入的JAVA程序" class="headerlink" title="如何运行一个需要输入的JAVA程序"></a>如何运行一个需要输入的JAVA程序</h1><p>编写test.java代码如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        double n,sum=0.0;</span><br><span class="line">        for (int i=0;i&lt; args.length;i++)&#123;</span><br><span class="line">            sum+=Double.valueOf(args[i]).doubleValue();</span><br><span class="line">        &#125;</span><br><span class="line">        n=sum/ args.length;</span><br><span class="line">        System.out.println(&quot;average:&quot;+n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>生成java.class后再命令行运行如下命令：<code>java test （需要输入的变量，用空格隔开）</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/06/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83-%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1351,97 +1515,6 @@ P(B_i|A)=P(AB_i)/P(A)=P(B_i)P(A|B_i)/\sum_{j}P(B_j)P(A|B_j)</script><p>这个公
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/29/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%9E%81%E9%99%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/29/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%9E%81%E9%99%90/" class="post-title-link" itemprop="url">高等数学 第二章 极限 笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-07-29 09:09:58" itemprop="dateCreated datePublished" datetime="2023-07-29T09:09:58+08:00">2023-07-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-06 00:35:56" itemprop="dateModified" datetime="2023-08-06T00:35:56+08:00">2023-08-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="第一课-数列的极限"><a href="#第一课-数列的极限" class="headerlink" title="第一课 数列的极限"></a>第一课 数列的极限</h1><h2 id="一、数列极限的定义"><a href="#一、数列极限的定义" class="headerlink" title="一、数列极限的定义"></a>一、数列极限的定义</h2><h3 id="数列"><a href="#数列" class="headerlink" title="数列"></a>数列</h3><p>设有定义域在正整数集$N^+$上的函数$u_n=f(x)$（整标函数），把函数值依照n的顺序排出来的无穷数串：</p>
-<script type="math/tex; mode=display">
-u_1,u_2,u_3,…,u_n…</script><p>叫做数列。第n项$u_n$叫一般项，记作{$u_n$}，则有{$u_n$}=$u_1$,$u_2$,$u_3$…,$u_n$,…</p>
-<h3 id="研究问题"><a href="#研究问题" class="headerlink" title="研究问题"></a>研究问题</h3><p>当n无限增加时，数列{$u_n$}能否与某一常数A无限接近？如能，在数学上如何描述？当n→∞时{$u_n$}的变化趋势如何？  </p>
-<ul>
-<li>设：<script type="math/tex; mode=display">
-u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接近程度用|a-b|。则：<script type="math/tex; mode=display">∵u_n=\frac{2n+(-1)^{n-1}}{n}</script><script type="math/tex; mode=display">∴u_n-2=\frac{(-1)^{n-1}}{n}</script><script type="math/tex; mode=display">∵|u_n-2|=|\frac{(-1)^{n-1}}{n}|,|\frac{(-1)^{n-1}}{n}|=\frac{1}{n}</script>∴当n增大时，$\frac{1}{n}$减小，$u_n$和2越来越近；<br>不论给定多么小的正数$\epsilon$&gt;0，总存在正数N。使得当n&gt;N时，不等式<script type="math/tex; mode=display">|u_n-2|>\epsilon</script>总是成立。<h3 id="数列极限的定义"><a href="#数列极限的定义" class="headerlink" title="数列极限的定义"></a>数列极限的定义</h3>设{$x_n$}为以数列，如果存在常数A对于任意给定的正数$\epsilon$总存在正数N，使得当n&gt;N时,不等式{$x_n$}&lt;$\epsilon$成立，那么就称A为{$x_n$}的极限，或者称数列{$x_n$}收敛于a，记为<script type="math/tex; mode=display">
-\lim_{n→∞}x_n=A</script>或$x_n$→A。如数列{$x_n$}没有极限，就说数列{$x_n$}是发散的  </li>
-</ul>
-<hr>
-<p><strong>说明：</strong></p>
-<ul>
-<li><strong>$\epsilon$是任意给定的，只有这样，不等式|$x_n$-A|&lt;$\epsilon$才能表达出$x_n$和A无限接近的意思</strong></li>
-<li><strong>定义中的N与$\epsilon$有关，记作N($\epsilon$)，随着$\epsilon$的给定而选定，且不唯一</strong></li>
-<li><strong>定义只描述了n→∞时$x_n$→A，没有提供求A的方法</strong></li>
-<li><strong>数列{$x_n$}的极限为A的几何解释：</strong><br><strong>任意邻域N(a,$\epsilon$)必存在N使$x<em>{N+1}$，$x</em>{N+2}$,…存在在N(a,$\epsilon$)上。</strong></li>
-</ul>
-<p><strong><em>注意：</em></strong><br><strong><em>在利用数列的极限定义来论证某个数a是数列{$x_n$}的极限时，重要的是要能够指出定义中所说的这种正整数N确实存在且不唯一。比如如果知道|$x_n$-a|&lt;φ(n)，那么当φ(n)&lt;$\epsilon$时，|$x_n$-a|&lt;$\epsilon$当然也成立。</em></strong></p>
-<h2 id="二、收敛数列的性质"><a href="#二、收敛数列的性质" class="headerlink" title="二、收敛数列的性质"></a>二、收敛数列的性质</h2><h3 id="定理1-极限的唯一性"><a href="#定理1-极限的唯一性" class="headerlink" title="定理1 极限的唯一性"></a>定理1 极限的唯一性</h3><p>如果数列{$x_n$}收敛，那么它的极限唯一</p>
-<ul>
-<li>证：假设$x_n→a且x_n→b$(a&lt;b)，设$\epsilon=\frac{b-a}{2}$<script type="math/tex; mode=display">
-∵\lim_{n→∞}=a</script><script type="math/tex; mode=display">
-∴ョN_1,当n>N_1时，|x_n-a|<\frac{b-a}{2}</script><script type="math/tex; mode=display">
-∴\frac{3a-b}{2}<x_n<\frac{b+a}{2}</script>同理，有<script type="math/tex; mode=display">
-|x_n-b|<\frac{b-a}{2}</script>即<script type="math/tex; mode=display">
-\frac{a+b}{2}<x_n<\frac{3b-a}{2}</script>由此可见，原式不可能成立，得证</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1511,7 +1584,7 @@ u_n=\frac{2n+(-1)^{n-1}}{n}</script>一般的说，对于a,b∈R，描述a,b接�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
