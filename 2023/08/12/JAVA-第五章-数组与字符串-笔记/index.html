@@ -28,10 +28,10 @@
 <meta property="og:description" content="数组是相同类型的数据按顺序组成的一种复合数据类型，通过数组名加数组下标,来使用数组中的数据，下标从0开始排序。 5.1 声明数组声名数组包括数组的名字,数组包含的元素的数据类型。声明一维数组有下列两种格式：数组元素类型 数组名字[ ]，数组元素类型[ ] 数组名字;声明二维数组有下列两种格式：数组元素类型 数组名字[ ][ ]，数组元素类型[ ][ ] 数组名字，例如：float boy[ ],表">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-12T07:36:08.000Z">
-<meta property="article:modified_time" content="2023-08-13T11:51:31.068Z">
+<meta property="article:modified_time" content="2023-08-13T11:52:53.987Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="JAVA">
 <meta property="article:tag" content="笔记">
+<meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2023/08/12/JAVA-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AC%94%E8%AE%B0/">
@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-13 19:51:31" itemprop="dateModified" datetime="2023-08-13T19:51:31+08:00">2023-08-13</time>
+                <time title="Modified: 2023-08-13 19:52:53" itemprop="dateModified" datetime="2023-08-13T19:52:53+08:00">2023-08-13</time>
               </span>
 
           
@@ -217,11 +217,9 @@
 <li><p><code>String(char a[],int startIndex,int count)</code>提取字符数组a中的一部分字符创建一个字符串对象,参数startIndex和count分别指定在a中提取字符的起始位置和从该位置开始截取的字符个数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char a[]=&#123;&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;&#125;;</span><br><span class="line">String s=new String(a,1,2);</span><br></pre></td></tr></table></figure>
 <p>相当于<code>String s=&quot;bc&quot;;</code></p>
-<h2 id="5-5-1-怎样获取字符串的长度"><a href="#5-5-1-怎样获取字符串的长度" class="headerlink" title="5.5.1 怎样获取字符串的长度"></a>5.5.1 怎样获取字符串的长度</h2><p>使用 String 类中的 length()方法可以获取一个字符串的长度,如:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int n;</span><br><span class="line">String s=&quot;abc&quot;;</span><br><span class="line">n=s.length();</span><br></pre></td></tr></table></figure>
-<p>n的值为3。</p>
 </li>
 </ul>
+<h2 id="5-5-1-怎样获取字符串的长度"><a href="#5-5-1-怎样获取字符串的长度" class="headerlink" title="5.5.1 怎样获取字符串的长度"></a>5.5.1 怎样获取字符串的长度</h2><p>使用 String 类中的 length()方法可以获取一个字符串的长度,如:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int n;</span><br><span class="line">String s=&quot;abc&quot;;</span><br><span class="line">n=s.length();</span><br></pre></td></tr></table></figure><br>n的值为3。</p>
 <h2 id="5-5-2-字符串比较"><a href="#5-5-2-字符串比较" class="headerlink" title="5.5.2 字符串比较"></a>5.5.2 字符串比较</h2><h3 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h3><p>字符串对象调用String类中的<code>public boolean equals(String s)</code>方法比较当前字符串对象的实体是否与参数指定的字符串s的实体相同,如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s=&quot;abc&quot;;</span><br><span class="line">String s1=&quot;abc&quot;;</span><br><span class="line">String s2=&quot;ac&quot;;</span><br></pre></td></tr></table></figure><br><code>s.equals(s1)</code>为<code>true</code>;<code>s.equals(s2)</code>为<code>false</code></p>
 <h3 id="equalsIgnoreCase方法"><a href="#equalsIgnoreCase方法" class="headerlink" title="equalsIgnoreCase方法"></a>equalsIgnoreCase方法</h3><p>字符串对象调用<code>public boolean equalsIgnoreCase(String s)</code>比较当前字符串对象是否与参数指定的字符串s是否相同, 比较时忽略大小写,如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s=&quot;abc&quot;;</span><br><span class="line">String s1=&quot;ABC&quot;;</span><br></pre></td></tr></table></figure><br><code>s.equalsIgnoreCase(s1)</code>为<code>true</code></p>
 <p><em>如果用new方法定义两个内容相同的字符串s、s1，则s==s1返回为false。例如：</em><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String s=new String(&quot;abc&quot;);</span><br><span class="line">String s1=new String(&quot;abc&quot;);</span><br></pre></td></tr></table></figure></p>
@@ -305,8 +303,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/JAVA/" rel="tag"># JAVA</a>
               <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/JAVA/" rel="tag"># JAVA</a>
           </div>
 
         
