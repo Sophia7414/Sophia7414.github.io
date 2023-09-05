@@ -28,7 +28,7 @@
 <meta property="og:description" content="2.1 一维随机变量2.1.1 随机变量的概念随机变量就是“其值随机会而定”的变量。随机变量的反面是所谓“确定性变量”,即其取值遵循某种严格的规律的变量。从绝对的意义讲，许多通常视为确定性变量的量，本质上都有随机性，只是由于随机性干扰不大，以至在所要求的精度之内，不妨把它作为确定性变量来处理。随机事件这个概念实际上是包容在随机变量这个更广的概念之内，也可以说：随机事件是从静态的观点来研究随机现象，">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-05T22:49:31.000Z">
-<meta property="article:modified_time" content="2023-09-05T13:21:31.308Z">
+<meta property="article:modified_time" content="2023-09-05T13:46:32.656Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="概率论与数理统计">
@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-05 21:21:31" itemprop="dateModified" datetime="2023-09-05T21:21:31+08:00">2023-09-05</time>
+                <time title="Modified: 2023-09-05 21:46:32" itemprop="dateModified" datetime="2023-09-05T21:46:32+08:00">2023-09-05</time>
               </span>
 
           
@@ -299,7 +299,11 @@ F(x)=
 1,x≥b
 \end{cases}</script><p>均匀分布的一个好处是：借助于它容易实现对分布的模拟，比如以某种方法产生“随机数”，如取n足够大，而独立地产生n个随机数字a₁,…,an时，X=0·a₁a₂…an就很接近于[0,1]均匀分布R(0,1)。<br>对一般分布函数F(x),若F(x)处处连续且严格上升，则其反函数G存在，若X～R(0,1),则G(X)～F。用上述模拟方法产生X的模拟值后,代入G中即得分布F的模拟值。</p>
 <h1 id="2-2-多维随机变量-随机向量"><a href="#2-2-多维随机变量-随机向量" class="headerlink" title="2.2  多维随机变量(随机向量)"></a>2.2  多维随机变量(随机向量)</h1><h2 id="2-2-1-离散型随机向量的分布"><a href="#2-2-1-离散型随机向量的分布" class="headerlink" title="2.2.1 离散型随机向量的分布"></a>2.2.1 离散型随机向量的分布</h2><p>设X=(X₁,X₂,…,$X_n$)为一n维向量，其每个分量都是一维随机变量，则称X是一个n维随机向量(n维随机变量)。与随机变量一样，随机向量也有离散型和连续型之分。</p>
-<h3 id="随机向量的概率函数"><a href="#随机向量的概率函数" class="headerlink" title="随机向量的概率函数"></a>随机向量的概率函数</h3><p>以{$a<em>{i1}$ , $a</em>{i2}$,…}</p>
+<h3 id="随机向量的概率函数"><a href="#随机向量的概率函数" class="headerlink" title="随机向量的概率函数"></a>随机向量的概率函数</h3><p>以</p>
+<script type="math/tex; mode=display">
+{a_{i1},a_{i2},…}</script><p>记$X_i$的全部可能值,则事件</p>
+<script type="math/tex; mode=display">
+{X_{1}=a_{1j_1},X_{2}=a_{2j_2},…,X_{n}=a_{nj_n}}</script><p>的概率:</p>
 <script type="math/tex; mode=display">
 p(j_1,j_2,…,j_n)=P(X_1=a_{1j_1},X_2=a_{2j_2},…,X_n=a_{nj_n})</script><p>称为随机向量X=(X₁,X₂,…,$X_n$)的概率函数或概率分布。</p>
 <ul>
@@ -312,7 +316,8 @@ p_i≥0,p₁+ …+p_n=1</script><p>将试验独立地重复N次，而以$X_i$记
 <script type="math/tex; mode=display">
 X=(X₁,…,X_n),(X₁,…,X_n∈N(自然数),X₁+…+X_n=N(实验次数))</script><p>X的概率分布就叫做多项分布,记为M(N;p₁ ,…,$p_n$),名称来自多项展开式，为：</p>
 <script type="math/tex; mode=display">
-P(X₁=k₁,X_2=k_2, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2}…p_n^{k_n},\\(k₁,…,k_n∈N,k₁+…+k_n=N)</script><p>当一个体按某种属性分成几类时，就会涉及这个分布。</p>
+P(X₁=k₁,X_2=k_2, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2}…p_n^{k_n},</script><script type="math/tex; mode=display">
+(k₁,…,k_n∈N,k₁+…+k_n=N)</script><p>当一个体按某种属性分成几类时，就会涉及这个分布。</p>
 <h2 id="2-2-2-连续型随机向量的分布"><a href="#2-2-2-连续型随机向量的分布" class="headerlink" title="2.2.2 连续型随机向量的分布"></a>2.2.2 连续型随机向量的分布</h2><p>设X=(X₁, …,$X_n$)是一个n维随机向量,其取值可视为n维欧氏空间$R^n$中的一个点。如果X的全部取值能充满$R^n$中某一区域，则称它是连续型的。描述多维随机向量的概率分布最方便的是概率密度函数。</p>
 <ul>
 <li><em>引进记号：X∈A,读作“X属于A”或 “X落在A内”,其中A是$R^n$中的集合，{X∈A}是一个随机事件</em><h3 id="连续型多维随机向量的概率密度函数"><a href="#连续型多维随机向量的概率密度函数" class="headerlink" title="连续型多维随机向量的概率密度函数"></a>连续型多维随机向量的概率密度函数</h3>若f(x₁,…,$x_n$)是定义在$R^n$上的非负函数，对$R^n$中的任何集合A, 如有：<script type="math/tex; mode=display">
@@ -329,17 +334,24 @@ P(X∈A)=\int_A…\int f(x₁,…,x_n) dx_1…dx_n</script>则称f是X的(概率
 f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2})),\\(-∞<a<∞,-∞<b<∞,σ_1>0,σ_2>0,-1<\rho<1)</script><p>(在三维空间中)的图形，好像一个椭圆切面的钟倒扣在$Ox_1x₂$平面上，其中心在(a,b)点。类似地，可定义n维正态分布的概率密度函数。</p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
 <li>论在一维或多维，在定义连续型随机变量时，实质之点都在于它有概率密度函数存在。在概率论理论上连续型随机变量的定义为有密度函数的随机变量。</li>
-<li>与离散型随机向量的定义不同，连续型随机向量不能简单地定义为“其各分量都是一维连续型随机变量的那种随机向量”，必须证明其的密度函数满足$\int_{-∞}^∞…\int f(x₁,…,x_n) dx_1…dx_n=1$</li>
+<li>与离散型随机向量的定义不同，连续型随机向量不能简单地定义为“其各分量都是一维连续型随机变量的那种随机向量”，必须证明其的密度函数满足:<script type="math/tex; mode=display">
+\int_{-∞}^∞…\int f(x₁,…,x_n) dx_1…dx_n=1</script></li>
 <li>与一维情况一样，也可以用概率分布函数去描述多维随机向量的概率分布，其定义为:<script type="math/tex; mode=display">
 F(x_1,x_2, …,x_n)=P(X₁≤x₁,X₂≤x₂, …,X_n≤x_n)</script></li>
 </ul>
 <h2 id="2-2-3-边缘分布"><a href="#2-2-3-边缘分布" class="headerlink" title="2.2.3 边缘分布"></a>2.2.3 边缘分布</h2><p>设X=(X₁,…,$X_n$)为一n维随机向量,X有一定的分布F,是一个n维分布。X的每个分量$X_i$各自的一维分布$F_i$称为随机向量X或其分布F的“边缘分布”</p>
-<h3 id="离散型求边缘分布"><a href="#离散型求边缘分布" class="headerlink" title="离散型求边缘分布"></a>离散型求边缘分布</h3><p>假设我们要求$P(X₁=a<em>{1k})$,那么他等于把所有$P(X_1=a</em>{1j<em>1},X_2=a</em>{2j<em>2},…,X_n=a</em>{nj_n})$全加起来，但局限于$j_1$=k,得:</p>
+<h3 id="离散型求边缘分布"><a href="#离散型求边缘分布" class="headerlink" title="离散型求边缘分布"></a>离散型求边缘分布</h3><p>假设我们要求</p>
 <script type="math/tex; mode=display">
-P(X_1=a_{1k})=\sum_{j_2,…,j_n}p(k,j_2,…,j_n)</script><h3 id="连续型随机向量的边缘分布"><a href="#连续型随机向量的边缘分布" class="headerlink" title="连续型随机向量的边缘分布"></a>连续型随机向量的边缘分布</h3><p>以二维的情况为例，设X=(X₁,X₂)有概率密度函数f(x1,x₂)，则X1，X2的概率密度函数分别为$\int^{∞}<em>{-∞}f(x_1,x_2)dx_2$,$\int^{∞}</em>{-∞}f(x_1,x_2)dx_1$。其边缘分布为：</p>
+P(X₁=a_{1k})</script><p>,那么他等于把所有</p>
+<script type="math/tex; mode=display">
+P(X_1=a_{1j_1},X_2=a_{2j_2},…,X_n=a_{nj_n})</script><p>全加起来，但局限于$j_1$=k,得:</p>
+<script type="math/tex; mode=display">
+P(X_1=a_{1k})=\sum_{j_2,…,j_n}p(k,j_2,…,j_n)</script><h3 id="连续型随机向量的边缘分布"><a href="#连续型随机向量的边缘分布" class="headerlink" title="连续型随机向量的边缘分布"></a>连续型随机向量的边缘分布</h3><p>以二维的情况为例，设X=(X₁,X₂)有概率密度函数f(x1,x₂)，则X1，X2的概率密度函数分别为</p>
+<script type="math/tex; mode=display">
+\int^{∞}_{-∞}f(x_1,x_2)dx_2,\int^{∞}_{-∞}f(x_1,x_2)dx_1</script><p>以X1为例，其边缘分布为：</p>
 <script type="math/tex; mode=display">
 P(X_1=x_1)=\int^{∞}_{-∞}f(x_1,x_2)dx_2</script><ul>
-<li>推广到n维:<br>设X=(X₁, …,$X<em>n$)有概率密度函数f(x₁,…,$x_n$),其中$X_i$的概率密度函数为将f(x₁,…,$x_n$)中的$x_i$固定然后对$x₁,…,x</em>{i-1},x_{i+1},…x_n$作定积分。以$X_1$为例，有概率密度函数：<script type="math/tex; mode=display">
+<li>推广到n维:<br>设X=(X₁, …,$X<em>n$)有概率密度函数f(x₁,…,$x_n$),其中$X_i$的概率密度函数为将f(x₁,…,$x_n$)中的$x_i$固定然后对x₁,…,$x</em>{i-1}$,$x_{i+1}$,…$x_n$<br>作定积分。以$X_1$为例，有概率密度函数：<script type="math/tex; mode=display">
 f_1(x_1)=\int^{∞}_{-∞}…\int^{∞}_{-∞}f(x_1,x_2,…,x_n)dx_2…dx_n</script></li>
 </ul>
 <h3 id="二维正态分布的边缘分布密度"><a href="#二维正态分布的边缘分布密度" class="headerlink" title="二维正态分布的边缘分布密度"></a>二维正态分布的边缘分布密度</h3><p>若($X_1$,X₂)有二维正态分布$N(a,b,σ_1^2,σ_2^2,\rho)$,则$X_1$,X₂的边缘分布分别为一维正态分布$N(a,σ_1^2)$和$N(b,σ_2^2)$。从这个例子看出一个有趣的事实:虽则一个随机向量X=(X₁,…,$X_n$)的分布F足以决定其任一分量$X_i$的(边缘)分布$F_i$,但反过来不对。</p>
@@ -426,10 +438,12 @@ P(x≤X≤x+h|X>x)/h</script><script type="math/tex; mode=display">
 <script type="math/tex; mode=display">
 X=(X₁,…,X_n),(X₁,…,X_n∈N(自然数),X₁+…+X_n=N(实验次数))</script><p>求X的概率分布。</p>
 <ul>
-<li>解：<br>设有一事件B={X₁=k₁,…,$X<em>i=k_i$, …,$X_n$=$k_n$},如$k₁,…,k_n∈N且k₁+…+k_n=N$不成立，则P(B)=0。记N次试验的原始结果为$j_1,j₂…j_n$(第i次实验发生$A</em>{j_i}$)，则为使B发生，其中应有k₁个1,k₂个2,…，将其转化为分堆问题，不同的分法应该有：<script type="math/tex; mode=display">
+<li>解：<br>设有一事件<script type="math/tex; mode=display">
+B={X₁=k₁,…,X_i=k_i, …,X_n=k_n}</script>,如k₁,…,$k<em>n$∈N且k₁+…+k_n=N$不成立，则P(B)=0。记N次试验的原始结果为$j_1$,j₂…$j_n$(第i次实验发生$A</em>{j_i}$)，则为使B发生，其中应有k₁个1,k₂个2,…，将其转化为分堆问题，不同的分法应该有：<script type="math/tex; mode=display">
 N!/(k₁!…k_n!)</script>符合上述条件的结果序列出现的概率为：<script type="math/tex; mode=display">
 p_1^{k_1}p_2^{k_2}…p_n^{k_n}</script>由此可得：<script type="math/tex; mode=display">
-P(X₁=k₁,…,X_i=k_i, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2}…p_n^{k_n},\\(k₁,…,k_n∈N,k₁+…+k_n=N)</script></li>
+P(X₁=k₁,…,X_i=k_i, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2}…p_n^{k_n},</script><script type="math/tex; mode=display">
+(k₁,…,k_n∈N,k₁+…+k_n=N)</script></li>
 </ul>
 <h3 id="多项展开式和多项分布的关联"><a href="#多项展开式和多项分布的关联" class="headerlink" title="多项展开式和多项分布的关联"></a>多项展开式和多项分布的关联</h3><p>多项展开式为：</p>
 <script type="math/tex; mode=display">
@@ -437,27 +451,26 @@ P(X₁=k₁,…,X_i=k_i, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2
 <script type="math/tex; mode=display">
 \sum{}^{*}\frac{N!}{k_1!…k_n!}p_1^{k_1}p_2^{k_2}…p_n^{k_n}</script><h3 id="二维正态分布-1"><a href="#二维正态分布-1" class="headerlink" title="二维正态分布"></a>二维正态分布</h3><p>证明以下函数是密度函数：</p>
 <script type="math/tex; mode=display">
-f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2})),\\(-∞<a<∞,-∞<b<∞,σ_1>0,σ_2>0,-1<\rho<1)</script><ul>
+f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2})),</script><script type="math/tex; mode=display">
+(-∞<a<∞,-∞<b<∞,σ_1>0,σ_2>0,-1<\rho<1)</script><ul>
 <li>证：<script type="math/tex; mode=display">
-∵证明f(x_1,x_2)为密度函数\\
-∴要证\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2=1\\
-设u=(1-\rho^2)^{-\frac{1}{2}}\frac{x_1-a}{σ_1},v=(1-\rho^2)^{-\frac{1}{2}}\frac{x_2-b}{σ_2}\\
-∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2\\
-=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) d\sqrt{1-\rho^2}σ_1u+ad\sqrt{1-\rho^2}σ_2v+b\\
-=\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) dudv\\
-设t_1=u-\rho v,t_2=\sqrt{1-\rho^2}v,则：\\
-u^2+2\rho uv+v^2=(u-\rho v)^2+(1-\rho^2)v^2=t_1^2+t_2^2\\
-由于变换的雅克比行列式为：\\
+∵证明f(x_1,x_2)为密度函数</script><script type="math/tex; mode=display">
+∴要证\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2=1</script><script type="math/tex; mode=display">
+设u=(1-\rho^2)^{-\frac{1}{2}}\frac{x_1-a}{σ_1},v=(1-\rho^2)^{-\frac{1}{2}}\frac{x_2-b}{σ_2}</script><script type="math/tex; mode=display">
+∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2</script><script type="math/tex; mode=display">
+=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) d\sqrt{1-\rho^2}σ_1u+ad\sqrt{1-\rho^2}σ_2v+b</script><script type="math/tex; mode=display">
+=\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) dudv</script><script type="math/tex; mode=display">
+设t_1=u-\rho v,t_2=\sqrt{1-\rho^2}v,则：</script><script type="math/tex; mode=display">
+u^2+2\rho uv+v^2=(u-\rho v)^2+(1-\rho^2)v^2=t_1^2+t_2^2</script>由于变换的雅克比行列式为：<script type="math/tex; mode=display">
 \left|\begin{array}{c}
 ∂t_1/∂u &∂t_1/∂v\\
 ∂t_2/∂u &∂t_2/∂v\\
-\end{array}\right|=\sqrt{1-\rho^2}\\
-∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2\\
-=\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{t_1^2+t_2^2}{2})(\sqrt{1-\rho^2})^{-1} dudv\\
-=(2π)^{-1}\int_0^∞e^{-\frac{2}}dt_1\int_0^∞e^{-\frac{2}}dt_2\\
-∵之前(各公式的推导以及证明-一维随机变量-正态分布)有证：\\
-I=\int_{-∞}^∞e^{-\frac{t^2}{2}}d\frac{x}{σ}=\int_{-∞}^∞e^{-\frac{t^2}{2}}dt=\sqrt{2π}\\
-∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2=(2π)^{-1}\sqrt{2π}\sqrt{2π}=1\\
+\end{array}\right|=\sqrt{1-\rho^2}</script><script type="math/tex; mode=display">
+∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2</script><script type="math/tex; mode=display">
+=\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{t_1^2+t_2^2}{2})(\sqrt{1-\rho^2})^{-1} dudv\</script><script type="math/tex; mode=display">
+=(2π)^{-1}\int_0^∞e^{-\frac{2}}dt_1\int_0^∞e^{-\frac{2}}dt_2</script>∵之前(各公式的推导以及证明-一维随机变量-正态分布)有证：<script type="math/tex; mode=display">
+I=\int_{-∞}^∞e^{-\frac{t^2}{2}}d\frac{x}{σ}=\int_{-∞}^∞e^{-\frac{t^2}{2}}dt=\sqrt{2π}</script><script type="math/tex; mode=display">
+∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2=(2π)^{-1}\sqrt{2π}\sqrt{2π}=1</script><script type="math/tex; mode=display">
 得证</script></li>
 </ul>
 <h3 id="通过离散型求边缘分布的方法求服从多项分布的随机变量的边缘分布"><a href="#通过离散型求边缘分布的方法求服从多项分布的随机变量的边缘分布" class="headerlink" title="通过离散型求边缘分布的方法求服从多项分布的随机变量的边缘分布"></a>通过离散型求边缘分布的方法求服从多项分布的随机变量的边缘分布</h3><p>设$X=(X₁, …,X_n)$服从多项分布$M(N;p₁, … ,p_n)$,要求其边缘分布。</p>
@@ -465,23 +478,22 @@ I=\int_{-∞}^∞e^{-\frac{t^2}{2}}d\frac{x}{σ}=\int_{-∞}^∞e^{-\frac{t^2}{2
 <li>解：</li>
 <li><ul>
 <li>方法一<script type="math/tex; mode=display">
-考虑X₁,有事件\overline{A_1}将事件A_1作为一方,A₂+ …+A_n作为一方\\
-∵X₁是在N次独立试验中事件A₁发生的次数，而在每次试验中A₁发生的概率保持为p₁\\
+考虑X₁,有事件\overline{A_1}将事件A_1作为一方,A₂+ …+A_n作为一方</script>∵X₁是在N次独立试验中事件A₁发生的次数，而在每次试验中A₁发生的概率保持为p₁<script type="math/tex; mode=display">
 ∴X_1的分布为B(N,p_1)</script></li>
 </ul>
 </li>
 <li><ul>
 <li>方法二<script type="math/tex; mode=display">
-P(X_1=k)=\sum_{k_2,…,k_n}p(k,k_2,…,k_n)\\
-=\sum_{k_2,…,k_n}\frac{N!}{k!k_2!…k_n!}p_1^kp_2^{k_2}…p_n^{k_n}\\
-=\frac{p_1^k}{k!}\sum_{k_2,…,k_n}\frac{N!}{k_2!…k_n!}p_2^{k_2}…p_n^{k_n}\\
-设p'_i=\frac{p_i}{1-p_1},(i>1),则有：\\
-p'_2+…+p'_n=\frac{p_2+…+p_n}{1-p_1}=\frac{1-p_1}{1-p_1}=1\\
-又∵p_2+…+p_n=N-k\\
-∴P(X_1=k)=\frac{p_1^k(N-k)!}{k!(N-k)!}\sum_{k_2,…,k_n}\frac{N!}{k_2!…k_n!}{(p'_2(1-p_1))}^{k_2}…{(p'_n(1-p_1))}^{k_n}\\
-=\frac{p_1^kN!(1-p_1)^{N-k}}{k!(N-k)!}\sum_{k_2,…,k_n}\frac{(N-k)!}{k_2!…k_n!}{p'_2}^{k_2}…{p'_n}^{k_n}\\
-∵\sum_{k_2,…,k_n}\frac{(N-k)!}{k_2!…k_n!}{p'_2}^{k_2}…{p'_n}^{k_n}=(p'_2+…+p'_n)^{N-k}=1\\
-∴P(X_1=k)=\frac{p_1^kN!(1-p_1)^{N-k}}{k!(N-k)!}=b(k;N,p_1)\\
+P(X_1=k)=\sum_{k_2,…,k_n}p(k,k_2,…,k_n)</script><script type="math/tex; mode=display">
+=\sum_{k_2,…,k_n}\frac{N!}{k!k_2!…k_n!}p_1^kp_2^{k_2}…p_n^{k_n}</script><script type="math/tex; mode=display">
+=\frac{p_1^k}{k!}\sum_{k_2,…,k_n}\frac{N!}{k_2!…k_n!}p_2^{k_2}…p_n^{k_n}</script><script type="math/tex; mode=display">
+设p'_i=\frac{p_i}{1-p_1},(i>1),则有：</script><script type="math/tex; mode=display">
+p'_2+…+p'_n=\frac{p_2+…+p_n}{1-p_1}=\frac{1-p_1}{1-p_1}=1</script><script type="math/tex; mode=display">
+又∵p_2+…+p_n=N-k</script><script type="math/tex; mode=display">
+∴P(X_1=k)=\frac{p_1^k(N-k)!}{k!(N-k)!}\sum_{k_2,…,k_n}\frac{N!}{k_2!…k_n!}{(p'_2(1-p_1))}^{k_2}…{(p'_n(1-p_1))}^{k_n}</script><script type="math/tex; mode=display">
+=\frac{p_1^kN!(1-p_1)^{N-k}}{k!(N-k)!}\sum_{k_2,…,k_n}\frac{(N-k)!}{k_2!…k_n!}{p'_2}^{k_2}…{p'_n}^{k_n}</script><script type="math/tex; mode=display">
+∵\sum_{k_2,…,k_n}\frac{(N-k)!}{k_2!…k_n!}{p'_2}^{k_2}…{p'_n}^{k_n}=(p'_2+…+p'_n)^{N-k}=1</script><script type="math/tex; mode=display">
+∴P(X_1=k)=\frac{p_1^kN!(1-p_1)^{N-k}}{k!(N-k)!}=b(k;N,p_1)</script><script type="math/tex; mode=display">
 ∴是二项式分布B(N,p_1)</script></li>
 </ul>
 </li>
@@ -489,28 +501,28 @@ p'_2+…+p'_n=\frac{p_2+…+p_n}{1-p_1}=\frac{1-p_1}{1-p_1}=1\\
 <h3 id="连续型随机向量的概率密度函数"><a href="#连续型随机向量的概率密度函数" class="headerlink" title="连续型随机向量的概率密度函数"></a>连续型随机向量的概率密度函数</h3><p>以二维的情况为例，设X=(X₁,X₂)有概率密度函数f(x1,x₂),证明$X_1,X_2$存在概率密度函数。</p>
 <ul>
 <li>证：<script type="math/tex; mode=display">
-X₁的分布函数F₁(x₁)=P(X₁≤x₁)可以写为P(X₁≤x₁,X₂<∞),得到：\\
-F_1(x_1)=P(X₁≤x₁)=\int^{x_1}_{-∞}dt_1\int^∞_{-∞}f(t_1,t_2)dt_2\\
-记f_1(t_1)=\int^∞_{-∞}f(t_1,t_2)dt_2,则：\\
-F_1(x_1)=\int^{x_1}_{-∞}f_1(t_1)dt_1\\
-两边同时对x_1求导得X_1的概率密度函数：\\
-dF_1(x_1)/dx_1=f_1(x_1)=\int^∞_{-∞}f(x_1,x_2)dx_2\\
-同理，有X_2的概率密度函数：\\
+X₁的分布函数F₁(x₁)=P(X₁≤x₁)可以写为P(X₁≤x₁,X₂<∞),得到：</script><script type="math/tex; mode=display">
+F_1(x_1)=P(X₁≤x₁)=\int^{x_1}_{-∞}dt_1\int^∞_{-∞}f(t_1,t_2)dt_2</script><script type="math/tex; mode=display">
+记f_1(t_1)=\int^∞_{-∞}f(t_1,t_2)dt_2,则：</script><script type="math/tex; mode=display">
+F_1(x_1)=\int^{x_1}_{-∞}f_1(t_1)dt_1</script><script type="math/tex; mode=display">
+两边同时对x_1求导得X_1的概率密度函数：</script><script type="math/tex; mode=display">
+dF_1(x_1)/dx_1=f_1(x_1)=\int^∞_{-∞}f(x_1,x_2)dx_2</script><script type="math/tex; mode=display">
+同理，有X_2的概率密度函数：</script><script type="math/tex; mode=display">
 f_2(x_2)=\int^∞_{-∞}f(x_1,x_2)dx_1</script></li>
 </ul>
 <h3 id="二维正态分布的边缘分布密度-1"><a href="#二维正态分布的边缘分布密度-1" class="headerlink" title="二维正态分布的边缘分布密度"></a>二维正态分布的边缘分布密度</h3><p>若($X_1$,X₂)有二维正态分布$N(a,b,σ_1^2,σ_2^2,\rho)$,证明$X_1$,X₂的边缘分布分别为一维正态分布$N(a,σ_1^2)$和$N(b,σ_2^2)$。</p>
 <ul>
 <li>证：<script type="math/tex; mode=display">
-f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}))\\
-∵\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}=(1-\rho^2)\frac{(x_1-a)^2}{σ_1^2}+(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2\\
-∴f_1(x_1)=\int^{∞}_{-∞}f(x_1,x_2)dx_2=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})C,\\
-其中C=\int^{∞}_{-∞}exp(-\frac{1}{2(1-\rho^2)}(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2)\\
-设有t=(\frac{x_2-b}{σ_2}-\rho\frac{x_1-a}{σ_1})/\sqrt{1-\rho^2}\\
-则C=\int^{∞}_{-∞}exp(-\frac{t^2}{2})d(σ_2(\sqrt{1-\rho^2}t+\rho\frac{x_1-a}{σ_1})+b)\\
-=σ_2\sqrt{1-\rho^2}\int^{∞}_{-∞}exp(-\frac{t^2}{2})dt\\
-=σ_2\sqrt{1-\rho^2}\sqrt{2π}\\
-∴f_1(x_1)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})*σ_2\sqrt{1-\rho^2}\sqrt{2π}\\
-=(\sqrt{2π}σ_1)^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})=N(a,σ_1^2)\\
+f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}))</script><script type="math/tex; mode=display">
+∵\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}=(1-\rho^2)\frac{(x_1-a)^2}{σ_1^2}+(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2</script><script type="math/tex; mode=display">
+∴f_1(x_1)=\int^{∞}_{-∞}f(x_1,x_2)dx_2=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})C,</script><script type="math/tex; mode=display">
+其中C=\int^{∞}_{-∞}exp(-\frac{1}{2(1-\rho^2)}(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2)</script><script type="math/tex; mode=display">
+设有t=(\frac{x_2-b}{σ_2}-\rho\frac{x_1-a}{σ_1})/\sqrt{1-\rho^2}</script><script type="math/tex; mode=display">
+则C=\int^{∞}_{-∞}exp(-\frac{t^2}{2})d(σ_2(\sqrt{1-\rho^2}t+\rho\frac{x_1-a}{σ_1})+b)</script><script type="math/tex; mode=display">
+=σ_2\sqrt{1-\rho^2}\int^{∞}_{-∞}exp(-\frac{t^2}{2})dt</script><script type="math/tex; mode=display">
+=σ_2\sqrt{1-\rho^2}\sqrt{2π}</script><script type="math/tex; mode=display">
+∴f_1(x_1)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})*σ_2\sqrt{1-\rho^2}\sqrt{2π}</script><script type="math/tex; mode=display">
+=(\sqrt{2π}σ_1)^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})=N(a,σ_1^2)</script><script type="math/tex; mode=display">
 得证</script></li>
 </ul>
 
