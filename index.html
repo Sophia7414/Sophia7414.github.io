@@ -338,7 +338,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-05 21:46:32" itemprop="dateModified" datetime="2023-09-05T21:46:32+08:00">2023-09-05</time>
+                <time title="Modified: 2023-09-05 22:03:57" itemprop="dateModified" datetime="2023-09-05T22:03:57+08:00">2023-09-05</time>
               </span>
 
           
@@ -487,7 +487,8 @@ P(X∈A)=\int_A…\int f(x₁,…,x_n) dx_1…dx_n</script>则称f是X的(概率
 </ul>
 <p>最重要的多维连续型分布是多维正态分布。对二维的情况，常把这个分布记为$N(a,b,σ_1,σ_2,\rho)$,其概率密度函数有形式：</p>
 <script type="math/tex; mode=display">
-f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2})),\\(-∞<a<∞,-∞<b<∞,σ_1>0,σ_2>0,-1<\rho<1)</script><p>(在三维空间中)的图形，好像一个椭圆切面的钟倒扣在$Ox_1x₂$平面上，其中心在(a,b)点。类似地，可定义n维正态分布的概率密度函数。</p>
+f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+</script><script type="math/tex; mode=display">
+\frac{(x_2-b)^2}{σ_2^2})),\\(-∞<a<∞,-∞<b<∞,σ_1>0,σ_2>0,-1<\rho<1)</script><p>(在三维空间中)的图形，好像一个椭圆切面的钟倒扣在$Ox_1x₂$平面上，其中心在(a,b)点。类似地，可定义n维正态分布的概率密度函数。</p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
 <li>论在一维或多维，在定义连续型随机变量时，实质之点都在于它有概率密度函数存在。在概率论理论上连续型随机变量的定义为有密度函数的随机变量。</li>
 <li>与离散型随机向量的定义不同，连续型随机向量不能简单地定义为“其各分量都是一维连续型随机变量的那种随机向量”，必须证明其的密度函数满足:<script type="math/tex; mode=display">
@@ -507,7 +508,9 @@ P(X_1=a_{1k})=\sum_{j_2,…,j_n}p(k,j_2,…,j_n)</script><h3 id="连续型随机
 \int^{∞}_{-∞}f(x_1,x_2)dx_2,\int^{∞}_{-∞}f(x_1,x_2)dx_1</script><p>以X1为例，其边缘分布为：</p>
 <script type="math/tex; mode=display">
 P(X_1=x_1)=\int^{∞}_{-∞}f(x_1,x_2)dx_2</script><ul>
-<li>推广到n维:<br>设X=(X₁, …,$X<em>n$)有概率密度函数f(x₁,…,$x_n$),其中$X_i$的概率密度函数为将f(x₁,…,$x_n$)中的$x_i$固定然后对x₁,…,$x</em>{i-1}$,$x_{i+1}$,…$x_n$<br>作定积分。以$X_1$为例，有概率密度函数：<script type="math/tex; mode=display">
+<li>推广到n维:  <script type="math/tex; mode=display">
+设X=(X₁, …,X_n)有概率密度函数f(x₁,…,x_n),其中X_i的概率密度函数为：</script><script type="math/tex; mode=display">
+将f(x₁,…,x_n)中的x_i固定然后对x₁,…,x_{i-1},x_{i+1},…x_n作定积分。</script>以$X_1$为例，有概率密度函数：<script type="math/tex; mode=display">
 f_1(x_1)=\int^{∞}_{-∞}…\int^{∞}_{-∞}f(x_1,x_2,…,x_n)dx_2…dx_n</script></li>
 </ul>
 <h3 id="二维正态分布的边缘分布密度"><a href="#二维正态分布的边缘分布密度" class="headerlink" title="二维正态分布的边缘分布密度"></a>二维正态分布的边缘分布密度</h3><p>若($X_1$,X₂)有二维正态分布$N(a,b,σ_1^2,σ_2^2,\rho)$,则$X_1$,X₂的边缘分布分别为一维正态分布$N(a,σ_1^2)$和$N(b,σ_2^2)$。从这个例子看出一个有趣的事实:虽则一个随机向量X=(X₁,…,$X_n$)的分布F足以决定其任一分量$X_i$的(边缘)分布$F_i$,但反过来不对。</p>
@@ -595,7 +598,9 @@ P(x≤X≤x+h|X>x)/h</script><script type="math/tex; mode=display">
 X=(X₁,…,X_n),(X₁,…,X_n∈N(自然数),X₁+…+X_n=N(实验次数))</script><p>求X的概率分布。</p>
 <ul>
 <li>解：<br>设有一事件<script type="math/tex; mode=display">
-B={X₁=k₁,…,X_i=k_i, …,X_n=k_n}</script>,如k₁,…,$k<em>n$∈N且k₁+…+k_n=N$不成立，则P(B)=0。记N次试验的原始结果为$j_1$,j₂…$j_n$(第i次实验发生$A</em>{j_i}$)，则为使B发生，其中应有k₁个1,k₂个2,…，将其转化为分堆问题，不同的分法应该有：<script type="math/tex; mode=display">
+B={X₁=k₁,…,X_i=k_i, …,X_n=k_n}</script><script type="math/tex; mode=display">
+如k₁,…,k_n∈N且k₁+…+k_n=N不成立，则P(B)=0。</script><script type="math/tex; mode=display">
+记N次试验的原始结果为j_1,j₂…j_n(第i次实验发生A_{j_i})</script>为使B发生，其中应有k₁个1,k₂个2,…，将其转化为分堆问题，不同的分法应该有：<script type="math/tex; mode=display">
 N!/(k₁!…k_n!)</script>符合上述条件的结果序列出现的概率为：<script type="math/tex; mode=display">
 p_1^{k_1}p_2^{k_2}…p_n^{k_n}</script>由此可得：<script type="math/tex; mode=display">
 P(X₁=k₁,…,X_i=k_i, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2}…p_n^{k_n},</script><script type="math/tex; mode=display">
@@ -607,14 +612,16 @@ P(X₁=k₁,…,X_i=k_i, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2
 <script type="math/tex; mode=display">
 \sum{}^{*}\frac{N!}{k_1!…k_n!}p_1^{k_1}p_2^{k_2}…p_n^{k_n}</script><h3 id="二维正态分布-1"><a href="#二维正态分布-1" class="headerlink" title="二维正态分布"></a>二维正态分布</h3><p>证明以下函数是密度函数：</p>
 <script type="math/tex; mode=display">
-f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2})),</script><script type="math/tex; mode=display">
+f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+</script><script type="math/tex; mode=display">
+\frac{(x_2-b)^2}{σ_2^2})),</script><script type="math/tex; mode=display">
 (-∞<a<∞,-∞<b<∞,σ_1>0,σ_2>0,-1<\rho<1)</script><ul>
 <li>证：<script type="math/tex; mode=display">
 ∵证明f(x_1,x_2)为密度函数</script><script type="math/tex; mode=display">
 ∴要证\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2=1</script><script type="math/tex; mode=display">
 设u=(1-\rho^2)^{-\frac{1}{2}}\frac{x_1-a}{σ_1},v=(1-\rho^2)^{-\frac{1}{2}}\frac{x_2-b}{σ_2}</script><script type="math/tex; mode=display">
 ∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2</script><script type="math/tex; mode=display">
-=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) d\sqrt{1-\rho^2}σ_1u+ad\sqrt{1-\rho^2}σ_2v+b</script><script type="math/tex; mode=display">
+=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) d\sqrt{1-\rho^2}σ_1u+</script><script type="math/tex; mode=display">
+ad\sqrt{1-\rho^2}σ_2v+b</script><script type="math/tex; mode=display">
 =\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) dudv</script><script type="math/tex; mode=display">
 设t_1=u-\rho v,t_2=\sqrt{1-\rho^2}v,则：</script><script type="math/tex; mode=display">
 u^2+2\rho uv+v^2=(u-\rho v)^2+(1-\rho^2)v^2=t_1^2+t_2^2</script>由于变换的雅克比行列式为：<script type="math/tex; mode=display">
@@ -623,8 +630,8 @@ u^2+2\rho uv+v^2=(u-\rho v)^2+(1-\rho^2)v^2=t_1^2+t_2^2</script>由于变换的�
 ∂t_2/∂u &∂t_2/∂v\\
 \end{array}\right|=\sqrt{1-\rho^2}</script><script type="math/tex; mode=display">
 ∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2</script><script type="math/tex; mode=display">
-=\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{t_1^2+t_2^2}{2})(\sqrt{1-\rho^2})^{-1} dudv\</script><script type="math/tex; mode=display">
-=(2π)^{-1}\int_0^∞e^{-\frac{2}}dt_1\int_0^∞e^{-\frac{2}}dt_2</script>∵之前(各公式的推导以及证明-一维随机变量-正态分布)有证：<script type="math/tex; mode=display">
+=\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{t_1^2+t_2^2}{2})(\sqrt{1-\rho^2})^{-1} dudv</script><script type="math/tex; mode=display">
+=(2π)^{-1}\int_0^∞ e^{-\frac{t_1^2}{2}}dt_1 \int_0^∞e^{-\frac{t_2^2}{2}}dt_2</script>∵之前(各公式的推导以及证明-一维随机变量-正态分布)有证：<script type="math/tex; mode=display">
 I=\int_{-∞}^∞e^{-\frac{t^2}{2}}d\frac{x}{σ}=\int_{-∞}^∞e^{-\frac{t^2}{2}}dt=\sqrt{2π}</script><script type="math/tex; mode=display">
 ∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2=(2π)^{-1}\sqrt{2π}\sqrt{2π}=1</script><script type="math/tex; mode=display">
 得证</script></li>
@@ -669,8 +676,10 @@ f_2(x_2)=\int^∞_{-∞}f(x_1,x_2)dx_1</script></li>
 <h3 id="二维正态分布的边缘分布密度-1"><a href="#二维正态分布的边缘分布密度-1" class="headerlink" title="二维正态分布的边缘分布密度"></a>二维正态分布的边缘分布密度</h3><p>若($X_1$,X₂)有二维正态分布$N(a,b,σ_1^2,σ_2^2,\rho)$,证明$X_1$,X₂的边缘分布分别为一维正态分布$N(a,σ_1^2)$和$N(b,σ_2^2)$。</p>
 <ul>
 <li>证：<script type="math/tex; mode=display">
-f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}))</script><script type="math/tex; mode=display">
-∵\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}=(1-\rho^2)\frac{(x_1-a)^2}{σ_1^2}+(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2</script><script type="math/tex; mode=display">
+f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-</script><script type="math/tex; mode=display">
+\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}))</script><script type="math/tex; mode=display">
+∵\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}</script><script type="math/tex; mode=display">
+=(1-\rho^2)\frac{(x_1-a)^2}{σ_1^2}+(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2</script><script type="math/tex; mode=display">
 ∴f_1(x_1)=\int^{∞}_{-∞}f(x_1,x_2)dx_2=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})C,</script><script type="math/tex; mode=display">
 其中C=\int^{∞}_{-∞}exp(-\frac{1}{2(1-\rho^2)}(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2)</script><script type="math/tex; mode=display">
 设有t=(\frac{x_2-b}{σ_2}-\rho\frac{x_1-a}{σ_1})/\sqrt{1-\rho^2}</script><script type="math/tex; mode=display">
