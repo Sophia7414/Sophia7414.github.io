@@ -338,7 +338,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-12 15:09:47" itemprop="dateModified" datetime="2023-08-12T15:09:47+08:00">2023-08-12</time>
+                <time title="Modified: 2023-09-05 20:49:35" itemprop="dateModified" datetime="2023-09-05T20:49:35+08:00">2023-09-05</time>
               </span>
 
           
@@ -454,9 +454,55 @@ F(x)=
 (x-a)/(b-a),a<x<b\\
 1,x≥b
 \end{cases}</script><p>均匀分布的一个好处是：借助于它容易实现对分布的模拟，比如以某种方法产生“随机数”，如取n足够大，而独立地产生n个随机数字a₁,…,an时，X=0·a₁a₂…an就很接近于[0,1]均匀分布R(0,1)。<br>对一般分布函数F(x),若F(x)处处连续且严格上升，则其反函数G存在，若X～R(0,1),则G(X)～F。用上述模拟方法产生X的模拟值后,代入G中即得分布F的模拟值。</p>
-<h1 id="各公式的推导以及证明"><a href="#各公式的推导以及证明" class="headerlink" title="各公式的推导以及证明"></a>各公式的推导以及证明</h1><h2 id="二项分布-1"><a href="#二项分布-1" class="headerlink" title="二项分布"></a>二项分布</h2><p>设某事件A在一次试验中发生的概率为p，现把这试验独立地重复n次，以X记A在这n次试验中发生的次数.则X可取0,1, … ,n等值。为确定其概率分布，考虑事件{X=i}。要这个事件发生，必须在这n次试验中，有i个A,n-i个$\overline{A}$。每个A有概率p，n次试验独立，每个这样的原始结果序列发生的概率为$p_i$$(1-p)^{n-i}$。因为在n个位置中A可以占据任何i个位置，故一共有$C_n^i$种可能。由此得出:</p>
+<h1 id="2-2-多维随机变量-随机向量"><a href="#2-2-多维随机变量-随机向量" class="headerlink" title="2.2  多维随机变量(随机向量)"></a>2.2  多维随机变量(随机向量)</h1><h2 id="2-2-1-离散型随机向量的分布"><a href="#2-2-1-离散型随机向量的分布" class="headerlink" title="2.2.1 离散型随机向量的分布"></a>2.2.1 离散型随机向量的分布</h2><p>设X=(X₁,X₂,…,$X_n$)为一n维向量，其每个分量都是一维随机变量，则称X是一个n维随机向量(n维随机变量)。与随机变量一样，随机向量也有离散型和连续型之分。</p>
+<h3 id="随机向量的概率函数"><a href="#随机向量的概率函数" class="headerlink" title="随机向量的概率函数"></a>随机向量的概率函数</h3><p>以{$a<em>{i1}$,$a</em>{i2}$,…}记$X<em>i$的全部可能值,则事件{$X_1=a</em>{1j<em>1},X_2=a</em>{2j<em>2},…,X_n=a</em>{nj_n}$}的概率:</p>
 <script type="math/tex; mode=display">
-p_i=b(i;n,p)=p^i(1-p)^{n-i}C_n^i(i=0,1, …,n)</script><h2 id="波哇松分布-1"><a href="#波哇松分布-1" class="headerlink" title="波哇松分布"></a>波哇松分布</h2><p>观察得到事件A在一段时间(长度为1)内发生了λ次,设所观察的这段时间为[0,1).取一个很大的自然数n, 把时间段[0,1)分为等长的n段，把在任意长度为1的时段内发生的A数设为X。作几个假定：</p>
+p(j_1,j_2,…,j_n)=P(X_1=a_{1j_1},X_2=a_{2j_2},…,X_n=a_{nj_n})</script><p>称为随机向量X=(X₁,X₂,…,$X_n$)的概率函数或概率分布。</p>
+<ul>
+<li>概率函数应满足条件：<script type="math/tex; mode=display">
+p(j_1,j_2,…,j_n)≥0, \sum_{j_n}…\sum_{j_2}\sum_{j_1}p(j_1,j_2,…,j_n)=1</script></li>
+</ul>
+<h3 id="多项分布"><a href="#多项分布" class="headerlink" title="多项分布"></a>多项分布</h3><p>多项分布是最重要的离散型多维分布。设A₁,A₂,…,$A_n$,是某一试验之下的完备事件群(每次试验时，事件A₁,A₂,…,$A_n$必发生一个且只发生一个)。分别以p₁,p₂,…,$p_n$记事件A₁,A₂,…,$A_n$的概率，则有:</p>
+<script type="math/tex; mode=display">
+p_i≥0,p₁+ …+p_n=1</script><p>将试验独立地重复N次，而以$X_i$记在这N次试验中事件$A_i$出现的次数，则有n维随机向量:</p>
+<script type="math/tex; mode=display">
+X=(X₁,…,X_n),(X₁,…,X_n∈N(自然数),X₁+…+X_n=N(实验次数))</script><p>X的概率分布就叫做多项分布,记为M(N;p₁ ,…,$p_n$),名称来自多项展开式，为：</p>
+<script type="math/tex; mode=display">
+P(X₁=k₁,X_2=k_2, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2}…p_n^{k_n},\\(k₁,…,k_n∈N,k₁+…+k_n=N)</script><p>当一个体按某种属性分成几类时，就会涉及这个分布。</p>
+<h2 id="2-2-2-连续型随机向量的分布"><a href="#2-2-2-连续型随机向量的分布" class="headerlink" title="2.2.2 连续型随机向量的分布"></a>2.2.2 连续型随机向量的分布</h2><p>设X=(X₁, …,$X_n$)是一个n维随机向量,其取值可视为n维欧氏空间$R^n$中的一个点。如果X的全部取值能充满$R^n$中某一区域，则称它是连续型的。描述多维随机向量的概率分布最方便的是概率密度函数。</p>
+<ul>
+<li><em>引进记号：X∈A,读作“X属于A”或 “X落在A内”,其中A是$R^n$中的集合，{X∈A}是一个随机事件</em><h3 id="连续型多维随机向量的概率密度函数"><a href="#连续型多维随机向量的概率密度函数" class="headerlink" title="连续型多维随机向量的概率密度函数"></a>连续型多维随机向量的概率密度函数</h3>若f(x₁,…,$x_n$)是定义在$R^n$上的非负函数，对$R^n$中的任何集合A, 如有：<script type="math/tex; mode=display">
+P(X∈A)=\int_A…\int f(x₁,…,x_n) dx_1…dx_n</script>则称f是X的(概率)密度函数。</li>
+<li>当A取$R^n$时{X ∈A}为必然事件，因此：<script type="math/tex; mode=display">
+\int_{-∞}^∞…\int f(x₁,…,x_n) dx_1…dx_n=1</script></li>
+</ul>
+<h3 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>若“X落在A内”的概率P(X ∈A)与A的面积成正比而与其位置及形状无关，则称X的分布称为$R^n$上的均匀分布。</p>
+<h3 id="二维正态分布"><a href="#二维正态分布" class="headerlink" title="二维正态分布"></a>二维正态分布</h3><ul>
+<li><em>引进记号:exp,exp(c)=$e^c$</em></li>
+</ul>
+<p>最重要的多维连续型分布是多维正态分布。对二维的情况，常把这个分布记为$N(a,b,σ_1,σ_2,\rho)$,其概率密度函数有形式：</p>
+<script type="math/tex; mode=display">
+f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2})),\\(-∞<a<∞,-∞<b<∞,σ_1>0,σ_2>0,-1<\rho<1)</script><p>(在三维空间中)的图形，好像一个椭圆切面的钟倒扣在$Ox_1x₂$平面上，其中心在(a,b)点。类似地，可定义n维正态分布的概率密度函数。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>论在一维或多维，在定义连续型随机变量时，实质之点都在于它有概率密度函数存在。在概率论理论上连续型随机变量的定义为有密度函数的随机变量。</li>
+<li>与离散型随机向量的定义不同，连续型随机向量不能简单地定义为“其各分量都是一维连续型随机变量的那种随机向量”，必须证明其的密度函数满足$\int_{-∞}^∞…\int f(x₁,…,x_n) dx_1…dx_n=1$</li>
+<li>与一维情况一样，也可以用概率分布函数去描述多维随机向量的概率分布，其定义为:<script type="math/tex; mode=display">
+F(x_1,x_2, …,x_n)=P(X₁≤x₁,X₂≤x₂, …,X_n≤x_n)</script></li>
+</ul>
+<h2 id="2-2-3-边缘分布"><a href="#2-2-3-边缘分布" class="headerlink" title="2.2.3 边缘分布"></a>2.2.3 边缘分布</h2><p>设X=(X₁,…,$X_n$)为一n维随机向量,X有一定的分布F,是一个n维分布。X的每个分量$X_i$各自的一维分布$F_i$称为随机向量X或其分布F的“边缘分布”</p>
+<h3 id="离散型求边缘分布"><a href="#离散型求边缘分布" class="headerlink" title="离散型求边缘分布"></a>离散型求边缘分布</h3><p>假设我们要求$P(X₁=a<em>{1k})$,那么他等于把所有$P(X_1=a</em>{1j<em>1},X_2=a</em>{2j<em>2},…,X_n=a</em>{nj_n})$全加起来，但局限于$j_1$=k,得:</p>
+<script type="math/tex; mode=display">
+P(X_1=a_{1k})=\sum_{j_2,…,j_n}p(k,j_2,…,j_n)</script><h3 id="连续型随机向量的边缘分布"><a href="#连续型随机向量的边缘分布" class="headerlink" title="连续型随机向量的边缘分布"></a>连续型随机向量的边缘分布</h3><p>以二维的情况为例，设X=(X₁,X₂)有概率密度函数f(x1,x₂)，则X1，X2的概率密度函数分别为$\int^{∞}<em>{-∞}f(x_1,x_2)dx_2$,$\int^{∞}</em>{-∞}f(x_1,x_2)dx_1$。其边缘分布为：</p>
+<script type="math/tex; mode=display">
+P(X_1=x_1)=\int^{∞}_{-∞}f(x_1,x_2)dx_2</script><ul>
+<li>推广到n维:<br>设X=(X₁, …,$X<em>n$)有概率密度函数f(x₁,…,$x_n$),其中$X_i$的概率密度函数为将f(x₁,…,$x_n$)中的$x_i$固定然后对$x₁,…,x</em>{i-1},x_{i+1},…x_n$作定积分。以$X_1$为例，有概率密度函数：<script type="math/tex; mode=display">
+f_1(x_1)=\int^{∞}_{-∞}…\int^{∞}_{-∞}f(x_1,x_2,…,x_n)dx_2…dx_n</script></li>
+</ul>
+<h3 id="二维正态分布的边缘分布密度"><a href="#二维正态分布的边缘分布密度" class="headerlink" title="二维正态分布的边缘分布密度"></a>二维正态分布的边缘分布密度</h3><p>若($X_1$,X₂)有二维正态分布$N(a,b,σ_1^2,σ_2^2,\rho)$,则$X_1$,X₂的边缘分布分别为一维正态分布$N(a,σ_1^2)$和$N(b,σ_2^2)$。从这个例子看出一个有趣的事实:虽则一个随机向量X=(X₁,…,$X_n$)的分布F足以决定其任一分量$X_i$的(边缘)分布$F_i$,但反过来不对。</p>
+<p><em>边缘分布也可以不只是单个，但一定比变量的维数低</em></p>
+<h1 id="各公式的推导以及证明"><a href="#各公式的推导以及证明" class="headerlink" title="各公式的推导以及证明"></a>各公式的推导以及证明</h1><h2 id="一维随机变量"><a href="#一维随机变量" class="headerlink" title="一维随机变量"></a>一维随机变量</h2><h3 id="二项分布-1"><a href="#二项分布-1" class="headerlink" title="二项分布"></a>二项分布</h3><p>设某事件A在一次试验中发生的概率为p，现把这试验独立地重复n次，以X记A在这n次试验中发生的次数.则X可取0,1, … ,n等值。为确定其概率分布，考虑事件{X=i}。要这个事件发生，必须在这n次试验中，有i个A,n-i个$\overline{A}$。每个A有概率p，n次试验独立，每个这样的原始结果序列发生的概率为$p_i$$(1-p)^{n-i}$。因为在n个位置中A可以占据任何i个位置，故一共有$C_n^i$种可能。由此得出:</p>
+<script type="math/tex; mode=display">
+p_i=b(i;n,p)=p^i(1-p)^{n-i}C_n^i(i=0,1, …,n)</script><h3 id="波哇松分布-1"><a href="#波哇松分布-1" class="headerlink" title="波哇松分布"></a>波哇松分布</h3><p>观察得到事件A在一段时间(长度为1)内发生了λ次,设所观察的这段时间为[0,1).取一个很大的自然数n, 把时间段[0,1)分为等长的n段，把在任意长度为1的时段内发生的A数设为X。作几个假定：</p>
 <ul>
 <li>在每段恰发生事件的概率，近似地与这段时间之长成正比，即可取为λ/n。当n趋近于无穷时，X视作在n个小时段内有A的时段数。</li>
 <li>各段是否发生事故是独立的</li>
@@ -468,7 +514,7 @@ P(X=i)=C_n^(\frac{\lambda}{n})^i(1-\frac{\lambda}{n}))^{n-i}</script><p>当n→�
 C_n^i/n^i→1/i!;(1-\frac{\lambda}{n})^n→e^{-\lambda}</script><p>由此得出：</p>
 <script type="math/tex; mode=display">
 P(X=i)=e^{-\lambda}\lambda^i/i!(\lambda>0)</script><p>从上述推导看出：波哇松分布可作为二项分布的极限而得到。</p>
-<h2 id="负二项分布-1"><a href="#负二项分布-1" class="headerlink" title="负二项分布"></a>负二项分布</h2><p>以检查产品为例，设废品率为p，指定一个自然数r，一个一个地从该厂产品中抽样检查，直到发现第r个废品为止，以X记到当时为止已检出的合格品个数。为计算X的分布假定各次抽取的结果是独立的，且每次抽得废品的概率固定为p。为使{X=i}发生，假定：</p>
+<h3 id="负二项分布-1"><a href="#负二项分布-1" class="headerlink" title="负二项分布"></a>负二项分布</h3><p>以检查产品为例，设废品率为p，指定一个自然数r，一个一个地从该厂产品中抽样检查，直到发现第r个废品为止，以X记到当时为止已检出的合格品个数。为计算X的分布假定各次抽取的结果是独立的，且每次抽得废品的概率固定为p。为使{X=i}发生，假定：</p>
 <ul>
 <li>在前i+r-1次抽取中，恰有r- 1个废品</li>
 <li>第i+r次抽出废品</li>
@@ -482,7 +528,7 @@ C_{-r}^i=\frac{(-r)!}{i!(-r-i)!}=\frac{(-r)(-r-1)(-r-2)…(-r-i+1)}{i!}</script>
 (1-x)^{-r}=\sum_{i=0}^∞C_{-r}^i(-x)^i=\sum_{i=0}^∞(-1)^iC_{i+r-1}^{i}(-x)^i=\sum_{i=0}^∞C_{i+r-1}^{i}x^i</script>当x=1-p并且两边都乘$p^r$时，有：<script type="math/tex; mode=display">
 1=p^r[1-(1-p)]^{-r}=\sum_{i=0}^∞C_{i+r-1}^{i}(1-p)^ip^r</script></li>
 </ul>
-<h2 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h2><p>证明f(x)确可以作为一个概率密度：</p>
+<h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><p>证明f(x)确可以作为一个概率密度：</p>
 <ul>
 <li>证：∵f(x)≥0<script type="math/tex; mode=display">
 ∴证明\int_{-∞}^∞f(x)dx=1</script>设t=(x-$\mu$)/σ，则转化为证明：<script type="math/tex; mode=display">
@@ -492,16 +538,16 @@ I=\int_{-∞}^∞e^{-\frac{t^2}{2}}d\frac{x}{σ}=\int_{-∞}^∞e^{-\frac{t^2}{2
 ∴I^2=\iint_{-∞}^∞e^{-\frac{t^2+u^2}{2}}dtdu</script>此时，将t和u转化成极坐标rcosθ和rsinθ，则：<script type="math/tex; mode=display">
 I^2=\int_0^{2π}\int_{-∞}^∞e^{-\frac{r^2}{2}}rdrdθ=\int_0^{2π}|0-1|dθ=2π</script>得证</li>
 </ul>
-<h2 id="正态分布与标准正态分布的转换"><a href="#正态分布与标准正态分布的转换" class="headerlink" title="正态分布与标准正态分布的转换"></a>正态分布与标准正态分布的转换</h2><p>已知x的正态分布密度函数为</p>
+<h3 id="正态分布与标准正态分布的转换"><a href="#正态分布与标准正态分布的转换" class="headerlink" title="正态分布与标准正态分布的转换"></a>正态分布与标准正态分布的转换</h3><p>已知x的正态分布密度函数为</p>
 <script type="math/tex; mode=display">
 f(x)=(\sqrt{2π}σ)^{-1}e^{-(x-\mu)^2/2σ^2}</script><p>设Y=(X-μ)/σ，即σY+μ=X，则有：</p>
 <script type="math/tex; mode=display">
 P(Y≤k)=P((X-μ)/σ≤k)=P(X≤σk+μ)=\int_{-∞}^{σk+μ}(\sqrt{2π}σ)^{-1}e^{-(x-\mu)^2/2σ^2}dx</script><script type="math/tex; mode=display">
 =\int_{-∞}^{k}(\sqrt{2π})^{-1}e^{-(σt+μ-μ)^2/2σ^2}dt=(\sqrt{2π})^{-1}\int_{-∞}^{k}e^{-t^2/2}dt</script><script type="math/tex; mode=display">
-∴P'(Y≤k)=e^{-\frac{x^2}{2}}/\sqrt{2π}</script><h2 id="Phi-x-1-Phi-x"><a href="#Phi-x-1-Phi-x" class="headerlink" title="$\Phi$(x)=1-$\Phi$(-x)"></a>$\Phi$(x)=1-$\Phi$(-x)</h2><script type="math/tex; mode=display">
+∴P'(Y≤k)=e^{-\frac{x^2}{2}}/\sqrt{2π}</script><h3 id="Phi-x-1-Phi-x"><a href="#Phi-x-1-Phi-x" class="headerlink" title="$\Phi$(x)=1-$\Phi$(-x)"></a>$\Phi$(x)=1-$\Phi$(-x)</h3><script type="math/tex; mode=display">
 \Phi(x)=(\sqrt{2π})^{-1}\int_{-∞}^{x}e^{-t^2/2}dt</script><script type="math/tex; mode=display">
 =(\sqrt{2π})^{-1}\int_{-x}^{∞}e^{-t^2/2}dt=(\sqrt{2π})^{-1}\int_{-∞}^{∞}e^{-t^2/2}dt-(\sqrt{2π})^{-1}\int_{-∞}^{-x}e^{-t^2/2}dt</script><script type="math/tex; mode=display">
-=1-\Phi(-x)</script><h2 id="指数分布-1"><a href="#指数分布-1" class="headerlink" title="指数分布"></a>指数分布</h2><p>以电子元件为例，其寿命X是随机变量，元件在时刻x尚能正常工作的条件下，其失效率总保持为某个常数λ&gt;0,与x无关，其寿命X遵从指数分布。通过这个来证明指数分布为：</p>
+=1-\Phi(-x)</script><h3 id="指数分布-1"><a href="#指数分布-1" class="headerlink" title="指数分布"></a>指数分布</h3><p>以电子元件为例，其寿命X是随机变量，元件在时刻x尚能正常工作的条件下，其失效率总保持为某个常数λ&gt;0,与x无关，其寿命X遵从指数分布。通过这个来证明指数分布为：</p>
 <script type="math/tex; mode=display">
 F(x)=\int_{-∞}^{x}f(t)dt=
 \begin{cases}
@@ -522,7 +568,7 @@ P(x≤X≤x+h|X>x)/h</script><script type="math/tex; mode=display">
 ∵F(0)=0</script><script type="math/tex; mode=display">
 ∴C=1</script>得证</li>
 </ul>
-<h2 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h2><p>对一般分布函数F(x),若F(x)处处连续且严格上升，则其反函数G存在，证明若X～R(0,1),则G(X)～F</p>
+<h3 id="均匀分布-2"><a href="#均匀分布-2" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>对一般分布函数F(x),若F(x)处处连续且严格上升，则其反函数G存在，证明若X～R(0,1),则G(X)～F</p>
 <ul>
 <li>证：<script type="math/tex; mode=display">
 ∵{G(X)≤x}</script><script type="math/tex; mode=display">
@@ -530,6 +576,97 @@ P(x≤X≤x+h|X>x)/h</script><script type="math/tex; mode=display">
 ∴{X≤F(x)}</script><script type="math/tex; mode=display">
 ∵R(0,1)的分布函数为F(x)=x,(0<x<1)</script><script type="math/tex; mode=display">
 ∴P(G(X)≤x)=P(X≤F(x))=F(x)</script><script type="math/tex; mode=display">
+得证</script></li>
+</ul>
+<h2 id="多维随机变量"><a href="#多维随机变量" class="headerlink" title="多维随机变量"></a>多维随机变量</h2><h3 id="多项分布-1"><a href="#多项分布-1" class="headerlink" title="多项分布"></a>多项分布</h3><p>设A₁,A₂,…,$A_n$,是某一试验之下的完备事件群,分别以p₁,p₂,…,$p_n$记事件A₁,A₂,…,$A_n$的概率,将试验独立地重复N次，而以$X_i$记在这N次试验中事件$A_i$出现的次数。设有n维随机向量:</p>
+<script type="math/tex; mode=display">
+X=(X₁,…,X_n),(X₁,…,X_n∈N(自然数),X₁+…+X_n=N(实验次数))</script><p>求X的概率分布。</p>
+<ul>
+<li>解：<br>设有一事件B={X₁=k₁,…,$X<em>i=k_i$, …,$X_n$=$k_n$},如$k₁,…,k_n∈N且k₁+…+k_n=N$不成立，则P(B)=0。记N次试验的原始结果为$j_1,j₂…j_n$(第i次实验发生$A</em>{j_i}$)，则为使B发生，其中应有k₁个1,k₂个2,…，将其转化为分堆问题，不同的分法应该有：<script type="math/tex; mode=display">
+N!/(k₁!…k_n!)</script>符合上述条件的结果序列出现的概率为：<script type="math/tex; mode=display">
+p_1^{k_1}p_2^{k_2}…p_n^{k_n}</script>由此可得：<script type="math/tex; mode=display">
+P(X₁=k₁,…,X_i=k_i, …,X_n=k_n)=\frac{N!}{(k₁!…k_n!)}p_1^{k_1}p_2^{k_2}…p_n^{k_n},\\(k₁,…,k_n∈N,k₁+…+k_n=N)</script></li>
+</ul>
+<h3 id="多项展开式和多项分布的关联"><a href="#多项展开式和多项分布的关联" class="headerlink" title="多项展开式和多项分布的关联"></a>多项展开式和多项分布的关联</h3><p>多项展开式为：</p>
+<script type="math/tex; mode=display">
+(x_1+…+x_n)^N=\sum{}^{*}\frac{N!}{k_1!…k_n!}x_1^{k_1}x_2^{k_2}…x_n^{k_n},(k₁+ …+k_n=N)</script><p>当$x_i=p_i$时，由于$p₁+ …+p_n=1$：</p>
+<script type="math/tex; mode=display">
+\sum{}^{*}\frac{N!}{k_1!…k_n!}p_1^{k_1}p_2^{k_2}…p_n^{k_n}</script><h3 id="二维正态分布-1"><a href="#二维正态分布-1" class="headerlink" title="二维正态分布"></a>二维正态分布</h3><p>证明以下函数是密度函数：</p>
+<script type="math/tex; mode=display">
+f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2})),\\(-∞<a<∞,-∞<b<∞,σ_1>0,σ_2>0,-1<\rho<1)</script><ul>
+<li>证：<script type="math/tex; mode=display">
+∵证明f(x_1,x_2)为密度函数\\
+∴要证\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2=1\\
+设u=(1-\rho^2)^{-\frac{1}{2}}\frac{x_1-a}{σ_1},v=(1-\rho^2)^{-\frac{1}{2}}\frac{x_2-b}{σ_2}\\
+∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2\\
+=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) d\sqrt{1-\rho^2}σ_1u+ad\sqrt{1-\rho^2}σ_2v+b\\
+=\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{u^2+2\rho uv+v^2}{2}) dudv\\
+设t_1=u-\rho v,t_2=\sqrt{1-\rho^2}v,则：\\
+u^2+2\rho uv+v^2=(u-\rho v)^2+(1-\rho^2)v^2=t_1^2+t_2^2\\
+由于变换的雅克比行列式为：\\
+\left|\begin{array}{c}
+∂t_1/∂u &∂t_1/∂v\\
+∂t_2/∂u &∂t_2/∂v\\
+\end{array}\right|=\sqrt{1-\rho^2}\\
+∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2\\
+=\frac{\sqrt{1-\rho^2}}{2π}\iint_{-∞}^∞ exp(-\frac{t_1^2+t_2^2}{2})(\sqrt{1-\rho^2})^{-1} dudv\\
+=(2π)^{-1}\int_0^∞e^{-\frac{2}}dt_1\int_0^∞e^{-\frac{2}}dt_2\\
+∵之前(各公式的推导以及证明-一维随机变量-正态分布)有证：\\
+I=\int_{-∞}^∞e^{-\frac{t^2}{2}}d\frac{x}{σ}=\int_{-∞}^∞e^{-\frac{t^2}{2}}dt=\sqrt{2π}\\
+∴\iint_{-∞}^∞ f(x_1,x_2)dx_1dx_2=(2π)^{-1}\sqrt{2π}\sqrt{2π}=1\\
+得证</script></li>
+</ul>
+<h3 id="通过离散型求边缘分布的方法求服从多项分布的随机变量的边缘分布"><a href="#通过离散型求边缘分布的方法求服从多项分布的随机变量的边缘分布" class="headerlink" title="通过离散型求边缘分布的方法求服从多项分布的随机变量的边缘分布"></a>通过离散型求边缘分布的方法求服从多项分布的随机变量的边缘分布</h3><p>设$X=(X₁, …,X_n)$服从多项分布$M(N;p₁, … ,p_n)$,要求其边缘分布。</p>
+<ul>
+<li>解：</li>
+<li><ul>
+<li>方法一<script type="math/tex; mode=display">
+考虑X₁,有事件\overline{A_1}将事件A_1作为一方,A₂+ …+A_n作为一方\\
+∵X₁是在N次独立试验中事件A₁发生的次数，而在每次试验中A₁发生的概率保持为p₁\\
+∴X_1的分布为B(N,p_1)</script></li>
+</ul>
+</li>
+<li><ul>
+<li>方法二<script type="math/tex; mode=display">
+P(X_1=k)=\sum_{k_2,…,k_n}p(k,k_2,…,k_n)\\
+=\sum_{k_2,…,k_n}\frac{N!}{k!k_2!…k_n!}p_1^kp_2^{k_2}…p_n^{k_n}\\
+=\frac{p_1^k}{k!}\sum_{k_2,…,k_n}\frac{N!}{k_2!…k_n!}p_2^{k_2}…p_n^{k_n}\\
+设p'_i=\frac{p_i}{1-p_1},(i>1),则有：\\
+p'_2+…+p'_n=\frac{p_2+…+p_n}{1-p_1}=\frac{1-p_1}{1-p_1}=1\\
+又∵p_2+…+p_n=N-k\\
+∴P(X_1=k)=\frac{p_1^k(N-k)!}{k!(N-k)!}\sum_{k_2,…,k_n}\frac{N!}{k_2!…k_n!}{(p'_2(1-p_1))}^{k_2}…{(p'_n(1-p_1))}^{k_n}\\
+=\frac{p_1^kN!(1-p_1)^{N-k}}{k!(N-k)!}\sum_{k_2,…,k_n}\frac{(N-k)!}{k_2!…k_n!}{p'_2}^{k_2}…{p'_n}^{k_n}\\
+∵\sum_{k_2,…,k_n}\frac{(N-k)!}{k_2!…k_n!}{p'_2}^{k_2}…{p'_n}^{k_n}=(p'_2+…+p'_n)^{N-k}=1\\
+∴P(X_1=k)=\frac{p_1^kN!(1-p_1)^{N-k}}{k!(N-k)!}=b(k;N,p_1)\\
+∴是二项式分布B(N,p_1)</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="连续型随机向量的概率密度函数"><a href="#连续型随机向量的概率密度函数" class="headerlink" title="连续型随机向量的概率密度函数"></a>连续型随机向量的概率密度函数</h3><p>以二维的情况为例，设X=(X₁,X₂)有概率密度函数f(x1,x₂),证明$X_1,X_2$存在概率密度函数。</p>
+<ul>
+<li>证：<script type="math/tex; mode=display">
+X₁的分布函数F₁(x₁)=P(X₁≤x₁)可以写为P(X₁≤x₁,X₂<∞),得到：\\
+F_1(x_1)=P(X₁≤x₁)=\int^{x_1}_{-∞}dt_1\int^∞_{-∞}f(t_1,t_2)dt_2\\
+记f_1(t_1)=\int^∞_{-∞}f(t_1,t_2)dt_2,则：\\
+F_1(x_1)=\int^{x_1}_{-∞}f_1(t_1)dt_1\\
+两边同时对x_1求导得X_1的概率密度函数：\\
+dF_1(x_1)/dx_1=f_1(x_1)=\int^∞_{-∞}f(x_1,x_2)dx_2\\
+同理，有X_2的概率密度函数：\\
+f_2(x_2)=\int^∞_{-∞}f(x_1,x_2)dx_1</script></li>
+</ul>
+<h3 id="二维正态分布的边缘分布密度-1"><a href="#二维正态分布的边缘分布密度-1" class="headerlink" title="二维正态分布的边缘分布密度"></a>二维正态分布的边缘分布密度</h3><p>若($X_1$,X₂)有二维正态分布$N(a,b,σ_1^2,σ_2^2,\rho)$,证明$X_1$,X₂的边缘分布分别为一维正态分布$N(a,σ_1^2)$和$N(b,σ_2^2)$。</p>
+<ul>
+<li>证：<script type="math/tex; mode=display">
+f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}))\\
+∵\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+\frac{(x_2-b)^2}{σ_2^2}=(1-\rho^2)\frac{(x_1-a)^2}{σ_1^2}+(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2\\
+∴f_1(x_1)=\int^{∞}_{-∞}f(x_1,x_2)dx_2=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})C,\\
+其中C=\int^{∞}_{-∞}exp(-\frac{1}{2(1-\rho^2)}(\rho\frac{x_1-a}{σ_1}-\frac{x_2-b}{σ_2})^2)\\
+设有t=(\frac{x_2-b}{σ_2}-\rho\frac{x_1-a}{σ_1})/\sqrt{1-\rho^2}\\
+则C=\int^{∞}_{-∞}exp(-\frac{t^2}{2})d(σ_2(\sqrt{1-\rho^2}t+\rho\frac{x_1-a}{σ_1})+b)\\
+=σ_2\sqrt{1-\rho^2}\int^{∞}_{-∞}exp(-\frac{t^2}{2})dt\\
+=σ_2\sqrt{1-\rho^2}\sqrt{2π}\\
+∴f_1(x_1)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})*σ_2\sqrt{1-\rho^2}\sqrt{2π}\\
+=(\sqrt{2π}σ_1)^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})=N(a,σ_1^2)\\
 得证</script></li>
 </ul>
 
@@ -1761,7 +1898,7 @@ P(B_i|A)=P(AB_i)/P(A)=P(B_i)P(A|B_i)/\sum_{j}P(B_j)P(A|B_j)</script><p>这个公
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-06 00:37:07" itemprop="dateModified" datetime="2023-08-06T00:37:07+08:00">2023-08-06</time>
+                <time title="Modified: 2023-08-22 02:02:12" itemprop="dateModified" datetime="2023-08-22T02:02:12+08:00">2023-08-22</time>
               </span>
 
           
@@ -1776,8 +1913,40 @@ P(B_i|A)=P(AB_i)/P(A)=P(B_i)P(A|B_i)/\sum_{j}P(B_j)P(A|B_j)</script><p>这个公
 
       
           <ul>
-<li>linux在<strong>服务器领域</strong>的应用是最强的  </li>
-<li>linux的特点有：免费、稳定、高效<h1 id="网络连接的三种方式"><a href="#网络连接的三种方式" class="headerlink" title="网络连接的三种方式"></a>网络连接的三种方式</h1><h2 id="1、桥接模式"><a href="#1、桥接模式" class="headerlink" title="1、桥接模式"></a>1、桥接模式</h2>虚拟系统可以和外部系统通信，但是容易造成IP冲突<h2 id="2、NAT模式（网络地址转换模式）"><a href="#2、NAT模式（网络地址转换模式）" class="headerlink" title="2、NAT模式（网络地址转换模式）"></a>2、NAT模式（网络地址转换模式）</h2>虚拟系统可以和外部系统通信，而且不会造成IP冲突<h2 id="3、主机模式"><a href="#3、主机模式" class="headerlink" title="3、主机模式"></a>3、主机模式</h2>独立的系统（不与外界通信）</li>
+<li><p>linux在<strong>服务器领域</strong>的应用是最强的 </p>
+</li>
+<li><p>linux的特点有：免费、稳定、高效</p>
+</li>
+</ul>
+<h1 id="网络连接的三种方式"><a href="#网络连接的三种方式" class="headerlink" title="网络连接的三种方式"></a>网络连接的三种方式</h1><h2 id="1、桥接模式"><a href="#1、桥接模式" class="headerlink" title="1、桥接模式"></a>1、桥接模式</h2><p>虚拟系统可以和外部系统通信，但是容易造成IP冲突</p>
+<h2 id="2、NAT模式（网络地址转换模式）"><a href="#2、NAT模式（网络地址转换模式）" class="headerlink" title="2、NAT模式（网络地址转换模式）"></a>2、NAT模式（网络地址转换模式）</h2><p>虚拟系统可以和外部系统通信，而且不会造成IP冲突</p>
+<h2 id="3、主机模式"><a href="#3、主机模式" class="headerlink" title="3、主机模式"></a>3、主机模式</h2><p>独立的系统（不与外界通信）</p>
+<h1 id="linux的目录结构"><a href="#linux的目录结构" class="headerlink" title="linux的目录结构"></a>linux的目录结构</h1><ul>
+<li><p>linux的文件系统采用的是层级式的树状目录结构，最上层是根目录<code>/</code></p>
+</li>
+<li><p>在linux中，一切皆文件</p>
+</li>
+</ul>
+<h2 id="具体的目录结构"><a href="#具体的目录结构" class="headerlink" title="具体的目录结构"></a>具体的目录结构</h2><ul>
+<li><code>/bin</code>——存放着最经常使用的命令</li>
+<li><code>/sbin</code>——存放系统管理员使用的系统管理程序</li>
+<li><code>/home</code>——存放普通用户的主目录，在linux中每一个用户都有一个自己的目录</li>
+<li><code>/root</code>——系统开机所需要用到的最基本的动态连接共享库</li>
+<li><code>/lost+found</code>——通常为空，非法关机后存放文件</li>
+<li><code>/etc</code>——所有系统管理所需要的配置文件和子目录</li>
+<li><code>/usr</code>——用户的很多应用程序和文件</li>
+<li><code>/boot</code>——linux的一些核心文件</li>
+<li><code>/proc</code>——虚拟的目录，是系统内存的映射（勿动！）</li>
+<li><code>/srv</code>——存放一些服务启动后要提取的数据（勿动！）</li>
+<li><code>/sys</code>——安装了linux2.6内核中新出现的一个文件系统（勿动！）</li>
+<li><code>/tmp</code>——存放一些临时文件</li>
+<li><code>dev</code>——把所有的硬件用文件形式储存</li>
+<li><code>/media</code>——linux会自动识别一些设备（如U盘），识别后linux会把识别的设备挂载到这个目录下</li>
+<li><code>/mnt</code>——为了让用户临时挂载别的文件系统</li>
+<li><code>/opt</code>——主机额外安装软件的安装包所摆放的目录</li>
+<li><code>/usr/local</code>——主机额外安装软件所安装的目录</li>
+<li><code>/var</code>——存放不断扩充的东西，习惯性将经常被修改的目录放在这个目录下</li>
+<li><code>selinux</code>——一种安全子系统，能控制程序只访问特定文件，有3种工作模式</li>
 </ul>
 
       
