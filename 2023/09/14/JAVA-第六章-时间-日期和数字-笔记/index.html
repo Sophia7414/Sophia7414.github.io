@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="6.1 Date类 Date类在java.util包中，使用Date类的无参数构造方法创建的对象可以获取本地当前时间，表示时间的默认顺序是：星期,月,日,小时,分,秒,年。 使用DataFormat的子类SimpleDateFormat的常用构造方法public SimpleDateFormat(String pattern)可以用参数pattern指定的格式创建一个对象,该对象调用format(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA 第六章 时间,日期和数字 笔记">
+<meta property="og:url" content="http://example.com/2023/09/14/JAVA-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%97%B6%E9%97%B4-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%95%B0%E5%AD%97-%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="6.1 Date类 Date类在java.util包中，使用Date类的无参数构造方法创建的对象可以获取本地当前时间，表示时间的默认顺序是：星期,月,日,小时,分,秒,年。 使用DataFormat的子类SimpleDateFormat的常用构造方法public SimpleDateFormat(String pattern)可以用参数pattern指定的格式创建一个对象,该对象调用format(">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-09-14T13:07:42.000Z">
+<meta property="article:modified_time" content="2023-09-14T15:58:10.190Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/09/14/JAVA-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%97%B6%E9%97%B4-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%95%B0%E5%AD%97-%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>JAVA 第六章 时间,日期和数字 笔记 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/14/JAVA-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%97%B6%E9%97%B4-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%95%B0%E5%AD%97-%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JAVA 第六章 时间,日期和数字 笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-14 21:07:42 / Modified: 23:58:10" itemprop="dateCreated datePublished" datetime="2023-09-14T21:07:42+08:00">2023-09-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="6-1-Date类"><a href="#6-1-Date类" class="headerlink" title="6.1 Date类"></a>6.1 Date类</h1><ul>
+<li>Date类在java.util包中，使用Date类的无参数构造方法创建的对象可以获取本地当前时间，表示时间的默认顺序是：星期,月,日,小时,分,秒,年。</li>
+<li>使用DataFormat的子类SimpleDateFormat的常用构造方法<code>public SimpleDateFormat(String pattern)</code>可以用参数pattern指定的格式创建一个对象,该对象调用<code>format(Data date)</code>方法格式化时间对象date。在pattern中有：</li>
+<li><ul>
+<li>月份：M或MM——用两位数字或文本输出；连续包含至少3个M——用汉字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>年份：y或yy——用两位数字输出；yyyy——用四位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>日：d或dd——用两位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>小时：H或HH——用两位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>分:m或mm——用两位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>秒：s或ss——用两位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>星期：E——用字符串输出</li>
+</ul>
+</li>
+</ul>
+<p>举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Date s=new Date();</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        SimpleDateFormat f=new SimpleDateFormat(&quot;MMMd日yy年mm分ss秒HH时E&quot;);</span><br><span class="line">        System.out.println(f.format(s));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出结果：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Thu Sep 14 22:52:36 CST 2023</span><br><span class="line">九月14日23年52分36秒22时星期四</span><br></pre></td></tr></table></figure><br>我们也可以用System类的静态方法<code>public long currentTimeMillis()</code>获取系统当前时间(从1970年1月1日0点到目前时刻所走过的毫秒数),如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">long s=System.currentTimeMillis();</span><br></pre></td></tr></table></figure></p>
+<h1 id="6-2-Calendar类"><a href="#6-2-Calendar类" class="headerlink" title="6.2 Calendar类"></a>6.2 Calendar类</h1><p>Calendar类在java.util包中,使用其static方法<code>getInstance()</code>可以初始化一个日历对象,如:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar ca=Calendar.getInstance();</span><br></pre></td></tr></table></figure></p>
+<h2 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h2><ul>
+<li>calendar对象可以调用方法<code>public final void set(int year,int month,int date)</code>,<code>public final void set(int year,int month,int date,int hour,int minute)</code>,<code>public final void set(int year,int month, int date, int hour, int minute,int second)</code>将日历翻到任何一个时间(当参数year取负数时表示公元前,月份由0到11代替1到12)，如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ca.set(2022,-1,1);</span><br></pre></td></tr></table></figure></li>
+<li>calendar对象调用方法<code>public int get(int field)</code>可以获取有关年份,月份,小时,星期等信息,参数field的有效值由Calendar的静态常量指定,如<code>Calendar.MONTH</code>表示返回一个表示月份的整数(由0到11代替1到12),举例有：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ca.get(Calendar.MONTH)</span><br></pre></td></tr></table></figure></li>
+<li>calendar对象调用<code>public long getTimeInMillis()</code>可以将时间表示为毫秒,如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">long time=ca.getTimeInMillis()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="6-3-Math类"><a href="#6-3-Math类" class="headerlink" title="6.3 Math类"></a>6.3 Math类</h1><p>java.lang包中的Math类包含许多用来进行科学计算的类方法(可以直接通过类名调用)以及两个静态常量E和PI。</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
+<li><code>public static long abs(double a)</code>——返回a的绝对值</li>
+<li><code>public static double max(double a,double b)</code>——返回a,b的最大值</li>
+<li><code>public static double min(double a,double b)</code>——返回a,b的最小值</li>
+<li><code>public static double random()</code>——产生一个0到1之间的随机数(不包括0和1)</li>
+<li><code>public static double pow(double a,double b)</code>——返回a的b次幕</li>
+<li><code>public static double sqrt(double a)</code>——返回a的平方根</li>
+<li><code>public static double log(double a)</code>——返回a的自然对数(lna)</li>
+<li><code>public static double sin(double a)</code>——返回正弦值.</li>
+<li><code>public static double asin(double a)</code>——返回反正弦值.</li>
+</ul>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>我们可以使用java.text包中的NumberFormat类对输出的数字结果进行必要的格式化,该类调用类方法<code>public static final NumberFormat getInstance()</code>实例化一个NumberFormat对象,该对象调用<code>public final String format(double number)</code>方法可以格式化数字number.</p>
+<h3 id="NumberFormat的常用方法"><a href="#NumberFormat的常用方法" class="headerlink" title="NumberFormat的常用方法"></a>NumberFormat的常用方法</h3><ul>
+<li><code>public void setMaximumFractionDigits(int newValue)</code>——设置最大小数位数</li>
+<li><code>public void setMinimumFractionDigits(int newValue)</code>——设置最小小数位数</li>
+<li><code>public void setMaximumIntegerDigits(int newValue)</code>——设置最大整数位数</li>
+<li><code>public void setMinimumIntegerDigits(int newValue)</code>——设置最小整数位数</li>
+</ul>
+<p>举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import java.text.NumberFormat;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        double a=231.234567089;</span><br><span class="line">        NumberFormat n=NumberFormat.getInstance();</span><br><span class="line">        n.setMaximumFractionDigits(3);</span><br><span class="line">        n.setMaximumIntegerDigits(1);</span><br><span class="line">        System.out.println(n.format(a));</span><br><span class="line">        n.setMinimumFractionDigits(20);</span><br><span class="line">        n.setMinimumIntegerDigits(5);</span><br><span class="line">        System.out.println(n.format(a));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.235</span><br><span class="line">00,231.23456708900000000000</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JAVA/" rel="tag"># JAVA</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/12/JAVA-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AC%94%E8%AE%B0/" rel="prev" title="JAVA 第五章 数组与字符串 笔记">
+      <i class="fa fa-chevron-left"></i> JAVA 第五章 数组与字符串 笔记
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#6-1-Date%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">6.1 Date类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-2-Calendar%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">6.2 Calendar类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">调用方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-3-Math%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">6.3 Math类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NumberFormat%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.1.</span> <span class="nav-text">NumberFormat的常用方法</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

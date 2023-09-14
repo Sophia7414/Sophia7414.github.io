@@ -28,7 +28,7 @@
 <meta property="og:description" content="linux在服务器领域的应用是最强的   linux的特点有：免费、稳定、高效   网络连接的三种方式1、桥接模式虚拟系统可以和外部系统通信，但是容易造成IP冲突 2、NAT模式（网络地址转换模式）虚拟系统可以和外部系统通信，而且不会造成IP冲突 3、主机模式独立的系统（不与外界通信） linux的目录结构 linux的文件系统采用的是层级式的树状目录结构，最上层是根目录&#x2F;  在linux中，一">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-07-29T04:31:07.000Z">
-<meta property="article:modified_time" content="2023-08-21T18:02:12.611Z">
+<meta property="article:modified_time" content="2023-09-08T18:58:46.300Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="linux">
@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-22 02:02:12" itemprop="dateModified" datetime="2023-08-22T02:02:12+08:00">2023-08-22</time>
+                <time title="Modified: 2023-09-09 02:58:46" itemprop="dateModified" datetime="2023-09-09T02:58:46+08:00">2023-09-09</time>
               </span>
 
           
@@ -231,6 +231,33 @@
 <li><code>/usr/local</code>——主机额外安装软件所安装的目录</li>
 <li><code>/var</code>——存放不断扩充的东西，习惯性将经常被修改的目录放在这个目录下</li>
 <li><code>selinux</code>——一种安全子系统，能控制程序只访问特定文件，有3种工作模式</li>
+</ul>
+<h1 id="vim编辑器"><a href="#vim编辑器" class="headerlink" title="vim编辑器"></a>vim编辑器</h1><h2 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h2><ul>
+<li>正常模式——直接用vim进入</li>
+<li>插入模式——按i进入，可编辑文字。输入esc再输入：进入命令行模式</li>
+<li>命令行模式——能用来保存内容(wq(保存并退出),q(退出),q!(强制退出))</li>
+</ul>
+<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
+<li>nyy——保存从当前行开始向下一共n行,n默认为1，黏贴键为p（正常模式）</li>
+<li>ndd——删除从当前行开始向下一共n行,n默认为1，黏贴键为p（正常模式）</li>
+<li>/关键字——查找关键字，输入n下一个（命令行模式）</li>
+<li>set nu——设置行号；set nonu——取消行号（命令行模式）</li>
+<li>G——跳转到最末行；gg——跳转到首行（正常模式）</li>
+<li>u——撤销（正常模式）</li>
+<li>n shift+g——跳转到第n行</li>
+</ul>
+<h1 id="关机重启"><a href="#关机重启" class="headerlink" title="关机重启"></a>关机重启</h1><ul>
+<li>shutdown -h now 立刻关机</li>
+<li>shutdown -h 1分钟后关机</li>
+<li>shutdown -r now 现在立刻重启</li>
+<li>halt 关机</li>
+<li>reboot 重启</li>
+<li>sync 把内存数据同步到磁盘</li>
+</ul>
+<p><em>重启和关机前一定要先执行sync指令</em></p>
+<h1 id="登录注销"><a href="#登录注销" class="headerlink" title="登录注销"></a>登录注销</h1><ul>
+<li>尽量不用root登录，避免操作失误，登录后用su -用户名来切换账号</li>
+<li>logout(注销)在图形运行级别下无效，在运行级别3下有效</li>
 </ul>
 
     </div>
@@ -316,7 +343,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">网络连接的三种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">1、桥接模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81NAT%E6%A8%A1%E5%BC%8F%EF%BC%88%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">2、NAT模式（网络地址转换模式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">3、主机模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">linux的目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">具体的目录结构</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">网络连接的三种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">1、桥接模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81NAT%E6%A8%A1%E5%BC%8F%EF%BC%88%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">2、NAT模式（网络地址转换模式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">3、主机模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">linux的目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">具体的目录结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">vim编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">三种模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">3.2.</span> <span class="nav-text">常用快捷键</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF"><span class="nav-number">4.</span> <span class="nav-text">关机重启</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%B3%A8%E9%94%80"><span class="nav-number">5.</span> <span class="nav-text">登录注销</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -330,7 +357,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

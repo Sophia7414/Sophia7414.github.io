@@ -145,6 +145,124 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/14/JAVA-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%97%B6%E9%97%B4-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%95%B0%E5%AD%97-%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/14/JAVA-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%97%B6%E9%97%B4-%E6%97%A5%E6%9C%9F%E5%92%8C%E6%95%B0%E5%AD%97-%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">JAVA 第六章 时间,日期和数字 笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-14 21:07:42 / Modified: 23:58:10" itemprop="dateCreated datePublished" datetime="2023-09-14T21:07:42+08:00">2023-09-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="6-1-Date类"><a href="#6-1-Date类" class="headerlink" title="6.1 Date类"></a>6.1 Date类</h1><ul>
+<li>Date类在java.util包中，使用Date类的无参数构造方法创建的对象可以获取本地当前时间，表示时间的默认顺序是：星期,月,日,小时,分,秒,年。</li>
+<li>使用DataFormat的子类SimpleDateFormat的常用构造方法<code>public SimpleDateFormat(String pattern)</code>可以用参数pattern指定的格式创建一个对象,该对象调用<code>format(Data date)</code>方法格式化时间对象date。在pattern中有：</li>
+<li><ul>
+<li>月份：M或MM——用两位数字或文本输出；连续包含至少3个M——用汉字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>年份：y或yy——用两位数字输出；yyyy——用四位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>日：d或dd——用两位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>小时：H或HH——用两位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>分:m或mm——用两位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>秒：s或ss——用两位数字输出</li>
+</ul>
+</li>
+<li><ul>
+<li>星期：E——用字符串输出</li>
+</ul>
+</li>
+</ul>
+<p>举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Date s=new Date();</span><br><span class="line">        System.out.println(s);</span><br><span class="line">        SimpleDateFormat f=new SimpleDateFormat(&quot;MMMd日yy年mm分ss秒HH时E&quot;);</span><br><span class="line">        System.out.println(f.format(s));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出结果：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Thu Sep 14 22:52:36 CST 2023</span><br><span class="line">九月14日23年52分36秒22时星期四</span><br></pre></td></tr></table></figure><br>我们也可以用System类的静态方法<code>public long currentTimeMillis()</code>获取系统当前时间(从1970年1月1日0点到目前时刻所走过的毫秒数),如：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">long s=System.currentTimeMillis();</span><br></pre></td></tr></table></figure></p>
+<h1 id="6-2-Calendar类"><a href="#6-2-Calendar类" class="headerlink" title="6.2 Calendar类"></a>6.2 Calendar类</h1><p>Calendar类在java.util包中,使用其static方法<code>getInstance()</code>可以初始化一个日历对象,如:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar ca=Calendar.getInstance();</span><br></pre></td></tr></table></figure></p>
+<h2 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h2><ul>
+<li>calendar对象可以调用方法<code>public final void set(int year,int month,int date)</code>,<code>public final void set(int year,int month,int date,int hour,int minute)</code>,<code>public final void set(int year,int month, int date, int hour, int minute,int second)</code>将日历翻到任何一个时间(当参数year取负数时表示公元前,月份由0到11代替1到12)，如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ca.set(2022,-1,1);</span><br></pre></td></tr></table></figure></li>
+<li>calendar对象调用方法<code>public int get(int field)</code>可以获取有关年份,月份,小时,星期等信息,参数field的有效值由Calendar的静态常量指定,如<code>Calendar.MONTH</code>表示返回一个表示月份的整数(由0到11代替1到12),举例有：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ca.get(Calendar.MONTH)</span><br></pre></td></tr></table></figure></li>
+<li>calendar对象调用<code>public long getTimeInMillis()</code>可以将时间表示为毫秒,如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">long time=ca.getTimeInMillis()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="6-3-Math类"><a href="#6-3-Math类" class="headerlink" title="6.3 Math类"></a>6.3 Math类</h1><p>java.lang包中的Math类包含许多用来进行科学计算的类方法(可以直接通过类名调用)以及两个静态常量E和PI。</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
+<li><code>public static long abs(double a)</code>——返回a的绝对值</li>
+<li><code>public static double max(double a,double b)</code>——返回a,b的最大值</li>
+<li><code>public static double min(double a,double b)</code>——返回a,b的最小值</li>
+<li><code>public static double random()</code>——产生一个0到1之间的随机数(不包括0和1)</li>
+<li><code>public static double pow(double a,double b)</code>——返回a的b次幕</li>
+<li><code>public static double sqrt(double a)</code>——返回a的平方根</li>
+<li><code>public static double log(double a)</code>——返回a的自然对数(lna)</li>
+<li><code>public static double sin(double a)</code>——返回正弦值.</li>
+<li><code>public static double asin(double a)</code>——返回反正弦值.</li>
+</ul>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>我们可以使用java.text包中的NumberFormat类对输出的数字结果进行必要的格式化,该类调用类方法<code>public static final NumberFormat getInstance()</code>实例化一个NumberFormat对象,该对象调用<code>public final String format(double number)</code>方法可以格式化数字number.</p>
+<h3 id="NumberFormat的常用方法"><a href="#NumberFormat的常用方法" class="headerlink" title="NumberFormat的常用方法"></a>NumberFormat的常用方法</h3><ul>
+<li><code>public void setMaximumFractionDigits(int newValue)</code>——设置最大小数位数</li>
+<li><code>public void setMinimumFractionDigits(int newValue)</code>——设置最小小数位数</li>
+<li><code>public void setMaximumIntegerDigits(int newValue)</code>——设置最大整数位数</li>
+<li><code>public void setMinimumIntegerDigits(int newValue)</code>——设置最小整数位数</li>
+</ul>
+<p>举例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import java.text.NumberFormat;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        double a=231.234567089;</span><br><span class="line">        NumberFormat n=NumberFormat.getInstance();</span><br><span class="line">        n.setMaximumFractionDigits(3);</span><br><span class="line">        n.setMaximumIntegerDigits(1);</span><br><span class="line">        System.out.println(n.format(a));</span><br><span class="line">        n.setMinimumFractionDigits(20);</span><br><span class="line">        n.setMinimumIntegerDigits(5);</span><br><span class="line">        System.out.println(n.format(a));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>输出为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.235</span><br><span class="line">00,231.23456708900000000000</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/12/JAVA-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2-%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1920,106 +2038,6 @@ P(B_i|A)=P(AB_i)/P(A)=P(B_i)P(A|B_i)/\sum_{j}P(B_j)P(A|B_j)</script><p>这个公
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/29/linux%E7%9B%B8%E5%85%B3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/29/linux%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">linux相关 笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-07-29 12:31:07" itemprop="dateCreated datePublished" datetime="2023-07-29T12:31:07+08:00">2023-07-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-08-22 02:02:12" itemprop="dateModified" datetime="2023-08-22T02:02:12+08:00">2023-08-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><p>linux在<strong>服务器领域</strong>的应用是最强的 </p>
-</li>
-<li><p>linux的特点有：免费、稳定、高效</p>
-</li>
-</ul>
-<h1 id="网络连接的三种方式"><a href="#网络连接的三种方式" class="headerlink" title="网络连接的三种方式"></a>网络连接的三种方式</h1><h2 id="1、桥接模式"><a href="#1、桥接模式" class="headerlink" title="1、桥接模式"></a>1、桥接模式</h2><p>虚拟系统可以和外部系统通信，但是容易造成IP冲突</p>
-<h2 id="2、NAT模式（网络地址转换模式）"><a href="#2、NAT模式（网络地址转换模式）" class="headerlink" title="2、NAT模式（网络地址转换模式）"></a>2、NAT模式（网络地址转换模式）</h2><p>虚拟系统可以和外部系统通信，而且不会造成IP冲突</p>
-<h2 id="3、主机模式"><a href="#3、主机模式" class="headerlink" title="3、主机模式"></a>3、主机模式</h2><p>独立的系统（不与外界通信）</p>
-<h1 id="linux的目录结构"><a href="#linux的目录结构" class="headerlink" title="linux的目录结构"></a>linux的目录结构</h1><ul>
-<li><p>linux的文件系统采用的是层级式的树状目录结构，最上层是根目录<code>/</code></p>
-</li>
-<li><p>在linux中，一切皆文件</p>
-</li>
-</ul>
-<h2 id="具体的目录结构"><a href="#具体的目录结构" class="headerlink" title="具体的目录结构"></a>具体的目录结构</h2><ul>
-<li><code>/bin</code>——存放着最经常使用的命令</li>
-<li><code>/sbin</code>——存放系统管理员使用的系统管理程序</li>
-<li><code>/home</code>——存放普通用户的主目录，在linux中每一个用户都有一个自己的目录</li>
-<li><code>/root</code>——系统开机所需要用到的最基本的动态连接共享库</li>
-<li><code>/lost+found</code>——通常为空，非法关机后存放文件</li>
-<li><code>/etc</code>——所有系统管理所需要的配置文件和子目录</li>
-<li><code>/usr</code>——用户的很多应用程序和文件</li>
-<li><code>/boot</code>——linux的一些核心文件</li>
-<li><code>/proc</code>——虚拟的目录，是系统内存的映射（勿动！）</li>
-<li><code>/srv</code>——存放一些服务启动后要提取的数据（勿动！）</li>
-<li><code>/sys</code>——安装了linux2.6内核中新出现的一个文件系统（勿动！）</li>
-<li><code>/tmp</code>——存放一些临时文件</li>
-<li><code>dev</code>——把所有的硬件用文件形式储存</li>
-<li><code>/media</code>——linux会自动识别一些设备（如U盘），识别后linux会把识别的设备挂载到这个目录下</li>
-<li><code>/mnt</code>——为了让用户临时挂载别的文件系统</li>
-<li><code>/opt</code>——主机额外安装软件的安装包所摆放的目录</li>
-<li><code>/usr/local</code>——主机额外安装软件所安装的目录</li>
-<li><code>/var</code>——存放不断扩充的东西，习惯性将经常被修改的目录放在这个目录下</li>
-<li><code>selinux</code>——一种安全子系统，能控制程序只访问特定文件，有3种工作模式</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2089,7 +2107,7 @@ P(B_i|A)=P(AB_i)/P(A)=P(B_i)P(A|B_i)/\sum_{j}P(B_j)P(A|B_j)</script><p>这个公
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
