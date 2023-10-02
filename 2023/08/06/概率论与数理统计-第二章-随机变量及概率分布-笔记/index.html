@@ -28,7 +28,7 @@
 <meta property="og:description" content="2.1 一维随机变量2.1.1 随机变量的概念随机变量就是“其值随机会而定”的变量。随机变量的反面是所谓“确定性变量”,即其取值遵循某种严格的规律的变量。从绝对的意义讲，许多通常视为确定性变量的量，本质上都有随机性，只是由于随机性干扰不大，以至在所要求的精度之内，不妨把它作为确定性变量来处理。随机事件这个概念实际上是包容在随机变量这个更广的概念之内，也可以说：随机事件是从静态的观点来研究随机现象，">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-05T22:49:31.000Z">
-<meta property="article:modified_time" content="2023-10-02T08:56:52.423Z">
+<meta property="article:modified_time" content="2023-10-02T09:01:18.029Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="概率论与数理统计">
@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-02 16:56:52" itemprop="dateModified" datetime="2023-10-02T16:56:52+08:00">2023-10-02</time>
+                <time title="Modified: 2023-10-02 17:01:18" itemprop="dateModified" datetime="2023-10-02T17:01:18+08:00">2023-10-02</time>
               </span>
 
           
@@ -632,7 +632,8 @@ C=\sum_{k_3…k_n}'\frac{(N-k_1-k_2)!}{k_3!…k_n!}p_3'^{k_3}…p_n'^{k_n}</scri
 ∵p_3'^{k_3}+…+p_n'^{k_n}=1</script><script type="math/tex; mode=display">
 ∴C=1</script><script type="math/tex; mode=display">
 ∴P(X_1=k_1,X_2=k_2)=\frac{N!}{k_1!k_2!(N-k_1-k_2)!}·p_1^{k_1}p_2^{k_2}(1-p_1-p_2)^{N-K_1-K_2}</script>由于X₂的分布为二项分布B(N,p₂)<script type="math/tex; mode=display">
-∴P(X_1=k_1|X_2=k_2)=\frac{N!}{k_1!k_2!(N-k_1-k_2)!}·p_1^{k_1}p_2^{k_2}(1-p_1-p_2)^{N-K_1-K_2}/\frac{N!}{k_2!(N-k_2)!}p_2^{k_2}(1-p_2)^{N-k_1-k_2}</script><script type="math/tex; mode=display">
+∴P(X_1=k_1|X_2=k_2)=\frac{N!}{k_1!k_2!(N-k_1-k_2)!}·</script><script type="math/tex; mode=display">
+p_1^{k_1}p_2^{k_2}(1-p_1-p_2)^{N-K_1-K_2}/\frac{N!}{k_2!(N-k_2)!}p_2^{k_2}(1-p_2)^{N-k_1-k_2}</script><script type="math/tex; mode=display">
 =\frac{(N-k_2)!}{k_1!(N-k_1-k_2)!}(\frac{p_1}{1-p_2})^{k_1}(1-\frac{p_1}{1-p_2})^{N-k_1-k_2}</script><script type="math/tex; mode=display">
 =b(k_1;N-k_2,p_1/(1-p_2))</script>由此可知：在给定X₂=k₂的条件下，X₁的条件分布就是分布B(N-k₂,p₁/(1-p₂))</li>
 </ul>
@@ -648,7 +649,8 @@ f_1(x₁|a≤X₂≤b)=\int_{a}^{b}f(x_1,t_2)dt_2/\int_{a}^{b}f_2(t_2)dt_2</scri
 <h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>当X₂给定等于一个值(a=b)时,求X₁的条件密度函数。</p>
 <ul>
 <li>解：<script type="math/tex; mode=display">
-f_1(x₁|x₂)=f_1(x₁|X₂=x_2)=\lim_{h→0}f_1(x₁|x_2≤X₂≤x_2+h)=\lim_{h→0}\frac{1}{h}\int^{x_2+h}_{x_2}f(x_1,t_2)dt_2/\lim_{h→0}\frac{1}{h}\int^{x_2+h}_{x_2}f_2(t_2)dt_2</script><script type="math/tex; mode=display">
+f_1(x₁|x₂)=f_1(x₁|X₂=x_2)=\lim_{h→0}f_1(x₁|x_2≤X₂≤x_2+h)</script><script type="math/tex; mode=display">
+=\lim_{h→0}\frac{1}{h}\int^{x_2+h}_{x_2}f(x_1,t_2)dt_2/\lim_{h→0}\frac{1}{h}\int^{x_2+h}_{x_2}f_2(t_2)dt_2</script><script type="math/tex; mode=display">
 =f(x_1,x_2)/f_2(x_2)</script></li>
 </ul>
 <h3 id="二维正态分布的条件分布-1"><a href="#二维正态分布的条件分布-1" class="headerlink" title="二维正态分布的条件分布"></a>二维正态分布的条件分布</h3><p>设(X₁,X₂)服从二维正态分布N(a,b,$σ₁^2$,$σ₂^2$,$\rho$),在给定X₁=x₁的条件下，求X₂的条件密度函数f₂(x₂|x₁)。</p>
@@ -679,7 +681,8 @@ f(x_1,x_2,…,x_n)=f_1(x_1)f_2(x_2)…f_n(x_n)</script>得证</li>
 <li>证明：若连续型随机向量(X₁, …,$X_n$)的概率密度函数f(x₁,…,$x_n$)可表为n个函数 $g_1$ ,…,$g_n$ 之积，其中 $g_i$ 只依赖于 $x_i$ ,则X₁, …, $X_n$ 相互独立，且 $X_i$ 的边缘密度函数 $f_i$ ($x_i$)与 $g_i$($x_i$)只相差一个常数因子</li>
 <li><ul>
 <li>证：<script type="math/tex; mode=display">
-∵f(x_1,…,x_n)=\int_{-∞}^∞…\int_{-∞}^∞f(x_1,x_2,…,x_n)dx_2dx_n=g_1(x_1)\int_{-∞}^∞g_2(x_2)dx_2…\int_{-∞}^∞g_n(x_n)dx_n=C_1g_1(x_1)</script>得证</li>
+∵f(x_1,…,x_n)=\int_{-∞}^∞…\int_{-∞}^∞f(x_1,x_2,…,x_n)dx_2dx_n</script><script type="math/tex; mode=display">
+=g_1(x_1)\int_{-∞}^∞g_2(x_2)dx_2…\int_{-∞}^∞g_n(x_n)dx_n=C_1g_1(x_1)</script>得证</li>
 </ul>
 </li>
 </ul>
