@@ -28,7 +28,7 @@
 <meta property="og:description" content="2.1 一维随机变量2.1.1 随机变量的概念随机变量就是“其值随机会而定”的变量。随机变量的反面是所谓“确定性变量”,即其取值遵循某种严格的规律的变量。从绝对的意义讲，许多通常视为确定性变量的量，本质上都有随机性，只是由于随机性干扰不大，以至在所要求的精度之内，不妨把它作为确定性变量来处理。随机事件这个概念实际上是包容在随机变量这个更广的概念之内，也可以说：随机事件是从静态的观点来研究随机现象，">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-05T22:49:31.000Z">
-<meta property="article:modified_time" content="2023-10-02T08:53:00.089Z">
+<meta property="article:modified_time" content="2023-10-02T08:56:52.423Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="概率论与数理统计">
@@ -182,7 +182,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-02 16:53:00" itemprop="dateModified" datetime="2023-10-02T16:53:00+08:00">2023-10-02</time>
+                <time title="Modified: 2023-10-02 16:56:52" itemprop="dateModified" datetime="2023-10-02T16:56:52+08:00">2023-10-02</time>
               </span>
 
           
@@ -380,7 +380,8 @@ f(x₁,x₂)=f₁(x₁)f₂(x₂|x₁)</script><p>给定X₁=x₁的条件下，
 f₂(x₂|x₁)=f(x₁,x₂)/f₁(x₁)</script><h4 id="推广到n维"><a href="#推广到n维" class="headerlink" title="推广到n维"></a>推广到n维</h4><p>设有n维随机向量(X₁,… ,$X_n$),其概率密度函数为f(x₁,…,$x_n$),则:</p>
 <script type="math/tex; mode=display">
 f(x_1,…,x_n)=g(x₁, …,x_k)h(x_{k+1},…,x_n|x₁, …,x_k),</script><script type="math/tex; mode=display">
-g为(X₁ ,…,X_k)的概率密度，h为在给定X₁=x₁,…,X_k=x_k的条件下X_{k+1},…,X_n的条件概率密度</script><h3 id="二维正态分布的条件分布"><a href="#二维正态分布的条件分布" class="headerlink" title="二维正态分布的条件分布"></a>二维正态分布的条件分布</h3><p>设(X₁,X₂)服从二维正态分布N(a,b,$σ₁^2$,$σ₂^2$,$\rho$),在给定X₁=x₁的条件下，X₂的条件密度函数f₂(x₂|x₁)为：</p>
+(g为(X₁,…,X_k)的概率密度，</script><script type="math/tex; mode=display">
+h为在给定X₁=x₁,…,X_k=x_k的条件下X_{k+1},…,X_n的条件概率密度)</script><h3 id="二维正态分布的条件分布"><a href="#二维正态分布的条件分布" class="headerlink" title="二维正态分布的条件分布"></a>二维正态分布的条件分布</h3><p>设(X₁,X₂)服从二维正态分布N(a,b,$σ₁^2$,$σ₂^2$,$\rho$),在给定X₁=x₁的条件下，X₂的条件密度函数f₂(x₂|x₁)为：</p>
 <script type="math/tex; mode=display">
 f_2(x₁|x₂)=(\sqrt{2π}σ_2\sqrt{1-\rho^2})^{-1}·exp(-\frac{(x_2-(b+\frac{\rho σ_2(x_1-a)}{σ_1}))^2}{2(1-\rho^2)σ_2^2})</script><p>即</p>
 <script type="math/tex; mode=display">
