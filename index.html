@@ -456,7 +456,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-05 22:03:57" itemprop="dateModified" datetime="2023-09-05T22:03:57+08:00">2023-09-05</time>
+                <time title="Modified: 2023-10-02 16:53:00" itemprop="dateModified" datetime="2023-10-02T16:53:00+08:00">2023-10-02</time>
               </span>
 
           
@@ -572,7 +572,7 @@ F(x)=
 (x-a)/(b-a),a<x<b\\
 1,x≥b
 \end{cases}</script><p>均匀分布的一个好处是：借助于它容易实现对分布的模拟，比如以某种方法产生“随机数”，如取n足够大，而独立地产生n个随机数字a₁,…,an时，X=0·a₁a₂…an就很接近于[0,1]均匀分布R(0,1)。<br>对一般分布函数F(x),若F(x)处处连续且严格上升，则其反函数G存在，若X～R(0,1),则G(X)～F。用上述模拟方法产生X的模拟值后,代入G中即得分布F的模拟值。</p>
-<h1 id="2-2-多维随机变量-随机向量"><a href="#2-2-多维随机变量-随机向量" class="headerlink" title="2.2  多维随机变量(随机向量)"></a>2.2  多维随机变量(随机向量)</h1><h2 id="2-2-1-离散型随机向量的分布"><a href="#2-2-1-离散型随机向量的分布" class="headerlink" title="2.2.1 离散型随机向量的分布"></a>2.2.1 离散型随机向量的分布</h2><p>设X=(X₁,X₂,…,$X_n$)为一n维向量，其每个分量都是一维随机变量，则称X是一个n维随机向量(n维随机变量)。与随机变量一样，随机向量也有离散型和连续型之分。</p>
+<h1 id="2-2-多维随机变量-随机向量"><a href="#2-2-多维随机变量-随机向量" class="headerlink" title="2.2 多维随机变量(随机向量)"></a>2.2 多维随机变量(随机向量)</h1><h2 id="2-2-1-离散型随机向量的分布"><a href="#2-2-1-离散型随机向量的分布" class="headerlink" title="2.2.1 离散型随机向量的分布"></a>2.2.1 离散型随机向量的分布</h2><p>设X=(X₁,X₂,…,$X_n$)为一n维向量，其每个分量都是一维随机变量，则称X是一个n维随机向量(n维随机变量)。与随机变量一样，随机向量也有离散型和连续型之分。</p>
 <h3 id="随机向量的概率函数"><a href="#随机向量的概率函数" class="headerlink" title="随机向量的概率函数"></a>随机向量的概率函数</h3><p>以</p>
 <script type="math/tex; mode=display">
 {a_{i1},a_{i2},…}</script><p>记$X_i$的全部可能值,则事件</p>
@@ -633,6 +633,85 @@ f_1(x_1)=\int^{∞}_{-∞}…\int^{∞}_{-∞}f(x_1,x_2,…,x_n)dx_2…dx_n</scr
 </ul>
 <h3 id="二维正态分布的边缘分布密度"><a href="#二维正态分布的边缘分布密度" class="headerlink" title="二维正态分布的边缘分布密度"></a>二维正态分布的边缘分布密度</h3><p>若($X_1$,X₂)有二维正态分布$N(a,b,σ_1^2,σ_2^2,\rho)$,则$X_1$,X₂的边缘分布分别为一维正态分布$N(a,σ_1^2)$和$N(b,σ_2^2)$。从这个例子看出一个有趣的事实:虽则一个随机向量X=(X₁,…,$X_n$)的分布F足以决定其任一分量$X_i$的(边缘)分布$F_i$,但反过来不对。</p>
 <p><em>边缘分布也可以不只是单个，但一定比变量的维数低</em></p>
+<h1 id="2-3-条件概率分布与随机变量的独立性"><a href="#2-3-条件概率分布与随机变量的独立性" class="headerlink" title="2.3 条件概率分布与随机变量的独立性"></a>2.3 条件概率分布与随机变量的独立性</h1><h2 id="2-3-1-条件概率分布的概念"><a href="#2-3-1-条件概率分布的概念" class="headerlink" title="2.3.1 条件概率分布的概念"></a>2.3.1 条件概率分布的概念</h2><p>一个随机变量或向量X的条件概率分布，就是在某种给定的(试验中所规定的“基本”条件之外再附加的)条件之下X的概率分布,一般采取设有两个随机变量或向量X、Y, 在给定了Y取某个或某些值的条件下，去求X的条件分布的形式。</p>
+<h2 id="2-3-2-离散型随机变量的条件概率分布"><a href="#2-3-2-离散型随机变量的条件概率分布" class="headerlink" title="2.3.2 离散型随机变量的条件概率分布"></a>2.3.2 离散型随机变量的条件概率分布</h2><h3 id="二维离散型随机向量"><a href="#二维离散型随机向量" class="headerlink" title="二维离散型随机向量"></a>二维离散型随机向量</h3><p>设(X₁,X₂)为一个二维离散型随机向量，X₁的全部可能值为a₁,a₂,… ；X₂的全部可能值为b₁,b₂,…,而(X₁,X₂)的联合概率分布为:</p>
+<script type="math/tex; mode=display">
+p_ij=P(X_1=a_i,X_2=b_j)</script><p>则有：</p>
+<script type="math/tex; mode=display">
+P(X₁=a_i|X₂=b_j)=P_{ij}/\sum_{k}p_{kj}</script><script type="math/tex; mode=display">
+P(X₂=b_j|X₁=a_i)=P_{ij}/\sum_{k}p_{ik}</script><h3 id="n维离散型向量"><a href="#n维离散型向量" class="headerlink" title="n维离散型向量"></a>n维离散型向量</h3><p>设(X₁,X₂, …,$X_n$)服从多项分布M(N;p₁,…,$p_n$),在给定X₂=k₂的条件下，X₁的条件分布为：</p>
+<script type="math/tex; mode=display">
+B(N-k₂,p₁/(1-p₂))</script><h2 id="2-3-3-连续型随机变量的条件分布"><a href="#2-3-3-连续型随机变量的条件分布" class="headerlink" title="2.3.3 连续型随机变量的条件分布"></a>2.3.3 连续型随机变量的条件分布</h2><h3 id="二维随机向量的条件分布"><a href="#二维随机向量的条件分布" class="headerlink" title="二维随机向量的条件分布"></a>二维随机向量的条件分布</h3><p>设二维随机向量X=(X₁,X₂)有概率密度函数f(x₁,x₂)，当a≤x₂≤b时，X₁的条件分布为：</p>
+<script type="math/tex; mode=display">
+f_1(x₁|a≤X₂≤b)=\int_{a}^{b}f(x_1,t_2)dt_2/\int_{a}^{b}f_2(t_2)dt_2</script><p>当X₂给定等于一个值(a=b)时,X₁的条件密度函数为：</p>
+<script type="math/tex; mode=display">
+f(x_1,x_2)/f_2(x_2),(f₂(x₂)>0)</script><p>可改写为:</p>
+<script type="math/tex; mode=display">
+f(x₁,x₂)=f₂(x₂)f₁(x₁|x₂)</script><p>就是说：两个随机变量X₁和X₂联合概率密度等于其中之一的概率密度乘以在给定这一个之下另一个的条件概率密度。(相应于条件概率的公式P(AB)=P(B)P(A|B))<br>同理可得：</p>
+<script type="math/tex; mode=display">
+f(x₁,x₂)=f₁(x₁)f₂(x₂|x₁)</script><p>给定X₁=x₁的条件下，X₂的条件密度为：</p>
+<script type="math/tex; mode=display">
+f₂(x₂|x₁)=f(x₁,x₂)/f₁(x₁)</script><h4 id="推广到n维"><a href="#推广到n维" class="headerlink" title="推广到n维"></a>推广到n维</h4><p>设有n维随机向量(X₁,… ,$X_n$),其概率密度函数为f(x₁,…,$x_n$),则:</p>
+<script type="math/tex; mode=display">
+f(x_1,…,x_n)=g(x₁, …,x_k)h(x_{k+1},…,x_n|x₁, …,x_k),</script><script type="math/tex; mode=display">
+g为(X₁ ,…,X_k)的概率密度，h为在给定X₁=x₁,…,X_k=x_k的条件下X_{k+1},…,X_n的条件概率密度</script><h3 id="二维正态分布的条件分布"><a href="#二维正态分布的条件分布" class="headerlink" title="二维正态分布的条件分布"></a>二维正态分布的条件分布</h3><p>设(X₁,X₂)服从二维正态分布N(a,b,$σ₁^2$,$σ₂^2$,$\rho$),在给定X₁=x₁的条件下，X₂的条件密度函数f₂(x₂|x₁)为：</p>
+<script type="math/tex; mode=display">
+f_2(x₁|x₂)=(\sqrt{2π}σ_2\sqrt{1-\rho^2})^{-1}·exp(-\frac{(x_2-(b+\frac{\rho σ_2(x_1-a)}{σ_1}))^2}{2(1-\rho^2)σ_2^2})</script><p>即</p>
+<script type="math/tex; mode=display">
+N(b+\frac{\rho σ_2(x_1-a)}{σ_1},σ_2^2(1-\rho ²))</script><p>的概率密度。由此看出，正态变量的条件分布仍为正态。</p>
+<ul>
+<li>正态分布N(μ,a²)关于μ点对称，μ就是分布的中心位置；由此看出对于上述条件分布其中心位置为<script type="math/tex; mode=display">
+m(x₁)=b+\frac{\rho σ_2(x_1-a)}{σ_1}</script></li>
+</ul>
+<p>若$\rho$&gt;0,则m(x₁)随x₁的增加而增加;若$\rho$&gt;0,则m(x₁)随x₁的增加而减少，即：</p>
+<script type="math/tex; mode=display">
+若\rho>0,当x₁增加时，X₂有随着X₁的增长而增长的倾向(X₂取大值的可能性增加)(正相关);</script><script type="math/tex; mode=display">
+若\rho<0, 则X₂有随着X₁增长而下降的倾向(负相关)。</script><p>由此可以看出$\rho$刻画了X₁,X₂之间的相依关系</p>
+<h3 id="对二维随机向量的条件分布的分析"><a href="#对二维随机向量的条件分布的分析" class="headerlink" title="对二维随机向量的条件分布的分析"></a>对二维随机向量的条件分布的分析</h3><script type="math/tex; mode=display">
+f(x₁,x₂)=f₂(x₂)f₁(x₁|x₂)</script><p>上述公式两边对x₂积分,由于：</p>
+<script type="math/tex; mode=display">
+f_1(x_1)=\int^{∞}_{-∞}f(x₁,x₂)dx_2</script><p>得：</p>
+<script type="math/tex; mode=display">
+f_1(x_1)=\int^{∞}_{-∞}f₂(x₂)f₁(x₁|x₂)dx_2</script><p>可解释为：X₁的无条件密度f₁(x₁),是其条件密度f₁(x₁lx₂)按“条件”x₂的平均概率大小为权的加权平均(f₂(x₂)dx₂是X₂在x₂附近dx₂这么长的区间内的概率)。该公式可以看作是全概率公式在概率密度这种情况下的表现形式(f₁(x₁)相当 于全概率公式中的P(A),f₁(x₁|x₂)相当于条件概率P(A|$B_i$),其积分相当于中的以P($B_i$)为权的加权和)</p>
+<ul>
+<li>在学习概率论时，不能光是形式地看待一些分析公式，更重要的是要分析其概率意义及直观意义，这样才能加深理解。</li>
+</ul>
+<h2 id="2-3-4-随机变量的独立性"><a href="#2-3-4-随机变量的独立性" class="headerlink" title="2.3.4 随机变量的独立性"></a>2.3.4 随机变量的独立性</h2><h3 id="连续型"><a href="#连续型" class="headerlink" title="连续型"></a>连续型</h3><p>设(X₁,X₂)为连续型，以f(x₁,x₂),f₁(x₁),f₂(x₂),f₁(x₁|x₂),f₂(x₂|x₁)记联合、边缘与条件概率密度。一般，f₁(x₁|x₂)是随x₂的变化而变化的，反映了X₁与X₂在概率上有相依关系的事实(X₁的(条件)分布如何取决于另一变量之值)。如f₁(x₁lx₂)不依赖于x₂,因而只是x₁的函数，暂记为g(x₁),表示X₁的分布情况与X₂取什么值完全无关，这时就称X₁,X₂这两个随机变量(在概率论意义上)独立。</p>
+<ul>
+<li>与事件的独立相似</li>
+</ul>
+<p>X₁,X₂独立时，有:</p>
+<script type="math/tex; mode=display">
+f_1(x_1)=\int^{∞}_{-∞}g(x_1)f_2(x_2)dx_2=g(x_1)</script><p>这可取为独立性的定义。<br>从上式可以得出,对于二维随机向量，有：</p>
+<script type="math/tex; mode=display">
+f(x_1,x₂)=f₁(x₁)f₂(x₂)</script><p>即(X₁,X₂)的联合密度等于其各分量的密度之积，也可取作X₁,X₂独立的定义。比起上述定义，此式有两个优点：</p>
+<ul>
+<li>其形式关于两个变量对称</li>
+<li>它总有意义</li>
+<li>可以直接推广到任意多个变量的情形(一般情况下的正式定义)：设n维随机向量(X₁, …,$X_n$)的联合密度函数为f(x₁, …,$x_n$),而 $X_i$ 的(边缘)密度函数为 $f_i$($x_i$)，则当：<script type="math/tex; mode=display">
+f(x₁, …,x_n)=f_1(x₁)…f_n(x_n)</script>就称随机变量X₁, …, $X_n$ 相互独立</li>
+</ul>
+<p>从另外的角度思考：<br>如果x₁, …,$x_n$ 独立，则各变量取值的概率如何不受其他变量之影响，若考察 n 个事件</p>
+<script type="math/tex; mode=display">
+A₁={a_1≤X₁≤b₁},…,A_n={a_n≤X_n≤b_n}</script><p>因各事件只涉及一个变量，它们应当是相互独立的事件。(变量X₁, …,$X_n$ 独立的定义)由此得出定理如下：</p>
+<h4 id="定理1"><a href="#定理1" class="headerlink" title="定理1"></a>定理1</h4><p>如果连续变量X₁, …,$X_n$ 独立时，则对任何 $a_i$ &lt; $b_i$ 由上述定义的 n 个事件A₁,…,$A_n$ 也独立; $a_i$ &lt; $b_i$ 事件A₁,…,$A_n$ 独立，则变量X₁, …,$X_n$ 也独立</p>
+<h4 id="定理2"><a href="#定理2" class="headerlink" title="定理2"></a>定理2</h4><p>若连续型随机向量(X₁, …,$X_n$)的概率密度函数f(x₁,…,$x_n$)可表为n个函数 $g_1$ ,…,$g_n$ 之积，其中 $g_i$ 只依赖于 $x_i$ ,则X₁, …, $X_n$ 相互独立，且 $X_i$ 的边缘密度函数 $f_i$ ($x_i$)与 $g_i$($x_i$)只相差一个常数因子 $C_i$，有：</p>
+<script type="math/tex; mode=display">
+g_i(x_i)=C_i^{-1}f_i(x_i)</script><h4 id="定理3"><a href="#定理3" class="headerlink" title="定理3"></a>定理3</h4><p>若X₁, …, $X_n$ 相互独立，则对：</p>
+<script type="math/tex; mode=display">
+Y₁=g₁(X₁,…,X_m),Y₂=g₂(X_{m+1},…,X_n)</script><p>有Y₁和Y₂独立</p>
+<h3 id="离散型"><a href="#离散型" class="headerlink" title="离散型"></a>离散型</h3><h4 id="定义1"><a href="#定义1" class="headerlink" title="定义1"></a>定义1</h4><p>设 X₁, …, $X_n$ 都是离散型随机变量,若对任何常数a₁,…,$a_n$都有:</p>
+<script type="math/tex; mode=display">
+P(X₁=a₁, …,X_n=a_n)=P(X₁=a₁)…P(Xn=an)</script><p>则称X₁ ,…,$X_n$ 相互独立。</p>
+<h4 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h4><p>所有关于独立性的定理，全都适用于离散型，唯一的变动是所有“密度函数”都要改为“概率函数”</p>
+<h4 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h4><p>设(X₁,X₂)服从二维正态分布N(a,b,$σ_1$,$σ_2$,$\rho$)，由其联合密度函数f(x₁,x₂)的形式看出：当且仅当 $\rho$ =0时,f(x₁,x₂)=f₁(x₁)f₂(x₂),即X₁和X₂独立。这进一步反映了：$\rho$ 这个参数与X₁,X₂的相依性有关.</p>
+<ul>
+<li>在实际问题中，变量的独立性往往不是从其数学定义去验证出来的.相反，常是从变量产生的实际背景判断它们独立,然后再使用独立性定义中所赋予的性质和独立性的有关定理</li>
+</ul>
+<h4 id="事件独立性与随机变量独立性"><a href="#事件独立性与随机变量独立性" class="headerlink" title="事件独立性与随机变量独立性"></a>事件独立性与随机变量独立性</h4><p>设有n个事件A₁,A₂,…,$A_n$ ,针对每个事件 $A_i$ 可定义一随机变量 $X_i$ 如下：</p>
+<script type="math/tex; mode=display">
+X_i=1,当A发生；X;=0,当A不发生</script><p>常把 $X_i$ 称为事件A的指示变量或指示函数、示性函数,意思是其值“指示”了A 是否发生.这个写法表明：事件可视作随机变量的一种特例</p>
+<h4 id="多项分布-1"><a href="#多项分布-1" class="headerlink" title="多项分布"></a>多项分布</h4><p>设(X₁,…,$X_n$)服从多项分布M(N;p₁,…,$p_n$),($p_i$&gt;0)对任何u≠v,$X_u$ 和 $X_v$ 不独立(按多项分布的定义有X₁+…+$X_n$=N,若n&gt;2,则虽然 $X_u$ 并不足以唯一决定 $X_v$ 但二者有关)</p>
 <h1 id="各公式的推导以及证明"><a href="#各公式的推导以及证明" class="headerlink" title="各公式的推导以及证明"></a>各公式的推导以及证明</h1><h2 id="一维随机变量"><a href="#一维随机变量" class="headerlink" title="一维随机变量"></a>一维随机变量</h2><h3 id="二项分布-1"><a href="#二项分布-1" class="headerlink" title="二项分布"></a>二项分布</h3><p>设某事件A在一次试验中发生的概率为p，现把这试验独立地重复n次，以X记A在这n次试验中发生的次数.则X可取0,1, … ,n等值。为确定其概率分布，考虑事件{X=i}。要这个事件发生，必须在这n次试验中，有i个A,n-i个$\overline{A}$。每个A有概率p，n次试验独立，每个这样的原始结果序列发生的概率为$p_i$$(1-p)^{n-i}$。因为在n个位置中A可以占据任何i个位置，故一共有$C_n^i$种可能。由此得出:</p>
 <script type="math/tex; mode=display">
 p_i=b(i;n,p)=p^i(1-p)^{n-i}C_n^i(i=0,1, …,n)</script><h3 id="波哇松分布-1"><a href="#波哇松分布-1" class="headerlink" title="波哇松分布"></a>波哇松分布</h3><p>观察得到事件A在一段时间(长度为1)内发生了λ次,设所观察的这段时间为[0,1).取一个很大的自然数n, 把时间段[0,1)分为等长的n段，把在任意长度为1的时段内发生的A数设为X。作几个假定：</p>
@@ -661,7 +740,7 @@ C_{-r}^i=\frac{(-r)!}{i!(-r-i)!}=\frac{(-r)(-r-1)(-r-2)…(-r-i+1)}{i!}</script>
 (1-x)^{-r}=\sum_{i=0}^∞C_{-r}^i(-x)^i=\sum_{i=0}^∞(-1)^iC_{i+r-1}^{i}(-x)^i=\sum_{i=0}^∞C_{i+r-1}^{i}x^i</script>当x=1-p并且两边都乘$p^r$时，有：<script type="math/tex; mode=display">
 1=p^r[1-(1-p)]^{-r}=\sum_{i=0}^∞C_{i+r-1}^{i}(1-p)^ip^r</script></li>
 </ul>
-<h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><p>证明f(x)确可以作为一个概率密度：</p>
+<h3 id="正态分布-2"><a href="#正态分布-2" class="headerlink" title="正态分布"></a>正态分布</h3><p>证明f(x)确可以作为一个概率密度：</p>
 <ul>
 <li>证：∵f(x)≥0<script type="math/tex; mode=display">
 ∴证明\int_{-∞}^∞f(x)dx=1</script>设t=(x-$\mu$)/σ，则转化为证明：<script type="math/tex; mode=display">
@@ -711,7 +790,7 @@ P(x≤X≤x+h|X>x)/h</script><script type="math/tex; mode=display">
 ∴P(G(X)≤x)=P(X≤F(x))=F(x)</script><script type="math/tex; mode=display">
 得证</script></li>
 </ul>
-<h2 id="多维随机变量"><a href="#多维随机变量" class="headerlink" title="多维随机变量"></a>多维随机变量</h2><h3 id="多项分布-1"><a href="#多项分布-1" class="headerlink" title="多项分布"></a>多项分布</h3><p>设A₁,A₂,…,$A_n$,是某一试验之下的完备事件群,分别以p₁,p₂,…,$p_n$记事件A₁,A₂,…,$A_n$的概率,将试验独立地重复N次，而以$X_i$记在这N次试验中事件$A_i$出现的次数。设有n维随机向量:</p>
+<h2 id="多维随机变量"><a href="#多维随机变量" class="headerlink" title="多维随机变量"></a>多维随机变量</h2><h3 id="多项分布-2"><a href="#多项分布-2" class="headerlink" title="多项分布"></a>多项分布</h3><p>设A₁,A₂,…,$A_n$,是某一试验之下的完备事件群,分别以p₁,p₂,…,$p_n$记事件A₁,A₂,…,$A_n$的概率,将试验独立地重复N次，而以$X_i$记在这N次试验中事件$A_i$出现的次数。设有n维随机向量:</p>
 <script type="math/tex; mode=display">
 X=(X₁,…,X_n),(X₁,…,X_n∈N(自然数),X₁+…+X_n=N(实验次数))</script><p>求X的概率分布。</p>
 <ul>
@@ -807,6 +886,75 @@ f(x_1,x_2)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_
 ∴f_1(x_1)=(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})*σ_2\sqrt{1-\rho^2}\sqrt{2π}</script><script type="math/tex; mode=display">
 =(\sqrt{2π}σ_1)^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})=N(a,σ_1^2)</script><script type="math/tex; mode=display">
 得证</script></li>
+</ul>
+<h2 id="条件概率分布与随机变量的独立性"><a href="#条件概率分布与随机变量的独立性" class="headerlink" title="条件概率分布与随机变量的独立性"></a>条件概率分布与随机变量的独立性</h2><h3 id="二维离散型随机向量的条件概率分布"><a href="#二维离散型随机向量的条件概率分布" class="headerlink" title="二维离散型随机向量的条件概率分布"></a>二维离散型随机向量的条件概率分布</h3><p>设(X₁,X₂)为一个二维离散型随机向量，X₁的全部可能值为a₁,a₂,… ；X₂的全部可能值为 b₁,b₂,…,而(X₁,X₂)的联合概率分布为:</p>
+<script type="math/tex; mode=display">
+p_ij=P(X_1=a_i,X_2=b_j)</script><p>则现X₁在给定X₂=b,的条件下的条件分布，为条件概率P(X₁=$a_i$|X₂=$b_j$),所以有：</p>
+<script type="math/tex; mode=display">
+P(X₁=a_i|X₂=b_j)=P(X₁=a_i,X₂=b_j)/P(X₂=b_j)=P_{ij}/P(X_2=b_j)</script><script type="math/tex; mode=display">
+∵P(X_2=b_j)=\sum_{k}p_{kj}</script><script type="math/tex; mode=display">
+∴P(X₁=a_i|X₂=b_j)=P_{ij}/\sum_{k}p_{kj}</script><p>同理可得</p>
+<script type="math/tex; mode=display">
+∴P(X₂=b_j|X₁=a_i)=P_{ij}/\sum_{k}p_{ik}</script><h3 id="n维离散型向量的条件概率分布"><a href="#n维离散型向量的条件概率分布" class="headerlink" title="n维离散型向量的条件概率分布"></a>n维离散型向量的条件概率分布</h3><p>设(X₁,X₂, …,$X_n$)服从多项分布M(N;p₁,…,$p_n$),在给定X₂=k₂的条件下求X₁的条件分布。</p>
+<ul>
+<li>解：<br>设k₁,k₂为非负整数，且k₁≤N-k₂，则有<script type="math/tex; mode=display">
+P(X_1=k_1,X_2=k_2)=\sum_{k_3…k_n}'\frac{N!}{k_1!k_2!…k_n!}p_1^{k_1}p_2^{k_2}p_3^{k_3}…p_n^{k_n}</script>设有:<script type="math/tex; mode=display">
+p_i'=p_i/(1-p_1-p_2),(i≥3)</script>则:<script type="math/tex; mode=display">
+P(X_1=k_1,X_2=k_2)=\frac{N!}{k_1!k_2!(N-k_1-k_2)!}·p_1^{k_1}p_2^{k_2}(1-p_1-p_2)^{N-K_1-K_2}C,</script><script type="math/tex; mode=display">
+C=\sum_{k_3…k_n}'\frac{(N-k_1-k_2)!}{k_3!…k_n!}p_3'^{k_3}…p_n'^{k_n}</script><script type="math/tex; mode=display">
+∵p_3'^{k_3}+…+p_n'^{k_n}=1</script><script type="math/tex; mode=display">
+∴C=1</script><script type="math/tex; mode=display">
+∴P(X_1=k_1,X_2=k_2)=\frac{N!}{k_1!k_2!(N-k_1-k_2)!}·p_1^{k_1}p_2^{k_2}(1-p_1-p_2)^{N-K_1-K_2}</script>由于X₂的分布为二项分布B(N,p₂)<script type="math/tex; mode=display">
+∴P(X_1=k_1|X_2=k_2)=\frac{N!}{k_1!k_2!(N-k_1-k_2)!}·p_1^{k_1}p_2^{k_2}(1-p_1-p_2)^{N-K_1-K_2}/\frac{N!}{k_2!(N-k_2)!}p_2^{k_2}(1-p_2)^{N-k_1-k_2}</script><script type="math/tex; mode=display">
+=\frac{(N-k_2)!}{k_1!(N-k_1-k_2)!}(\frac{p_1}{1-p_2})^{k_1}(1-\frac{p_1}{1-p_2})^{N-k_1-k_2}</script><script type="math/tex; mode=display">
+=b(k_1;N-k_2,p_1/(1-p_2))</script>由此可知：在给定X₂=k₂的条件下，X₁的条件分布就是分布B(N-k₂,p₁/(1-p₂))</li>
+</ul>
+<h3 id="二维随机向量的条件分布-1"><a href="#二维随机向量的条件分布-1" class="headerlink" title="二维随机向量的条件分布"></a>二维随机向量的条件分布</h3><p>设二维随机向量X=(X₁,X₂)有概率密度函数f(x₁,x₂)，当a≤x₂≤b时，求X₁的条件分布</p>
+<ul>
+<li>解：<script type="math/tex; mode=display">
+P(X₁≤x₁|a≤X₂≤b)=P(X₁≤x₁,a≤X₂≤b)/P(a≤X₂≤b)</script>其中<script type="math/tex; mode=display">
+P(X₁≤x₁,a≤X₂≤b)=\int_{-∞}^{x_1}dt_1\int_{a}^{b}f(t_1,t_2)dt_2</script>设X₂的边缘分布的密度函数为f₂，则<script type="math/tex; mode=display">
+P(a≤X₂≤b)=\int_{a}^{b}f_2(t_2)dt_2</script><script type="math/tex; mode=display">
+∴P(X₁≤x₁|a≤X₂≤b)=\int_{-∞}^{x_1}dt_1\int_{a}^{b}f(t_1,t_2)dt_2/\int_{a}^{b}f_2(t_2)dt_2</script>对x₁求导得到x₁的条件密度函数为<script type="math/tex; mode=display">
+f_1(x₁|a≤X₂≤b)=\int_{a}^{b}f(x_1,t_2)dt_2/\int_{a}^{b}f_2(t_2)dt_2</script></li>
+</ul>
+<h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>当X₂给定等于一个值(a=b)时,求X₁的条件密度函数。</p>
+<ul>
+<li>解：<script type="math/tex; mode=display">
+f_1(x₁|x₂)=f_1(x₁|X₂=x_2)=\lim_{h→0}f_1(x₁|x_2≤X₂≤x_2+h)=\lim_{h→0}\frac{1}{h}\int^{x_2+h}_{x_2}f(x_1,t_2)dt_2/\lim_{h→0}\frac{1}{h}\int^{x_2+h}_{x_2}f_2(t_2)dt_2</script><script type="math/tex; mode=display">
+=f(x_1,x_2)/f_2(x_2)</script></li>
+</ul>
+<h3 id="二维正态分布的条件分布-1"><a href="#二维正态分布的条件分布-1" class="headerlink" title="二维正态分布的条件分布"></a>二维正态分布的条件分布</h3><p>设(X₁,X₂)服从二维正态分布N(a,b,$σ₁^2$,$σ₂^2$,$\rho$),在给定X₁=x₁的条件下，求X₂的条件密度函数f₂(x₂|x₁)。</p>
+<ul>
+<li>解：<script type="math/tex; mode=display">
+f_2(x₁|x₂)=f(x_1,x_2)/f_1(x_2)</script><script type="math/tex; mode=display">
+=[(2πσ_1σ_2\sqrt{1-\rho^2})^{-1}exp(-\frac{1}{2(1-\rho^2)}(\frac{(x_1-a)^2}{σ_1^2}-\frac{2\rho(x_1-a)(x_2-b)}{σ_1σ_2}+</script><script type="math/tex; mode=display">
+\frac{(x_2-b)^2}{σ_2^2}))]/[(\sqrt{2π}σ_1)^{-1}exp(-\frac{1}{2}\frac{(x_1-a)^2}{σ_1^2})]</script><script type="math/tex; mode=display">
+=(\sqrt{2π}σ_2\sqrt{1-\rho^2})^{-1}·exp(-\frac{(x_2-(b+\frac{\rho σ_2(x_1-a)}{σ_1}))^2}{2(1-\rho^2)σ_2^2})</script></li>
+</ul>
+<h3 id="X₁-…-X-n-独立定理证明"><a href="#X₁-…-X-n-独立定理证明" class="headerlink" title="X₁, …,$X_n$ 独立定理证明"></a>X₁, …,$X_n$ 独立定理证明</h3><p>证明：如果连续变量X₁, …,$X_n$ 独立时，则对任何 $a_i$ &lt; $b_i$ 由上述定义的 n 个事件A₁,…,$A_n$ 也独立; $a_i$ &lt; $b_i$ ，事件A₁,…,$A_n$ 独立，则变量X₁, …,$X_n$ 也独立</p>
+<ul>
+<li>证：1 °设X₁, …,$X_n$ 独立，为证事件A₁,…,$A_n$ 独立，需证：<script type="math/tex; mode=display">
+P(A_{i₁}A_{i_2}…A_{i_m})=P(A_{i₁})P(A_{i_2})…P(A_{i_m})</script>设i₁=1,i₂=2,…,$i_m$=m，则：<script type="math/tex; mode=display">
+P(A₁A₂…A_m)=P(a_1≤X₁≤b₁,…,a_m≤X_m≤b_m)</script><script type="math/tex; mode=display">
+=P(a_1≤X₁≤b₁,…,a_m≤X_m≤b_m,-∞<x_{m+1}<∞,…,-∞<x_n<∞)</script><script type="math/tex; mode=display">
+=\int_{-∞}^∞…\int_{-∞}^∞\int_{a_m}^{b_m}…\int_{a_1}^{b_1}f(x_1,…,x_n)dx_1…dx_n</script><script type="math/tex; mode=display">
+=\int_{-∞}^∞…\int_{-∞}^∞\int_{a_m}^{b_m}…\int_{a_1}^{b_1}f_1(x_1)…f_n(x_n)dx_1…dx_n</script><script type="math/tex; mode=display">
+=\int_{-∞}^∞f_n(x_n)dx_n…\int_{-∞}^∞f_{m+1}(x_{m+1})dx_{m+1}\int_{a_m}^{b_m}f_m(x_m)dx_m…\int_{a_1}^{b_1}f_1(x_1)dx_1</script><script type="math/tex; mode=display">
+=\int_{a_m}^{b_m}f_m(x_m)dx_m…\int_{a_1}^{b_1}f_1(x_1)dx_1</script><script type="math/tex; mode=display">
+=P(a_1≤X₁≤b₁)…P(a_m≤X_m≤b_m)
+得证</script>2°设A₁,…,$A_n$ 独立且 $A_i$={-∞&lt;$X_i$&lt;$x_i$},<script type="math/tex; mode=display">
+∵P(A₁A₂…A_n)=P(A₁)P(A₂)…P(A_n)</script><script type="math/tex; mode=display">
+∴\int^{x_n}_{-∞}…\int^{x_1}_{-∞}f(t_1,t_2,…,t_n)dt_1dt_2=\int^{x_n}_{-∞}f_n(t_n)dt_n…\int^{x_1}_{-∞}f_1(t_1)dt_1</script>两边依次对 x₁,x₂, …, $x_n$ 取偏导数得：<script type="math/tex; mode=display">
+f(x_1,x_2,…,x_n)=f_1(x_1)f_2(x_2)…f_n(x_n)</script>得证</li>
+</ul>
+<h3 id="有关独立性的有用结果-定理2"><a href="#有关独立性的有用结果-定理2" class="headerlink" title="有关独立性的有用结果(定理2)"></a>有关独立性的有用结果(定理2)</h3><ul>
+<li>证明：若连续型随机向量(X₁, …,$X_n$)的概率密度函数f(x₁,…,$x_n$)可表为n个函数 $g_1$ ,…,$g_n$ 之积，其中 $g_i$ 只依赖于 $x_i$ ,则X₁, …, $X_n$ 相互独立，且 $X_i$ 的边缘密度函数 $f_i$ ($x_i$)与 $g_i$($x_i$)只相差一个常数因子</li>
+<li><ul>
+<li>证：<script type="math/tex; mode=display">
+∵f(x_1,…,x_n)=\int_{-∞}^∞…\int_{-∞}^∞f(x_1,x_2,…,x_n)dx_2dx_n=g_1(x_1)\int_{-∞}^∞g_2(x_2)dx_2…\int_{-∞}^∞g_n(x_n)dx_n=C_1g_1(x_1)</script>得证</li>
+</ul>
+</li>
 </ul>
 
       
